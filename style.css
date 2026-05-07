@@ -7,11 +7,18 @@
 /* =========================
    RESET
 ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 /* =========================
-   HOME
+   BODY
 ========================= */
 
-.home-body{
+body{
 
     min-height:100vh;
 
@@ -25,221 +32,93 @@
 }
 
 /* =========================
-   CONTENEDOR HOME
+   NAVBAR
 ========================= */
 
-.home-container{
+header{
+    padding-top:30px;
+}
+
+nav ul{
+
+    display:flex;
+    justify-content:center;
+    gap:70px;
+
+    list-style:none;
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:#F0CB75;
+
+    font-size:16px;
+
+    font-family:'Italiana', serif;
+
+    transition:0.3s;
+}
+
+nav a:hover{
+
+    color:white;
+}
+
+/* =========================
+   HOME
+========================= */
+
+#home{
 
     height:80vh;
 
     display:flex;
+    flex-direction:column;
+
     justify-content:center;
     align-items:center;
 }
 
 /* =========================
-   CONTENIDO HOME
+   TITULO
 ========================= */
 
-.home-content{
-    text-align:center;
-}
-
-/* =========================
-   TITULO HOME
-========================= */
-
-.home-title{
-
-    font-family:'DM Serif Display', serif;
-
-    font-size:120px;
-    font-weight:400;
+h1{
 
     color:white;
 
-    letter-spacing:6px;
+    font-size:80px;
+
+    font-family:'DM Serif Display', serif;
+
+    font-weight:400;
 
     text-shadow:0px 4px 4px rgba(0,0,0,0.25);
+
+    margin-bottom:30px;
 }
 
 /* =========================
-   BOTON HOME
+   BOTON
 ========================= */
 
-.start-button{
-
-    margin-top:20px;
+button{
 
     background:rgba(73, 89, 48, 0.77);
 
     color:#E48BAA;
 
     border:none;
+
     border-radius:10px;
 
-    padding:15px 40px;
+    padding:15px 35px;
+
+    font-size:16px;
 
     font-family:'Italiana', serif;
-    font-size:20px;
-
-    transition:0.3s;
-}
-
-.start-button:hover{
-
-    background:#F0CB75;
-
-    color:#6E1A36;
-
-    transform:scale(1.05);
-}
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-/* =========================
-   BODY
-========================= */
-
-body{
-    min-height:100vh;
-    overflow-x:hidden;
-
-    background: radial-gradient(
-        ellipse at center,
-        #841F42 0%,
-        #495930 100%
-    );
-
-    color:#EEF2E8;
-}
-
-/* =========================
-   NAVBAR
-========================= */
-
-header{
-    padding:25px;
-}
-
-nav ul{
-    display:flex;
-    justify-content:center;
-    gap:50px;
-
-    list-style:none;
-}
-
-nav a{
-    text-decoration:none;
-
-    color:#EEF2E8;
-
-    font-family:'Italiana', serif;
-    font-size:24px;
-
-    transition:0.3s;
-}
-
-nav a:hover{
-    color:#F0CB75;
-}
-
-/* =========================
-   TITULOS
-========================= */
-
-h1{
-    text-align:center;
-
-    margin-top:60px;
-
-    font-family:'DM Serif Display', serif;
-    font-size:80px;
-    font-weight:400;
-
-    color:rgba(238, 242, 232, 0.85);
-
-    letter-spacing:4px;
-
-    text-shadow: 4px 4px rgba(0,0,0,0.2);
-}
-
-/* =========================
-   SECCIONES
-========================= */
-
-section{
-    padding:50px;
-}
-
-/* =========================
-   GRID DE CAPITULOS
-========================= */
-
-.capitulos-container{
-    margin-top:100px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-
-    gap:60px;
-}
-
-/* =========================
-   TARJETAS
-========================= */
-
-.ciudad{
-    text-align:center;
-}
-
-/* =========================
-   IMAGENES
-========================= */
-
-.ciudad img{
-    width:300px;
-    height:300px;
-
-    object-fit:cover;
-
-    border-radius:50%;
-
-    border:3px solid #EEF2E8;
-
-    transition:0.4s;
-}
-
-.ciudad img:hover{
-    transform:scale(1.05);
-
-    border-color:#F0CB75;
-}
-
-/* =========================
-   BOTONES
-========================= */
-
-button{
-    margin-top:30px;
-
-    padding:12px 30px;
-
-    border:none;
-    border-radius:23px;
-
-    background:#F0CB75;
-
-    color:#841F42;
-
-    font-family:'Italiana', serif;
-    font-size:30px;
 
     cursor:pointer;
 
@@ -247,53 +126,10 @@ button{
 }
 
 button:hover{
-    background:#841F42;
-    color:#F0CB75;
 
-    transform:translateY(-3px);
-}
+    background:#F0CB75;
 
-/* =========================
-   TEXTOS
-========================= */
+    color:#6E1A36;
 
-p{
-    width:70%;
-
-    margin:30px auto;
-
-    text-align:center;
-
-    font-size:20px;
-    line-height:1.7;
-
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-/* =========================
-   LINKS
-========================= */
-
-a{
-    text-decoration:none;
-}
-
-/* =========================
-   CREDITOS
-========================= */
-
-ul{
-    list-style:none;
-
-    text-align:center;
-
-    margin-top:30px;
-}
-
-li{
-    margin:15px 0;
-
-    font-size:24px;
-
-    font-family:'Italiana', serif;
+    transform:scale(1.05);
 }
