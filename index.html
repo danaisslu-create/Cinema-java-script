@@ -1,54 +1,75 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta
-      name="description"
-      content="our first interactive multimedia narrative"
-    />
-    <link
-      id="favicon"
-      rel="icon"
-      href="https://glitch.com/edit/favicon-app.ico"
-      type="image/x-icon"
-    />
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html>
+<html lang="es">
 
-    <link
-      rel="stylesheet"
-      href="
-style.css"
-    />
-    <script
-      src=".
-/script.js"
-      defer
-    ></script>
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <body>
+    <!-- Título -->
+    <title>CINEMA</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="home-body">
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
     <header>
+
         <nav>
+
             <ul>
-                <li><a href="aboutNicole.html">About</a></li>
-                <li><a href="personajes.html">Personajes</a></li>
-                <li><a href="capitulos.html">Capítulos</a></li>
-                <li><a href="creditos.html">Créditos</a></li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="personajes.html">Personajes</a>
+                </li>
+
+                <li>
+                    <a href="capitulos.html">Capítulos</a>
+                </li>
+
+                <li>
+                    <a href="creditos.html">Créditos</a>
+                </li>
+
             </ul>
+
         </nav>
+
     </header>
-    
-    <main>
-        <section id="home">
-            <h1>CINEMA</h1>
-            <button onclick="location.href='aboutNicole.html'">
-                Comenzar
-            </button>
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <main class="home-container">
+
+        <section class="home-content">
+
+            <h1 class="home-title">
+                CINEMA
+            </h1>
+
+            <a href="capitulos.html">
+
+                <button class="start-button">
+                    START HERE
+                </button>
+
+            </a>
+
         </section>
+
     </main>
-    
-  </body>
+
+</body>
+
 </html>
- 
