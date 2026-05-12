@@ -1,24 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Travis Bickle</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
-<body>
+<body class="travis-body">
 
-    <h1>Travis Bickle</h1>
+    <!-- BACK -->
 
-    <img src="ASSETS/Imagenes/Easter eggs 2.png" alt="Travis Bickle">
+    <button class="back-button" onclick="history.back()">
+        ← BACK
+    </button>
 
-    <p>
-        Un hombre solitario que recorre la ciudad de noche, observando una realidad que le resulta cada vez más ajena.
-        Su mente se mueve entre el aislamiento, la paranoia y una necesidad intensa de encontrar propósito en el caos urbano.
-    </p>
+    <!-- NAVBAR -->
 
-    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/31YXwKz7UBqGE1maqVKLev?utm_source=generator" width="50%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      
+    <header>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="aboutNicole.html">About</a></li>
+
+                <li><a href="personajes.html">Personajes</a></li>
+
+                <li><a href="capitulos.html">Capítulos</a></li>
+
+                <li><a href="creditos.html">Créditos</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- CONTENIDO -->
+
+    <main class="travis-container">
+
+        <h1 class="travis-title">
+            TRAVIS BICKLE
+        </h1>
+
+        <img
+            class="travis-image"
+            src="ASSETS/Imagenes/Easter eggs 2.png"
+            alt="Travis Bickle"
+        >
+
+        <p class="travis-description">
+
+            Un hombre solitario que recorre la ciudad de noche,
+            observando una realidad que le resulta cada vez más ajena.
+
+            Su mente se mueve entre el aislamiento,
+            la paranoia y una necesidad intensa
+            de encontrar propósito en el caos urbano.
+
+        </p>
+
+        <!-- SPOTIFY -->
+
+        <iframe
+
+            class="travis-spotify"
+
+            src="https://open.spotify.com/embed/playlist/31YXwKz7UBqGE1maqVKLev?utm_source=generator&autoplay=1"
+
+            height="352"
+
+            frameborder="0"
+
+            allowfullscreen=""
+
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+
+            loading="lazy">
+
+        </iframe>
+
+    </main>
 
 </body>
+
 </html>
