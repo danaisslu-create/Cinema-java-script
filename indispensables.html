@@ -1,46 +1,105 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta
-      name="description"
-      content="our first interactive multimedia narrative"
-    />
-    <link
-      id="favicon"
-      rel="icon"
-      href="https://glitch.com/edit/favicon-app.ico"
-      type="image/x-icon"
-    />
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html>
+<html lang="es">
 
-    <link
-      rel="stylesheet"
-      href="
-style.css"
-    />
-    <script
-      src=".
-/script.js"
-      defer
-    ></script>
-  </head>
+<head>
 
-  <body>
-    
-     <h1>Los objetos favortios de Nicole</h1>
-    
-   <img src="ASSETS/Imagenes/audifonos.png">
-   <img src="ASSETS/Imagenes/camara.png">
-   <img src="ASSETS/Imagenes/libros.png">
-   <img src="ASSETS/Imagenes/jeans.png">
-   <img src="ASSETS/Imagenes/memeletterboxd.jpeg">
+    <meta charset="UTF-8">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <a href="aboutNicole.html">
-                    <button>regresa</button>
-                </a>
-  </body>
+    <title>Indispensables de Nicole</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="miranda-body">
+
+    <!-- BOTON BACK -->
+    <button class="back-button" onclick="history.back()">
+        ← BACK
+    </button>
+
+    <!-- NAVBAR -->
+    <header>
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="aboutNicole.html">About</a>
+                </li>
+
+                <li>
+                    <a href="personajes.html">Personajes</a>
+                </li>
+
+                <li>
+                    <a href="capitulos.html">Capítulos</a>
+                </li>
+
+                <li>
+                    <a href="creditos.html">Créditos</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- CONTENIDO -->
+    <main class="indispensables-container">
+
+        <h1 class="miranda-title">
+            Los Objetos Favoritos de Nicole
+        </h1>
+
+        <!-- GRID DE OBJETOS -->
+        <section class="objetos-grid">
+
+            <img 
+                src="ASSETS/Imagenes/audifonos.png"
+                alt="Audífonos"
+                class="objeto objeto1"
+            >
+
+            <img 
+                src="ASSETS/Imagenes/camara.png"
+                alt="Cámara"
+                class="objeto objeto2"
+            >
+
+            <img 
+                src="ASSETS/Imagenes/libros.png"
+                alt="Libros"
+                class="objeto objeto3"
+            >
+
+            <img 
+                src="ASSETS/Imagenes/jeans.png"
+                alt="Jeans"
+                class="objeto objeto4"
+            >
+
+            <img 
+                src="ASSETS/Imagenes/memeletterboxd.jpeg"
+                alt="Letterboxd"
+                class="objeto objeto5"
+            >
+
+        </section>
+
+       
+
+    </main>
+
+</body>
+
 </html>

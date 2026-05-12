@@ -1,57 +1,155 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta
-      name="description"
-      content="our first interactive multimedia narrative"
-    />
-    <link
-      id="favicon"
-      rel="icon"
-      href="https://glitch.com/edit/favicon-app.ico"
-      type="image/x-icon"
-    />
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html>
+<html lang="es">
 
-    <link
-      rel="stylesheet"
-      href="
-style.css"
-    />
-    <script
-      src=".
-/script.js"
-      defer
-    ></script>
-  </head>
+<head>
 
-  <body>
-     <h1>About Nicole</h1>
-     <img src="ASSETS/Imagenes/nicole.png">
-     
-    <h2> Escucha el Spotify de Nicole</h2>
-    <a href="spotify.html">
-        <img src="ASSETS/Imagenes/spotifynicole">
-        </a>
+    <meta charset="UTF-8">
 
-   <h2> Los indispensables de Nicole</h2>
-    <a href="indispensables.html">
-    <img src="ASSETS/Imagenes/indispensables.jpeg">
-    </a>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <h2> Room tour</h2> 
-    <a href="roomtour.html">
-    <img src="ASSETS/Imagenes/roomtour.jpeg">
-    </a>
-    <h2> Conoce Bogota</h2>
-      <img src="ASSETS/Imagenes/bogota.jpeg">
-    
-       <a href="Capitulo1-bogota.html">
-                    <button>Empezar la Historia</button>
-                </a>
+    <title>About Nicole</title>
 
-  </body>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- BOTON BACK -->
+    <button class="back-button" onclick="history.back()">
+        ← BACK
+    </button>
+
+    <!-- NAVBAR -->
+    <header>
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="aboutNicole.html">About</a>
+                </li>
+
+                <li>
+                    <a href="personajes.html">Personajes</a>
+                </li>
+
+                <li>
+                    <a href="capitulos.html">Capítulos</a>
+                </li>
+
+                <li>
+                    <a href="creditos.html">Créditos</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- CONTENIDO -->
+    <main class="travis-container">
+
+        <h1 class="travis-title">
+            About Nicole
+        </h1>
+
+        <!-- FOTO PRINCIPAL -->
+        <img 
+            src="ASSETS/Imagenes/nicole.png"
+            alt="Nicole"
+            class="travis-image"
+        >
+
+        <!-- SPOTIFY -->
+        <section class="ciudad">
+
+            <h2 class="travis-description">
+                Escucha el Spotify de Nicole
+            </h2>
+
+            <a href="spotify.html">
+
+                <img 
+                    src="ASSETS/Imagenes/spotifynicole.png"
+                    alt="Spotify Nicole"
+                    class="travis-image"
+                >
+
+            </a>
+
+        </section>
+
+        <!-- INDISPENSABLES -->
+        <section class="ciudad">
+
+            <h2 class="travis-description">
+                Los indispensables de Nicole
+            </h2>
+
+            <a href="indispensables.html">
+
+                <img 
+                    src="ASSETS/Imagenes/indispensables.jpeg"
+                    alt="Indispensables"
+                    class="travis-image"
+                >
+
+            </a>
+
+        </section>
+
+        <!-- ROOM TOUR -->
+        <section class="ciudad">
+
+            <h2 class="travis-description">
+                Room Tour
+            </h2>
+
+            <a href="roomtour.html">
+
+                <img 
+                    src="ASSETS/Imagenes/roomtour.jpeg"
+                    alt="Room Tour"
+                    class="travis-image"
+                >
+
+            </a>
+
+        </section>
+
+        <!-- BOGOTA -->
+        <section class="ciudad">
+
+            <h2 class="travis-description">
+                Conoce Bogotá
+            </h2>
+
+            <img 
+                src="ASSETS/Imagenes/bogota.jpeg"
+                alt="Bogotá"
+                class="travis-image"
+            >
+
+            <a href="Capitulo1-bogota.html">
+
+                <button>
+                    Empezar la Historia
+                </button>
+
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+
 </html>
