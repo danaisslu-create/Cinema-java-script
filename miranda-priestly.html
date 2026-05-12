@@ -1,25 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Miranda Priestly</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
-<body>
+<body class="miranda-body">
 
-    <h1>Miranda Priestly</h1>
+    <!-- BACK BUTTON -->
 
-    <img src="ASSETS/Imagenes/miranda.jpg" alt="Miranda Priestly">
+    <button class="back-button" onclick="history.back()">
+        ← BACK
+    </button>
 
-    <p>
-        Directora de una influyente revista de moda, su presencia impone respeto sin necesidad de elevar la voz.
-        Controla cada detalle con precisión absoluta, representando el poder, la exigencia y la perfección.
-    </p>
+    <!-- =========================
+         NAVBAR
+    ========================== -->
 
-    <a href="https://open.spotify.com/playlist/7rn5423C3L20dIqjB8Bm0x?si=XXvgOpvjQ0uB77uaE01Uww" target="_blank">
-        Escuchar playlist
-    </a>
+    <header>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="aboutNicole.html">About</a></li>
+
+                <li><a href="personajes.html">Personajes</a></li>
+
+                <li><a href="capitulos.html">Capítulos</a></li>
+
+                <li><a href="creditos.html">Créditos</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- =========================
+         CONTENIDO
+    ========================== -->
+
+    <main class="miranda-container">
+
+        <h1 class="miranda-title">
+            MIRANDA PRIESTLY
+        </h1>
+
+        <img
+            class="miranda-image"
+            src="ASSETS/Imagenes/miranda.jpg"
+            alt="Miranda Priestly"
+        >
+
+        <p class="miranda-description">
+
+            Directora de una influyente revista de moda,
+            su presencia impone respeto sin necesidad de elevar la voz.
+
+            Controla cada detalle con precisión absoluta,
+            representando el poder,
+            la exigencia y la perfección.
+
+        </p>
+
+        <!-- SPOTIFY -->
+
+        <iframe
+
+            class="miranda-spotify"
+
+            src="https://open.spotify.com/embed/playlist/7rn5423C3L20dIqjB8Bm0x?utm_source=generator&autoplay=1"
+
+            height="352"
+
+            frameborder="0"
+
+            allowfullscreen=""
+
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+
+            loading="lazy">
+
+        </iframe>
+
+    </main>
 
 </body>
+
 </html>

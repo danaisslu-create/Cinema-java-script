@@ -632,3 +632,122 @@ button:hover{
 
     box-shadow:0px 4px 20px rgba(0,0,0,0.3);
 }
+
+/* =========================
+   MIRANDA PAGE
+========================= */
+
+.miranda-body{
+
+    min-height:100vh;
+
+    background: radial-gradient(
+        circle at center,
+        #c54b6c 0%,
+        #5c1c39 100%
+    );
+
+    overflow-x:hidden;
+
+    color:#EEF2E8;
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.miranda-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:35px;
+
+    padding:120px 20px 100px 20px;
+}
+
+/* =========================
+   TITULO
+========================= */
+
+.miranda-title{
+
+    color:#F5F5F5;
+
+    font-size:85px;
+
+    font-family:'DM Serif Display', serif;
+
+    font-weight:400;
+
+    text-align:center;
+
+    letter-spacing:4px;
+
+    text-shadow:4px 4px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   IMAGEN
+========================= */
+
+.miranda-image{
+
+    width:320px;
+
+    max-width:85%;
+
+    border-radius:20px;
+
+    border:3px solid #F5F5F5;
+
+    object-fit:cover;
+
+    transition:0.4s;
+}
+
+.miranda-image:hover{
+
+    transform:scale(1.03);
+
+    border-color:#E48BAA;
+}
+
+/* =========================
+   DESCRIPCION
+========================= */
+
+.miranda-description{
+
+    width:60%;
+
+    max-width:750px;
+
+    text-align:center;
+
+    color:#F5F5F5;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    font-family:'Italiana', serif;
+}
+
+/* =========================
+   SPOTIFY
+========================= */
+
+.miranda-spotify{
+
+    width:70%;
+
+    max-width:800px;
+
+    border-radius:12px;
+
+    box-shadow:0px 4px 20px rgba(0,0,0,0.4);
+}
