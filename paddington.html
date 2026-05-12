@@ -1,25 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Paddington</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
-<body>
+<body class="paddington-body">
 
-    <h1>Paddington</h1>
+    <!-- BACK BUTTON -->
 
-    <img src="ASSETS/Imagenes/paddington.jpg" alt="Paddington">
+    <button class="back-button" onclick="history.back()">
+        ← BACK
+    </button>
 
-    <p>
-        Un oso curioso y amable que llega a una ciudad desconocida con una mirada inocente.
-        Su forma de ver el mundo transforma todo a su alrededor, encontrando calidez incluso en lo inesperado.
-    </p>
+    <!-- =========================
+         NAVBAR
+    ========================== -->
 
-    <a href="https://open.spotify.com/" target="_blank">
-        Escuchar playlist
-    </a>
+    <header>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="aboutNicole.html">About</a></li>
+
+                <li><a href="personajes.html">Personajes</a></li>
+
+                <li><a href="capitulos.html">Capítulos</a></li>
+
+                <li><a href="creditos.html">Créditos</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- =========================
+         CONTENIDO
+    ========================== -->
+
+    <main class="paddington-container">
+
+        <h1 class="paddington-title">
+            PADDINGTON
+        </h1>
+
+        <img
+            class="paddington-image"
+            src="ASSETS/Imagenes/paddington.jpg"
+            alt="Paddington"
+        >
+
+        <p class="paddington-description">
+
+            Un oso curioso y amable que llega a una ciudad desconocida
+            con una mirada inocente.
+
+            Su forma de ver el mundo transforma todo a su alrededor,
+            encontrando calidez incluso en lo inesperado.
+
+        </p>
+
+        <!-- SPOTIFY -->
+
+        <iframe
+
+    class="paddington-spotify"
+
+    src="https://open.spotify.com/embed/playlist/5WUYYsoA96BWxqYOMZu2F7?utm_source=generator&autoplay=1"
+
+    height="352"
+
+    frameborder="0"
+
+    allowfullscreen=""
+
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+
+    loading="lazy">
+
+</iframe>
+
+    </main>
 
 </body>
+
 </html>
