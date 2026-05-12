@@ -133,3 +133,187 @@ button:hover{
 
     transform:scale(1.05);
 }
+
+/* =========================
+   GOOGLE FONTS
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&display=swap');
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+
+    min-height:100vh;
+
+    background: radial-gradient(
+        ellipse at center,
+        #841F42 0%,
+        #495930 100%
+    );
+
+    overflow-x:hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header{
+    padding-top:30px;
+}
+
+nav ul{
+
+    display:flex;
+    justify-content:center;
+    gap:70px;
+
+    list-style:none;
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:#F0CB75;
+
+    font-size:18px;
+
+    font-family:'Italiana', serif;
+
+    transition:0.3s;
+}
+
+nav a:hover{
+
+    color:white;
+}
+
+/* =========================
+   TITULO
+========================= */
+
+h1{
+
+    text-align:center;
+
+    margin-top:60px;
+
+    color:rgba(238, 242, 232, 0.85);
+
+    font-size:80px;
+
+    font-family:'DM Serif Display', serif;
+
+    font-weight:400;
+
+    text-shadow:4px 4px rgba(0,0,0,0.2);
+
+    letter-spacing:4px;
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.capitulos-container{
+
+    margin-top:100px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:50px;
+}
+
+/* =========================
+   CIUDADES
+========================= */
+
+.ciudad{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+}
+
+/* =========================
+   IMAGENES
+========================= */
+
+.ciudad img{
+
+    width:300px;
+    height:300px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:3px solid #EEF2E8;
+
+    transition:0.4s;
+}
+
+.ciudad img:hover{
+
+    transform:scale(1.05);
+
+    border-color:#F0CB75;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+button{
+
+    margin-top:25px;
+
+    background:#F0CB75;
+
+    color:#841F42;
+
+    border:none;
+
+    border-radius:23px;
+
+    padding:12px 30px;
+
+    font-size:28px;
+
+    font-family:'Italiana', serif;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+button:hover{
+
+    background:#841F42;
+
+    color:#F0CB75;
+
+    transform:translateY(-3px);
+}
