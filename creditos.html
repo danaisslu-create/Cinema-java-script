@@ -1,47 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Créditos - Cinema</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
-<body>
+<body class="creditos-body">
 
-    <!-- Navegación -->
+    <!-- BACK BUTTON -->
+
+    <button class="back-button" onclick="history.back()">
+        ← BACK
+    </button>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
     <header>
+
         <nav>
+
             <ul>
+
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+
+                <li><a href="aboutNicole.html">About</a></li>
+
                 <li><a href="personajes.html">Personajes</a></li>
+
                 <li><a href="capitulos.html">Capítulos</a></li>
+
                 <li><a href="creditos.html">Créditos</a></li>
+
             </ul>
+
         </nav>
+
     </header>
 
-    <!-- Créditos -->
-    <main>
-        <section id="creditos">
-            <h1>Créditos</h1>
+    <!-- =========================
+         CONTENIDO
+    ========================== -->
 
-            <p>Este proyecto fue creado por:</p>
+    <main class="creditos-main">
 
-            <ul>
-                <li>Natalia Alvarado</li>
-                <li>Isabella Ballesteros</li>
-                <li>Luisa Sahagún</li>
-                <li>Daniela Nerea</li>
-                <li>Isabela Alban</li>
-            </ul>
+        <!-- FONDO -->
 
-            <p>
-                Una narrativa interactiva que explora el cine, las decisiones y los universos que habitan en cada historia.
+        <img
+            class="creditos-background"
+            src="ASSETS/Imagenes/creditos cinema.jpeg"
+            alt="Cinema Background"
+        >
+
+        <!-- TITULO -->
+
+        <h1 class="creditos-title">
+            CINEMA
+        </h1>
+
+        <!-- CAJA -->
+
+        <section class="creditos-box">
+
+            <p class="creditos-text">
+
+                Este proyecto fue creado por:
+
+                <br><br>
+
+                Natalia Alvarado  
+                <br>
+                Isabella Ballesteros  
+                <br>
+                Luisa Sahagún  
+                <br>
+                Daniela Nerea  
+                <br>
+                Isabela Alban
+
+                <br><br>
+
+                Una narrativa interactiva que explora
+                el cine, las decisiones y los universos
+                que existen dentro de cada historia.
+
             </p>
 
         </section>
+
     </main>
 
 </body>
+
 </html>

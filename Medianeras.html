@@ -1,104 +1,93 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta
-      name="description"
-      content="our first interactive multimedia narrative"
-    />
-    <link
-      id="favicon"
-      rel="icon"
-      href="ASSETS/Imagenes/MEDIANERAS1.jpg.png"
-      type="image/x-icon"
-    />
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html>
+<html lang="es">
 
-    <link
-      rel="stylesheet"
-      href="
-style.css"
-    />
-    <script
-      src=".
-/script.js"
-      defer
-    ></script>
-  </head>
+<head>
 
-  <body>
-    <h1>Go</h1>
-    <img src="ASSETS/Imagenes/Medianeras_ (2011).jpg">
-  <h2>Medianeras</h2>
-  <img src="/ASSETS/Imagenes/buenos aires.jpg">
-  <h3>¿Qué caminos quieres escoger?</h3>
-<img src="ASSETS/Imagenes/ -12.jpg">
+    <meta charset="UTF-8">
 
-  <!-- INICIO -->
-  <div id="inicio">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <h4>Seguirlo</h4>
-    <button onclick="mostrar('seguir')">Ir</button>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <h5>Ignorarlo</h5>
-    <button onclick="mostrar('ciudad')">Ir</button>
+    <title>Medianeras</title>
 
-  </div>
+    <!-- FUENTE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-  <!-- SEGUIR -->
-  <div id="seguir" style="display:none;">
-    <h3>Seguirlo</h3>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <p>
-      Ve a alguien caminando y decide seguirlo.
-      No mira atrás. Solo avanza entre la gente.
-    </p>
+    <link 
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" 
+        rel="stylesheet"
+    >
 
-    <p>
-      Entra a un edificio. Sube. Cierra la puerta.
-      Todo queda en silencio.
-    </p>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
-    <img src="https://i.imgur.com/5PLpQ7P.jpg" width="300">
+    <!-- JS -->
+    <script src="script.js" defer></script>
 
-    <p>
-      Aunque la ciudad está llena, el lugar se siente vacío.
-    </p>
+</head>
 
-    <button onclick="mostrar('escenas')">Ver escenas</button>
-    <br><br>
-    <button onclick="mostrar('inicio')">Volver</button>
-  </div>
+<body>
 
-  <!-- CIUDAD -->
-  <div id="ciudad" style="display:none;">
-    <h3>Ignorarlo</h3>
+    <!-- HERO -->
 
-    <p>
-      Decide no seguir a nadie. Se queda mirando alrededor.
-    </p>
+    <section class="hero-medianeras">
 
-    <p>
-      Edificios altos. Ventanas. Paredes vacías.
-      Algunas paredes quedan expuestas: son medianeras.
-    </p>
+        <!-- IMAGEN FONDO -->
+        <img
+            src="ASSETS/Imagenes/Medianeras_ (2011).jpg"
+            alt="Medianeras"
+            class="hero-image"
+        >
 
-    <img src="https://i.imgur.com/8Km9tLL.jpg" width="300">
+        <!-- TITULO -->
+        <h1 class="hero-title">
+            MEDIANERAS
+        </h1>
 
-    <p>
-      La ciudad parece incompleta. Como si algo faltara.
-    </p>
+        <!-- SUBTITULO -->
+        <h2 class="hero-subtitle">
+            ¿Qué caminos quieres escoger?
+        </h2>
 
-    <button onclick="mostrar('arquitectura')">Ver arquitectura</button>
-    <br><br>
-    <button onclick="mostrar('inicio')">Volver</button>
-  </div>
+        <!-- BOTONES -->
 
-  <!-- ESCENAS -->
-  <div id="escenas" style="display:none;">
-    <h3>Escenas de la película</h3>
-    
-  </body>
+        <div class="hero-buttons">
+
+            <button onclick="mostrar('seguir')">
+                Seguirlo
+            </button>
+
+            <button onclick="mostrar('ciudad')">
+                Ignorarlo
+            </button>
+
+        </div>
+
+        <!-- RECTANGULO NARANJA -->
+        <div class="hero-box"></div>
+
+        <!-- BARRA -->
+        <div class="hero-bar">
+
+            <div class="hero-circle"></div>
+
+        </div>
+
+        <!-- ESQUINAS -->
+
+        <div class="corner top-left"></div>
+
+        <div class="corner bottom-left"></div>
+
+        <div class="corner top-right"></div>
+
+        <div class="corner bottom-right"></div>
+
+    </section>
+
+</body>
+
 </html>

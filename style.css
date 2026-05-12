@@ -767,7 +767,7 @@ Bogota1
     background: radial-gradient(
         circle at center,
         #6B2D5C 0%,
-        #1F2232 100%
+        #324324 100%
     );
 
     overflow-x:hidden;
@@ -979,4 +979,757 @@ Bogota1
 
         width:85%;
     }
+}
+
+
+/* =========================
+   ROOM TOUR PAGE
+========================= */
+
+.roomtour-container{
+
+    padding:120px 40px 80px 40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:50px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.room-grid{
+
+    width:100%;
+
+    max-width:1400px;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    grid-template-rows:1fr 1fr;
+
+    gap:30px;
+}
+
+/* =========================
+   IMAGEN PRINCIPAL
+========================= */
+
+.room-main{
+
+    grid-row:1 / 3;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    border:3px solid #EEF2E8;
+
+    transition:0.4s;
+
+    box-shadow:0px 4px 20px rgba(0,0,0,0.3);
+}
+
+.room-main:hover{
+
+    transform:scale(1.02);
+
+    border-color:#F0CB75;
+}
+
+/* =========================
+   IMAGENES LATERALES
+========================= */
+
+.room-side{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    border:3px solid #EEF2E8;
+
+    transition:0.4s;
+
+    box-shadow:0px 4px 20px rgba(0,0,0,0.3);
+}
+
+.room-side:hover{
+
+    transform:scale(1.03);
+
+    border-color:#F0CB75;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .room-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .room-main{
+
+        grid-row:auto;
+    }
+
+    .room-side{
+
+        height:300px;
+    }
+}
+
+/* =========================
+   CREDITOS PAGE
+========================= */
+
+.creditos-body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    background:black;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.creditos-main{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:30px;
+
+    padding:40px 20px;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.creditos-background{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:-2;
+
+    opacity:0.9;
+
+    filter:brightness(0.75);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.creditos-main::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(73, 89, 48, 0.55);
+
+    z-index:-1;
+}
+
+/* =========================
+   TITULO
+========================= */
+
+.creditos-title{
+
+    color:#FFF9F9;
+
+    font-size:90px;
+
+    font-family:'DM Serif Display', serif;
+
+    font-weight:400;
+
+    text-shadow:0px 4px 10px rgba(0,0,0,0.4);
+
+    margin-bottom:40px;
+}
+
+/* =========================
+   CAJA
+========================= */
+
+.creditos-box{
+
+    width:600px;
+
+    max-width:85%;
+
+    padding:35px;
+
+    background:rgba(73, 89, 48, 0.88);
+
+    backdrop-filter:blur(4px);
+
+    border-radius:8px;
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+.creditos-text{
+
+    color:#F0CB75;
+
+    font-size:32px;
+
+    font-family:'Italiana', serif;
+
+    line-height:1.6;
+
+    text-align:center;
+}
+/* HERO */
+
+.hero-medianeras{
+
+    width:100%;
+
+    height:100vh;
+
+    position:relative;
+
+    background:white;
+
+    overflow:hidden;
+
+}
+
+/* IMAGEN */
+
+.hero-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+}
+
+/* TITULO */
+
+.hero-title{
+
+    width:664px;
+
+    position:absolute;
+
+    top:446px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    text-align:center;
+
+    color:white;
+
+    font-size:80px;
+
+    font-family:'DM Serif Display', serif;
+
+    font-weight:400;
+
+    line-height:96px;
+
+    word-wrap:break-word;
+
+    text-shadow:0px 4px 62px rgba(0, 0, 0, 0.25);
+
+    z-index:2;
+
+}
+
+/* RECTANGULO */
+
+.hero-box{
+
+    width:226px;
+
+    height:151px;
+
+    position:absolute;
+
+    left:999px;
+
+    top:686px;
+
+    opacity:0.5;
+
+    background:#EEA033;
+
+    border-radius:50px;
+
+    border:1px solid black;
+
+    z-index:2;
+
+}
+
+/* BARRA */
+
+.hero-bar{
+
+    width:819px;
+
+    height:34px;
+
+    position:absolute;
+
+    left:380px;
+
+    top:921px;
+
+    background:rgba(110, 26, 55, 0.65);
+
+    z-index:2;
+
+}
+
+/* CIRCULO */
+
+.hero-circle{
+
+    width:25px;
+
+    height:25px;
+
+    position:absolute;
+
+    left:1362px;
+
+    top:955px;
+
+    background:#6E1A37;
+
+    border-radius:9999px;
+
+    z-index:2;
+
+}
+
+/* ESQUINAS */
+
+.corner{
+
+    width:80px;
+
+    height:80px;
+
+    position:absolute;
+
+    background:white;
+
+    z-index:2;
+
+}
+
+.top-left{
+
+    left:20px;
+
+    top:24px;
+
+}
+
+.bottom-left{
+
+    left:20px;
+
+    top:904px;
+
+}
+
+.top-right{
+
+    left:1347px;
+
+    top:20px;
+
+}
+
+.bottom-right{
+
+    left:1344px;
+
+    top:918px;
+
+}
+/* =========================
+   ABOUT MEDIANERAS
+========================= */
+
+.about-medianeras{
+
+    width:100%;
+
+    height:100vh;
+
+    position:relative;
+
+    background:white;
+
+    overflow:hidden;
+
+}
+
+/* =========================
+   IMAGEN
+========================= */
+
+.about-image{
+
+    width:1440px;
+
+    height:1080px;
+
+    position:absolute;
+
+    left:0;
+
+    top:-26px;
+
+    object-fit:cover;
+
+}
+
+/* =========================
+   CUADRO
+========================= */
+
+.about-square{
+
+    width:62px;
+
+    height:44px;
+
+    position:absolute;
+
+    left:16px;
+
+    top:21px;
+
+    background:rgba(73, 89, 48, 0.70);
+
+}
+
+/* =========================
+   TITULO
+========================= */
+
+.about-title{
+
+    width:486px;
+
+    height:102px;
+
+    position:absolute;
+
+    left:477px;
+
+    top:952px;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:40px;
+
+    font-family:'Inter', sans-serif;
+
+    font-weight:500;
+
+    word-wrap:break-word;
+
+}
+
+/* =========================
+   CAJA TEXTO
+========================= */
+
+.about-box{
+
+    width:590px;
+
+    padding:10px;
+
+    position:absolute;
+
+    left:425px;
+
+    top:265px;
+
+    background:rgba(73, 89, 48, 0.88);
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+.about-text{
+
+    width:552px;
+
+    text-align:justify;
+
+    color:#F0CB75;
+
+    font-size:36px;
+
+    font-family:'Tiro Devanagari Marathi', serif;
+
+    font-weight:400;
+
+    line-height:43.2px;
+
+    word-wrap:break-word;
+
+}
+
+/* =========================
+   CIRCULO
+========================= */
+
+.about-circle{
+
+    width:25px;
+
+    height:25px;
+
+    position:absolute;
+
+    left:1375px;
+
+    top:956px;
+
+    background:#6E1A37;
+
+    border-radius:9999px;
+
+}
+
+/* =========================
+   BOGOTA PAGE
+========================= */
+
+.bogota-container{
+
+    padding:120px 60px 80px 60px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:90px;
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+.bogota-section{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:60px;
+}
+
+.reverse{
+
+    flex-direction:row-reverse;
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+.bogota-text{
+
+    flex:1;
+}
+
+.bogota-text p{
+
+    color:#DDCBA2;
+
+    font-size:28px;
+
+    line-height:1.7;
+
+    text-align:justify;
+
+    font-family:'Italiana', serif;
+}
+
+.bogota-subtitle{
+
+    color:#F0CB75;
+
+    font-size:55px;
+
+    margin-bottom:25px;
+
+    font-family:'DM Serif Display', serif;
+
+    font-weight:400;
+}
+
+/* =========================
+   IMAGENES
+========================= */
+
+.bogota-image{
+
+    width:420px;
+
+    max-width:100%;
+
+    border-radius:25px;
+
+    border:3px solid #EEF2E8;
+
+    object-fit:cover;
+
+    transition:0.4s;
+
+    box-shadow:0px 4px 20px rgba(0,0,0,0.35);
+}
+
+.bogota-image:hover{
+
+    transform:scale(1.03);
+
+    border-color:#F0CB75;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .bogota-section{
+
+        flex-direction:column;
+    }
+
+    .reverse{
+
+        flex-direction:column;
+    }
+
+    .bogota-text p{
+
+        font-size:22px;
+    }
+}
+
+/* =========================
+   FOTO CENTRAL
+========================= */
+
+.bogota-banner{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+}
+
+.bogota-banner-image{
+
+    width:100%;
+
+    max-width:1200px;
+
+    height:500px;
+
+    object-fit:cover;
+
+    border-radius:30px;
+
+    border:3px solid #EEF2E8;
+
+    box-shadow:0px 4px 25px rgba(0,0,0,0.35);
+
+    transition:0.4s;
+}
+
+.bogota-banner-image:hover{
+
+    transform:scale(1.02);
+
+    border-color:#F0CB75;
 }
