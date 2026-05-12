@@ -1,84 +1,179 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Personajes - Cinema</title>
+
+    <!-- Favicon -->
     <link
-      id="favicon"
-      rel="icon"
-      href="ASSETS/Imagenes/BOGOTA 1.jpg"
-      type="image/x-icon"
+        id="favicon"
+        rel="icon"
+        href="ASSETS/Imagenes/BOGOTA 1.jpg"
+        type="image/x-icon"
     />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <!-- Navegación -->
+    <!-- BOTON BACK -->
+
+    <button class="back-button" onclick="history.back()">
+        ← BACK
+    </button>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
     <header>
+
         <nav>
+
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="personajes.html">Personajes</a></li>
-                <li><a href="capitulos.html">Capítulos</a></li>
-                <li><a href="creditos.html">Créditos</a></li>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="aboutNicole.html">About</a>
+                </li>
+
+                <li>
+                    <a href="personajes.html">Personajes</a>
+                </li>
+
+                <li>
+                    <a href="capitulos.html">Capítulos</a>
+                </li>
+
+                <li>
+                    <a href="creditos.html">Créditos</a>
+                </li>
+
             </ul>
+
         </nav>
+
     </header>
 
-    <!-- Sección Personajes -->
+    <!-- =========================
+         PERSONAJES
+    ========================== -->
+
     <main>
+
         <section id="personajes">
-            <h1>Personajes</h1>
 
-            <!-- Nicole -->
-            <div>
-                <img src="ASSETS/Imagenes/nicole.png" alt="Nicole">
-                <br>
-                <a href="aboutNicole.html">
-                    <button>Nicole</button>
-                </a>
-            </div>
+            <h1>PERSONAJES</h1>
 
-            <!-- Travis Bickle -->
-            <div>
-                <img src="ASSETS/Imagenes/travis bicle still.jpeg" alt="Travis Bickle">
-                <br>
-                <a href="travis-bickle.html">
-                    <button>Travis Bickle</button>
-                </a>
-            </div>
+            <div class="capitulos-container">
 
-            <!-- Paddington -->
-            <div>
-                <img src="ASSETS/Imagenes/paddington.jpg" alt="Paddington">
-                <br>
-                <a href="paddington.html">
-                    <button>Paddington</button>
-                </a>
-            </div>
+                <!-- Nicole -->
+                <div class="ciudad">
 
-            <!-- Miranda Priestly -->
-            <div>
-                <img src="ASSETS/Imagenes/meryl streep.avif" alt="Miranda Priestly">
-                <br>
-                <a href="miranda-priestly.html">
-                    <button>Miranda Priestly</button>
-                </a>
-            </div>
+                    <img 
+                        src="ASSETS/Imagenes/nicole.png" 
+                        alt="Nicole"
+                    >
 
-            <!-- Nigel Kipling -->
-            <div>
-                <img src="ASSETS/Imagenes/nigel.jpg" alt="Nigel Kipling">
-                <br>
-                <a href="nigel-kipling.html">
-                    <button>Nigel Kipling</button>
-                </a>
+                    <a href="aboutNicole.html">
+
+                        <button>
+                            Nicole
+                        </button>
+
+                    </a>
+
+                </div>
+
+                <!-- Travis -->
+                <div class="ciudad">
+
+                    <img 
+                        src="ASSETS/Imagenes/travis bicle still.jpeg" 
+                        alt="Travis Bickle"
+                    >
+
+                    <a href="travis-bickle.html">
+
+                        <button>
+                            Travis Bickle
+                        </button>
+
+                    </a>
+
+                </div>
+
+                <!-- Paddington -->
+                <div class="ciudad">
+
+                    <img 
+                        src="ASSETS/Imagenes/paddington.jpg" 
+                        alt="Paddington"
+                    >
+
+                    <a href="paddington.html">
+
+                        <button>
+                            Paddington
+                        </button>
+
+                    </a>
+
+                </div>
+
+                <!-- Miranda -->
+                <div class="ciudad">
+
+                    <img 
+                        src="ASSETS/Imagenes/meryl streep.avif" 
+                        alt="Miranda Priestly"
+                    >
+
+                    <a href="miranda-priestly.html">
+
+                        <button>
+                            Miranda Priestly
+                        </button>
+
+                    </a>
+
+                </div>
+
+                <!-- Nigel -->
+                <div class="ciudad">
+
+                    <img 
+                        src="ASSETS/Imagenes/nigel.jpg" 
+                        alt="Nigel Kipling"
+                    >
+
+                    <a href="nigel-kipling.html">
+
+                        <button>
+                            Nigel Kipling
+                        </button>
+
+                    </a>
+
+                </div>
+
             </div>
 
         </section>
+
     </main>
 
 </body>
+
 </html>
