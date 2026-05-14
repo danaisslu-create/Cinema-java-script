@@ -28641,7 +28641,6 @@ Bogota1
     box-shadow:0px 4px 15px rgba(0,0,0,0.3);
 }
 
-.
 /* =========================
    PAGE BASE (ESTO ES LO QUE TE FALTABA SI NO SE VEÍA BIEN)
 ========================= */
@@ -28996,7 +28995,7 @@ Bogota1
     background:#6E1A37;
 }
 
-```css id="mde82p"
+
 /* =========================
    ABOUT MEDIANERAS
 ========================= */
@@ -29188,7 +29187,7 @@ Bogota1
     text-align:center;
     padding:60px;
     color:white;
-
+}
 
 /* =========================
    TEXTO
@@ -29364,9 +29363,8 @@ Bogota1
     
     box-shadow:0px 10px 25px rgba(0,0,0,0.5);
 }
-
 .fire-button:hover{
-    transform:translateX(-50%) scale(1.05);
+    transform:translateX(-50%) translateY(-5px);
     background:#769446;
     color:white;
 }
