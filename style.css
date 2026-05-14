@@ -2410,9 +2410,7 @@ Bogota1
 
 
 
-/* =========================
-   PLAYLIST PAGE
-========================= */
+
 
 /* =========================
    PLAYLIST PAGE
@@ -2424,7 +2422,7 @@ Bogota1
 
     overflow-x:hidden;
 
-    background:#EEA033;
+    background:#0000005d;
 
     position:relative;
 
@@ -2674,6 +2672,21 @@ Bogota1
 }
 
 /* =========================
+   BOTTOM BUTTON
+========================= */
+
+.playlist-bottom-button{
+
+    margin-top:40px;
+
+    margin-bottom:80px;
+
+    display:flex;
+
+    justify-content:center;
+}
+
+/* =========================
    PADDINGTON PAGE SUBWAY
 ========================= */
 
@@ -2863,6 +2876,49 @@ Bogota1
     transform:translateY(-5px);
 
     background:#5f7737;
+
+    color:white;
+}
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-button{
+
+    position:fixed;
+
+    top:25px;
+
+    left:25px;
+
+    z-index:10;
+
+    background:rgba(73, 89, 48, 0.9);
+
+    color:#E7CCD5;
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:14px 24px;
+
+    font-size:22px;
+
+    font-family:'Italiana', serif;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:0px 4px 15px rgba(0,0,0,0.25);
+}
+
+.back-button:hover{
+
+    background:#769446;
+
+    transform:translateX(-3px);
 
     color:white;
 }
