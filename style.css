@@ -2922,3 +2922,650 @@ Bogota1
 
     color:white;
 }
+
+/* =========================
+   PADDINGTON ADVENTURE PAGE
+========================= */
+
+.paddington-adventure-page{
+
+    min-height:100vh;
+
+    background:linear-gradient(
+        250deg,
+        #48590F 0%,
+        #738034 100%
+    );
+
+    overflow-x:hidden;
+
+    position:relative;
+
+    padding:60px;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-button{
+
+    position:fixed;
+
+    top:25px;
+
+    left:25px;
+
+    z-index:100;
+
+    background:rgba(73, 89, 48, 0.9);
+
+    color:#E7CCD5;
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:14px 24px;
+
+    font-size:22px;
+
+    font-family:'Italiana', serif;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.back-button:hover{
+
+    background:#769446;
+
+    color:white;
+}
+
+/* =========================
+   MAP SECTION
+========================= */
+
+.map-section{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-top:40px;
+}
+
+/* =========================
+   MAP TEXT
+========================= */
+
+.map-text{
+
+    color:white;
+
+    font-size:24px;
+
+    font-family:'Italiana', serif;
+
+    line-height:1.7;
+
+    text-align:center;
+
+    width:70%;
+}
+
+/* =========================
+   MAP FRAME
+========================= */
+
+.map-frame{
+
+    width:75%;
+
+    height:750px;
+
+    border:none;
+
+    border-radius:20px;
+
+    box-shadow:0px 10px 30px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   PLAYLIST SECTION
+========================= */
+
+.playlist-section{
+
+    width:100%;
+
+    margin-top:100px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+}
+
+/* =========================
+   PLAYLIST TITLE
+========================= */
+
+.playlist-title{
+
+    color:#F8B556;
+
+    font-size:60px;
+
+    font-family:'DM Serif Display', serif;
+
+    letter-spacing:4px;
+
+    text-shadow:0px 4px 10px rgba(0,0,0,0.45);
+
+    text-align:center;
+
+    margin-bottom:35px;
+}
+
+/* =========================
+   PLAYLIST CONTAINER
+========================= */
+
+.playlist-container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+}
+
+/* =========================
+   RADIO BOX
+========================= */
+
+.playlist-radio-box{
+
+    width:60%;
+
+    background:#7E1F2B;
+
+    border-radius:30px;
+
+    padding:35px;
+
+    box-shadow:0px 10px 40px rgba(0,0,0,0.4);
+
+    border:6px solid #F8B556;
+}
+
+/* =========================
+   RADIO SCREEN
+========================= */
+
+.playlist-radio-screen{
+
+    background:#2A2A2A;
+
+    color:#F8B556;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    font-family:'Italiana', serif;
+
+    font-size:28px;
+
+    margin-bottom:30px;
+
+    letter-spacing:3px;
+}
+
+/* =========================
+   SPOTIFY
+========================= */
+
+.playlist-spotify{
+
+    border:none;
+
+    border-radius:18px;
+
+    margin-bottom:30px;
+}
+
+/* =========================
+   QUOTE
+========================= */
+
+.playlist-quote{
+
+    color:#F4D7C7;
+
+    text-align:center;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    font-family:'Italiana', serif;
+
+    margin-bottom:30px;
+}
+
+/* =========================
+   DETAILS
+========================= */
+
+.playlist-details{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    color:#F8B556;
+
+    font-family:'Italiana', serif;
+
+    font-size:18px;
+}
+
+/* =========================
+   ALBUM SECTION
+========================= */
+
+.album-section{
+
+    width:100%;
+
+    margin-top:120px;
+
+    margin-bottom:120px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:35px;
+}
+
+/* =========================
+   ALBUM TEXT
+========================= */
+
+.album-text{
+
+    color:white;
+
+    text-align:center;
+
+    font-size:24px;
+
+    font-family:'Italiana', serif;
+
+    line-height:1.7;
+
+    width:65%;
+}
+
+/* =========================
+   ALBUM IMAGE
+========================= */
+
+.album-image{
+
+    width:260px;
+
+    border-radius:20px;
+
+    transition:0.3s;
+
+    box-shadow:0px 10px 25px rgba(0,0,0,0.35);
+
+    cursor:pointer;
+}
+
+.album-image:hover{
+
+    transform:translateY(-8px) scale(1.03);
+}
+
+/* =========================
+   CAMERA FLASH
+========================= */
+
+.camera-flash{
+
+    position:fixed;
+
+    inset:0;
+
+    background:white;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:9999;
+}
+
+.flash-active{
+
+    animation:cameraFlash 0.35s ease;
+}
+
+/* =========================
+   FLASH ANIMATION
+========================= */
+
+@keyframes cameraFlash{
+
+    0%{
+
+        opacity:0;
+    }
+
+    20%{
+
+        opacity:1;
+    }
+
+    100%{
+
+        opacity:0;
+    }
+}
+
+/* =========================
+   TAXI RIDE PAGE
+========================= */
+
+.taxi-ride-body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    background:black;
+
+    position:relative;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.taxi-ride-background{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:-3;
+}
+
+.taxi-ride-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,0.55);
+
+    z-index:-2;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.taxi-ride-title{
+
+    text-align:center;
+
+    padding-top:60px;
+
+    color:#F8B556;
+
+    font-size:90px;
+
+    font-family:'DM Serif Display', serif;
+
+    letter-spacing:6px;
+
+    text-shadow:0px 0px 20px rgba(153,29,46,0.7);
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.taxi-ride-container{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    padding-bottom:100px;
+
+    position:relative;
+}
+
+/* =========================
+   DIALOGUE BOX
+========================= */
+
+.taxi-dialogue-box{
+
+    margin-top:40px;
+
+    width:65%;
+
+    max-width:850px;
+
+    background:rgba(73,89,48,0.75);
+
+    border:2px solid rgba(240,203,117,0.5);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    backdrop-filter:blur(6px);
+
+    box-shadow:0px 0px 30px rgba(0,0,0,0.4);
+}
+
+.taxi-dialogue{
+
+    color:#F0CB75;
+
+    font-size:32px;
+
+    font-family:'DM Serif Display', serif;
+
+    margin-bottom:20px;
+}
+
+.taxi-dialogue-small{
+
+    color:#EEF2E8;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    font-family:'Italiana', serif;
+}
+
+/* =========================
+   TAXI IMAGE
+========================= */
+
+.taxi-interior{
+
+    width:700px;
+
+    max-width:90%;
+
+    margin-top:60px;
+
+    border-radius:20px;
+
+    border:3px solid rgba(240,203,117,0.5);
+
+    box-shadow:0px 10px 40px rgba(0,0,0,0.5);
+}
+
+/* =========================
+   OPTIONS
+========================= */
+
+.taxi-options{
+
+    margin-top:70px;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:30px;
+
+    width:90%;
+}
+
+.taxi-option-card{
+
+    width:300px;
+
+    background:rgba(153,29,46,0.78);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:0.3s;
+
+    backdrop-filter:blur(4px);
+}
+
+.taxi-option-card:hover{
+
+    transform:translateY(-6px);
+
+    background:rgba(73,89,48,0.88);
+}
+
+.taxi-option-card h2{
+
+    color:#F0CB75;
+
+    font-family:'DM Serif Display', serif;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+}
+
+.taxi-option-card p{
+
+    color:#EEF2E8;
+
+    font-family:'Italiana', serif;
+
+    line-height:1.7;
+
+    font-size:18px;
+}
+
+/* =========================
+   SIDE BUTTONS
+========================= */
+
+.taxi-side-button{
+
+    position:fixed;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    background:rgba(73,89,48,0.88);
+
+    color:#F0CB75;
+
+    padding:18px 20px;
+
+    text-decoration:none;
+
+    font-family:'Italiana', serif;
+
+    border-radius:18px;
+
+    transition:0.3s;
+
+    z-index:50;
+}
+
+.taxi-side-button:hover{
+
+    background:#991D2E;
+
+    transform:translateY(-50%) scale(1.05);
+}
+
+.taxi-left-button{
+
+    left:20px;
+}
+
+.taxi-right-button{
+
+    right:20px;
+}
+
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
+.taxi-continue{
+
+    margin-top:90px;
+}

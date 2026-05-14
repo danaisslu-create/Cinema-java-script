@@ -38,7 +38,7 @@
 
     </div>
 
-    <!-- SPOTIFY -->
+    <!-- PLAYLIST -->
 
     <div class="playlist-section">
 
@@ -93,15 +93,45 @@
             Parece que se divirtieron demasiado. ¿Quieres ver todas las fotos que se tomaron?
         </h2>
 
-        <a href="album.html">
+        <a href="album.html" class="album-link">
 
-            <button class="album-button">
-                Explora el álbum de fotos
-            </button>
+            <img 
+                src="ASSETS/Imagenes/camara.png"
+                class="album-image"
+                id="albumImage"
+            >
 
         </a>
 
     </div>
+
+    <!-- FLASH -->
+
+    <div class="camera-flash" id="cameraFlash"></div>
+
+    <!-- SCRIPT -->
+
+    <script>
+
+    const albumLink = document.querySelector(".album-link");
+
+    const flash = document.getElementById("cameraFlash");
+
+    albumLink.addEventListener("click", function(event){
+
+        event.preventDefault();
+
+        flash.classList.add("flash-active");
+
+        setTimeout(() => {
+
+            window.location.href = "album.html";
+
+        }, 350);
+
+    });
+
+    </script>
 
 </body>
 
