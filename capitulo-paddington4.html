@@ -2,5 +2,75 @@
 <html lang="es">
 
 <head>
-    <h2>bla bla bla no importa</h2>
-    </head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Museum Page</title>
+
+  
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="museum-page">
+
+    <!-- ALBUM -->
+    <div class="album-section">
+        <img src="ASSETS/Imagenes/foto album.png" class="album-image">
+    </div>
+
+    <!-- TEXTO 1 -->
+    <div class="museum-text-top">
+        Qué día tan ocupado tuvieron.  
+        Abre tu maleta para guardar las cosas.
+    </div>
+
+    <!-- MALETA -->
+    <div class="suitcase-section">
+        <img 
+            src="ASSETS/Imagenes/maleta cerrada.png"
+            class="suitcase-image"
+            id="suitcase"
+        >
+    </div>
+
+    <!-- TEXTO 2 -->
+    <div class="museum-text-bottom" id="museumText">
+        Oh wow, ¿qué es eso?  
+        Todavía tienes un tiquete para el museo.  
+        ¿Por qué no vas con Paddington?
+    </div>
+
+    <!-- BOTÓN -->
+    <div class="museum-button-container" id="museumButton">
+
+        <a href="museo.html">
+            <button class="museum-button">
+                Vamos al museo
+            </button>
+        </a>
+
+    </div>
+
+    <!-- JS -->
+    <script>
+
+        const suitcase = document.getElementById("suitcase");
+        const museumText = document.getElementById("museumText");
+        const museumButton = document.getElementById("museumButton");
+
+        suitcase.addEventListener("click", function(){
+
+            suitcase.src = "ASSETS/Imagenes/foto maleta.png";
+
+            suitcase.classList.add("open");
+            museumText.classList.add("show-content");
+            museumButton.classList.add("show-content");
+
+        });
+
+    </script>
+
+</body>
+</html>

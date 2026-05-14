@@ -4,89 +4,72 @@
 <head>
 
     <meta charset="UTF-8">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Medianeras</title>
 
-    <!-- FUENTE -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link 
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" 
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&display=swap"
         rel="stylesheet"
     >
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- JS -->
-    <script src="script.js" defer></script>
-
 </head>
 
-<body>
+<body class="medianeras-body">
 
-    <!-- HERO -->
+    <!-- BACK BUTTON -->
 
-    <section class="hero-medianeras">
+    <button class="back-button" onclick="history.back()">
+        ←
+    </button>
 
-        <!-- IMAGEN FONDO -->
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="medianeras-main">
+
+        <!-- FONDO -->
+
         <img
-            src="ASSETS/Imagenes/Medianeras_ (2011).jpg"
+            class="medianeras-background"
+            src="ASSETS/Imagenes/MEDIANERAS1.jpg.png"
             alt="Medianeras"
-            class="hero-image"
         >
 
-        <!-- TITULO -->
-        <h1 class="hero-title">
-            MEDIANERAS
-        </h1>
+        <!-- OVERLAY -->
 
-        <!-- SUBTITULO -->
-        <h2 class="hero-subtitle">
-            ¿Qué caminos quieres escoger?
-        </h2>
+        <div class="medianeras-overlay"></div>
 
-        <!-- BOTONES -->
+        <!-- CONTENIDO -->
 
-        <div class="hero-buttons">
+        <section class="medianeras-content">
 
-            <button onclick="mostrar('seguir')">
-                Seguirlo
-            </button>
+            <h1 class="medianeras-title">
+                MEDIANERAS
+            </h1>
 
-            <button onclick="mostrar('ciudad')">
-                Ignorarlo
-            </button>
+            <a href="buenosaires.html">
 
-        </div>
+                <button class="medianeras-button">
 
-        <!-- RECTANGULO NARANJA -->
-        <div class="hero-box"></div>
+                    GO
 
-        <!-- BARRA -->
-        <div class="hero-bar">
+                </button>
 
-            <div class="hero-circle"></div>
+            </a>
 
-        </div>
+        </section>
 
-        <!-- ESQUINAS -->
-
-        <div class="corner top-left"></div>
-
-        <div class="corner bottom-left"></div>
-
-        <div class="corner top-right"></div>
-
-        <div class="corner bottom-right"></div>
-
-    </section>
+    </main>
 
 </body>
 
