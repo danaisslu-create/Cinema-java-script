@@ -2196,3 +2196,673 @@ Bogota1
 
     color:white;
 }
+
+/* =========================
+   EASTER EGGS PAGE
+========================= */
+
+.eggs-body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    background:#F8B556;
+
+    position:relative;
+
+    padding-bottom:80px;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.eggs-background{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:0.18;
+
+    z-index:-3;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.eggs-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(248, 181, 86, 0.88);
+
+    z-index:-2;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.eggs-title{
+
+    text-align:center;
+
+    color:#991D2E;
+
+    font-size:80px;
+
+    font-family:'DM Serif Display', serif;
+
+    margin-top:40px;
+
+    margin-bottom:30px;
+
+    text-shadow:0px 4px 10px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   PLAYLIST BUTTON
+========================= */
+
+.playlist-button{
+
+    display:block;
+
+    margin:0 auto 50px auto;
+
+    background:#495930;
+
+    color:#F0CB75;
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:15px 30px;
+
+    font-size:24px;
+
+    font-family:'Italiana', serif;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.playlist-button:hover{
+
+    transform:translateY(-4px);
+
+    background:#991D2E;
+
+    color:white;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.eggs-grid{
+
+    width:90%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4, 1fr);
+
+    gap:40px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.egg-card{
+
+    background:rgba(255,255,255,0.2);
+
+    backdrop-filter:blur(5px);
+
+    border-radius:18px;
+
+    padding:18px;
+
+    text-align:center;
+
+    transition:0.3s;
+
+    box-shadow:0px 4px 15px rgba(0,0,0,0.15);
+}
+
+.egg-card:hover{
+
+    transform:translateY(-6px);
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+.egg-card img{
+
+    width:100%;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    margin-bottom:15px;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.egg-card p{
+
+    color:#2B1B12;
+
+    font-size:17px;
+
+    line-height:1.5;
+
+    font-family:'Italiana', serif;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1200px){
+
+    .eggs-grid{
+
+        grid-template-columns:repeat(2, 1fr);
+    }
+}
+
+@media(max-width:700px){
+
+    .eggs-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .eggs-title{
+
+        font-size:55px;
+    }
+}
+
+
+
+/* =========================
+   PLAYLIST PAGE
+========================= */
+
+/* =========================
+   PLAYLIST PAGE
+========================= */
+
+.playlist-body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    background:#EEA033;
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.playlist-background{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:0.22;
+
+    z-index:-3;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.playlist-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(20, 10, 5, 0.55);
+
+    z-index:-2;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.playlist-title{
+
+    margin-top:50px;
+
+    color:#F8B556;
+
+    font-size:75px;
+
+    font-family:'DM Serif Display', serif;
+
+    letter-spacing:4px;
+
+    text-shadow:0px 4px 10px rgba(0,0,0,0.45);
+
+    text-align:center;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.playlist-container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:40px;
+
+    margin-top:40px;
+
+    padding-bottom:80px;
+}
+
+/* =========================
+   RADIO BOX
+========================= */
+
+.playlist-radio-box{
+
+    width:700px;
+
+    background:#7E1F2B;
+
+    border-radius:30px;
+
+    padding:40px;
+
+    box-shadow:0px 10px 40px rgba(0,0,0,0.4);
+
+    border:6px solid #F8B556;
+}
+
+/* =========================
+   RADIO SCREEN
+========================= */
+
+.playlist-radio-screen{
+
+    background:#2A2A2A;
+
+    color:#F8B556;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    font-family:'Italiana', serif;
+
+    font-size:28px;
+
+    margin-bottom:30px;
+
+    letter-spacing:3px;
+}
+
+/* =========================
+   SPOTIFY
+========================= */
+
+.playlist-spotify{
+
+    border-radius:18px;
+
+    margin-bottom:30px;
+}
+
+/* =========================
+   QUOTE
+========================= */
+
+.playlist-quote{
+
+    color:#F4D7C7;
+
+    text-align:center;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    font-family:'Italiana', serif;
+
+    margin-bottom:30px;
+}
+
+/* =========================
+   DETAILS
+========================= */
+
+.playlist-details{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    color:#F8B556;
+
+    font-family:'Italiana', serif;
+
+    font-size:18px;
+}
+
+/* =========================
+   SIDE BUTTONS
+========================= */
+
+.playlist-side-button{
+
+    background:#495930;
+
+    color:#F0CB75;
+
+    border:none;
+
+    border-radius:18px;
+
+    padding:18px 25px;
+
+    font-size:22px;
+
+    font-family:'Italiana', serif;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    min-width:180px;
+}
+
+.playlist-side-button:hover{
+
+    transform:translateY(-4px);
+
+    background:#991D2E;
+
+    color:white;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+    .playlist-container{
+
+        flex-direction:column;
+    }
+
+    .playlist-radio-box{
+
+        width:90%;
+    }
+}
+
+@media(max-width:700px){
+
+    .playlist-title{
+
+        font-size:50px;
+    }
+
+    .playlist-radio-box{
+
+        padding:25px;
+    }
+}
+
+/* =========================
+   PADDINGTON PAGE SUBWAY
+========================= */
+
+.paddington-page-subway{
+
+    min-height:100vh;
+
+    overflow-y:auto;
+
+    background:#495930;
+
+    position:relative;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.hero-image{
+
+    position:absolute;
+
+    width:85%;
+
+    height:85%;
+
+    object-fit:cover;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%, -50%);
+
+    border-radius:10px;
+
+    box-shadow:0px 10px 30px rgba(0,0,0,0.35);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.paddington-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(73, 89, 48, 0.25);
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+.paddington-text{
+
+    position:absolute;
+
+    left:220px;
+
+    top:250px;
+
+    width:420px;
+
+    height:300px;
+
+    overflow-y:auto;
+
+    padding-right:15px;
+
+    color:white;
+
+    font-size:32px;
+
+    font-family:'DM Serif Display', serif;
+
+    line-height:1.4;
+
+    text-align:justify;
+
+    z-index:5;
+
+    text-shadow:0px 4px 10px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   SCROLL
+========================= */
+
+.paddington-text::-webkit-scrollbar{
+
+    width:8px;
+}
+
+.paddington-text::-webkit-scrollbar-track{
+
+    background:rgba(255,255,255,0.1);
+
+    border-radius:10px;
+}
+
+.paddington-text::-webkit-scrollbar-thumb{
+
+    background:#E7CCD5;
+
+    border-radius:10px;
+}
+
+/* =========================
+   FOTO ESCENA
+========================= */
+
+.scene-image{
+
+    position:absolute;
+
+    right:120px;
+
+    top:180px;
+
+    width:850px;
+
+    border-radius:10px;
+
+    z-index:4;
+
+    box-shadow:0px 10px 25px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   CONTENEDOR BOTONES
+========================= */
+
+/* =========================
+   CONTENEDOR BOTONES
+========================= */
+
+.buttons-container{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:80px;
+
+    display:flex;
+
+    gap:40px;
+
+    z-index:6;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.paddington-button{
+
+    background:#769446;
+
+    color:#E7CCD5;
+
+    border:none;
+
+    border-radius:20px;
+
+    padding:25px 35px;
+
+    font-size:30px;
+
+    font-family:'Italiana', serif;
+
+    line-height:1.4;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:0px 4px 15px rgba(0,0,0,0.25);
+}
+
+.paddington-button:hover{
+
+    transform:translateY(-5px);
+
+    background:#5f7737;
+
+    color:white;
+}
