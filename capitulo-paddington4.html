@@ -45,7 +45,7 @@
     <!-- BOTÓN -->
     <div class="museum-button-container" id="museumButton">
 
-        <a href="museo.html">
+        <a href="capitulo-paddington5.html">
             <button class="museum-button">
                 Vamos al museo
             </button>
@@ -54,23 +54,28 @@
     </div>
 
     <!-- JS -->
-    <script>
+   <script>
 
-        const suitcase = document.getElementById("suitcase");
-        const museumText = document.getElementById("museumText");
-        const museumButton = document.getElementById("museumButton");
+    const suitcase = document.getElementById("suitcase");
+    const museumText = document.getElementById("museumText");
+    const museumButton = document.getElementById("museumButton");
 
-        suitcase.addEventListener("click", function(){
+    suitcase.addEventListener("click", function(){
 
-            suitcase.src = "ASSETS/Imagenes/foto maleta.png";
+        suitcase.src = "ASSETS/Imagenes/foto maleta.png";
 
-            suitcase.classList.add("open");
-            museumText.classList.add("show-content");
-            museumButton.classList.add("show-content");
+        suitcase.classList.add("open");
+        museumText.classList.add("show-content");
+        museumButton.classList.add("show-content");
 
-        });
+        
+        setTimeout(() => {
+            window.location.href = "capitulo-paddington5.html";
+        }, 800); // pequeño delay para que se vea el cambio
 
-    </script>
+    });
+
+</script>
 
 </body>
 </html>
