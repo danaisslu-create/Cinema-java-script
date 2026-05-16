@@ -10,22 +10,19 @@
     <title>Taxi Ride - Cinema</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
 
 </head>
 
 <body class="taxi-ride-body">
 
-    <!-- =========================
-         BACK BUTTON
-    ========================== -->
+    <!-- BACK BUTTON -->
 
     <button class="back-button" onclick="history.back()">
-        ← 
+        ←
     </button>
 
-    <!-- =========================
-         FONDO
-    ========================== -->
+    <!-- FONDO -->
 
     <img
         src="ASSETS/Imagenes/fondo tax ride.jpg"
@@ -33,36 +30,38 @@
         alt="New York Night"
     >
 
+    <!-- OVERLAY -->
+
     <div class="taxi-ride-overlay"></div>
 
-    <!-- =========================
-         TITULO
-    ========================== -->
+    <!-- TITULO -->
 
     <h1 class="taxi-ride-title">
         NIGHT RIDE
     </h1>
 
-    <!-- =========================
-         TAXI INTERFACE
-    ========================== -->
+    <!-- CONTENIDO -->
 
     <main class="taxi-ride-container">
 
-        <!-- VENTANA / DIALOGO -->
+        <!-- DIALOGO -->
 
         <section class="taxi-dialogue-box">
 
-            <p class="taxi-dialogue">
+            <p
+                class="taxi-dialogue"
+                id="taxiDialogue"
+            >
 
-                “La ciudad se ve diferente después de medianoche.”
+                La ciudad se ve diferente después de medianoche.
 
             </p>
 
             <p class="taxi-dialogue-small">
 
-                Travis conduce sin mirar atrás.  
-                Afuera, Manhattan parece una película que nunca termina.
+                Travis conduce sin mirar atrás.
+                Afuera, Manhattan parece una película
+                que nunca termina.
 
             </p>
 
@@ -80,7 +79,12 @@
 
         <section class="taxi-options">
 
-            <div class="taxi-option-card">
+            <!-- OPCION 1 -->
+
+            <div
+                class="taxi-option-card"
+                onclick="changeDialogue(0)"
+            >
 
                 <h2>
                     Mirar por la ventana
@@ -92,7 +96,12 @@
 
             </div>
 
-            <div class="taxi-option-card">
+            <!-- OPCION 2 -->
+
+            <div
+                class="taxi-option-card"
+                onclick="changeDialogue(1)"
+            >
 
                 <h2>
                     Escuchar a Travis
@@ -104,7 +113,12 @@
 
             </div>
 
-            <div class="taxi-option-card">
+            <!-- OPCION 3 -->
+
+            <div
+                class="taxi-option-card"
+                onclick="changeDialogue(2)"
+            >
 
                 <h2>
                     Permanecer en silencio
@@ -118,7 +132,7 @@
 
         </section>
 
-        <!-- BOTONES LATERALES -->
+        <!-- BOTON EASTER EGGS -->
 
         <a
             href="taxidriver-eastereggs.html"
@@ -127,11 +141,13 @@
             🚕
         </a>
 
+        <!-- BOTON PLAYLIST -->
+
         <a
             href="travis-bickle-playlist.html"
             class="taxi-side-button taxi-right-button"
         >
-            🎵 
+            🎵
         </a>
 
         <!-- CONTINUAR -->
@@ -140,7 +156,7 @@
 
             <a href="taxi-driver-ending.html">
 
-                <button>
+                <button class="taxi-continue-button">
 
                     Continuar el recorrido
 
@@ -151,6 +167,10 @@
         </div>
 
     </main>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
 
 </body>
 

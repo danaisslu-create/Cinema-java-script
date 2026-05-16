@@ -15,17 +15,13 @@
 
 <body class="eggs-body">
 
-    <!-- =========================
-         BACK BUTTON
-    ========================== -->
+    <!-- BACK BUTTON -->
 
     <button class="back-button" onclick="history.back()">
-        ← 
+        ←
     </button>
 
-    <!-- =========================
-         BACKGROUND
-    ========================== -->
+    <!-- BACKGROUND -->
 
     <img
         src="ASSETS/Imagenes/NYC SKY.jpg"
@@ -35,17 +31,13 @@
 
     <div class="eggs-overlay"></div>
 
-    <!-- =========================
-         TITLE
-    ========================== -->
+    <!-- TITLE -->
 
     <h1 class="eggs-title">
         EASTER EGGS
     </h1>
 
-    <!-- =========================
-         PLAYLIST BUTTON
-    ========================== -->
+    <!-- PLAYLIST BUTTON -->
 
     <a href="travis-bickle-playlist.html">
 
@@ -55,101 +47,89 @@
 
     </a>
 
-    <!-- =========================
-         GRID
-    ========================== -->
+    <!-- GRID -->
 
     <main class="eggs-grid">
 
         <!-- 1 -->
 
-        <div class="egg-card">
+        <div class="egg-card" onclick="abrirPopup('popup1')">
 
             <img
                 src="ASSETS/Imagenes/taxi1.jpg"
-                alt="Taxi Driver Mirror Scene"
+                alt="Mirror Scene"
             >
 
             <p>
-
-                “You talkin’ to me?”  
+                “You talkin’ to me?”
                 La escena frente al espejo fue parcialmente improvisada.
-
             </p>
 
         </div>
 
         <!-- 2 -->
 
-        <div class="egg-card">
+        <div class="egg-card" onclick="abrirPopup('popup2')">
 
             <img
                 src="ASSETS/Imagenes/taxi2.jpg"
-                alt="Taxi Driver Taxi"
+                alt="Taxi"
             >
 
             <p>
-
                 El taxi amarillo funciona como símbolo del aislamiento de Travis.
-
             </p>
 
         </div>
 
         <!-- 3 -->
 
-        <div class="egg-card">
+        <div class="egg-card" onclick="abrirPopup('popup3')">
 
             <img
                 src="ASSETS/Imagenes/taxi3.jpg"
-                alt="Rain Scene"
+                alt="Rain"
             >
 
             <p>
-
                 La lluvia constante representa la decadencia moral de Nueva York.
-
             </p>
 
         </div>
 
         <!-- 4 -->
 
-        <div class="egg-card">
+        <div class="egg-card" onclick="abrirPopup('popup4')">
 
             <img
                 src="ASSETS/Imagenes/taxi4.jpg"
-                alt="Cinema Scene"
+                alt="Cinema"
             >
 
             <p>
-
                 Travis lleva a Betsy a un cine porno porque perdió contacto con la realidad social.
-
             </p>
 
         </div>
 
         <!-- 5 -->
 
-        <div class="egg-card">
+        <div class="egg-card" onclick="abrirPopup('popup5')">
 
             <img
                 src="ASSETS/Imagenes/taxi5.jpg"
-                alt="Neon Lights"
+                alt="Neon"
             >
 
             <p>
-
                 Las luces neón reflejan la visión fragmentada y paranoica de Travis.
-
             </p>
 
         </div>
 
         <!-- 6 -->
 
-        <div class="egg-card">
+        <div class="egg-card" onclick="abrirPopup('popup6')">
 
             <img
                 src="ASSETS/Imagenes/taxi6.jpg"
@@ -157,33 +137,29 @@
             >
 
             <p>
-
                 Iris representa la inocencia atrapada dentro del caos urbano.
-
             </p>
 
         </div>
 
         <!-- 7 -->
 
-        <div class="egg-card">
+        <div class="egg-card" onclick="abrirPopup('popup7')">
 
             <img
                 src="ASSETS/Imagenes/taxi7.jpg"
-                alt="Travis Eyes"
+                alt="Eyes"
             >
 
             <p>
-
-                Los close-ups a los ojos de Travis muestran su descenso psicológico.
-
+                Los close-ups muestran el descenso psicológico de Travis.
             </p>
 
         </div>
 
         <!-- 8 -->
 
-        <div class="egg-card">
+        <div class="egg-card" onclick="abrirPopup('popup8')">
 
             <img
                 src="ASSETS/Imagenes/taxi8.jpg"
@@ -191,14 +167,196 @@
             >
 
             <p>
-
                 El final ambiguo hace dudar si Travis realmente sobrevivió.
-
             </p>
 
         </div>
 
     </main>
+
+    <!-- =========================
+         POP UPS
+    ========================== -->
+
+    <!-- POPUP 1 -->
+
+    <div id="popup1" class="popup">
+
+        <div class="popup-content">
+
+            <span class="cerrar"
+            onclick="cerrarPopup('popup1')">
+                ✕
+            </span>
+
+            <h2>You Talkin’ To Me?</h2>
+
+            <iframe
+                src="https://www.youtube.com/embed/lQkpes3dgzg"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+    <!-- POPUP 2 -->
+
+    <div id="popup2" class="popup">
+
+        <div class="popup-content">
+
+            <span class="cerrar"
+            onclick="cerrarPopup('popup2')">
+                ✕
+            </span>
+
+            <h2>The Taxi</h2>
+
+            <iframe
+                src="https://www.youtube.com/embed/sLpMx8_TYOo"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+    <!-- POPUP 3 -->
+
+    <div id="popup3" class="popup">
+
+        <div class="popup-content">
+
+            <span class="cerrar"
+            onclick="cerrarPopup('popup3')">
+                ✕
+            </span>
+
+            <h2>Rainy Manhattan</h2>
+
+            <iframe
+                src="https://www.youtube.com/embed/iFme5QgpJxo?si=SjRunPXxpQC15_bv"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+    <!-- POPUP 4 -->
+
+    <div id="popup4" class="popup">
+
+        <div class="popup-content">
+
+            <span class="cerrar"
+            onclick="cerrarPopup('popup4')">
+                ✕
+            </span>
+
+            <h2>Betsy Date</h2>
+
+            <iframe
+                 src="https://www.youtube.com/embed/HdBe7tHddQs?si=7IA8CfWlZMpoRnSc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+    <!-- POPUP 5 -->
+
+    <div id="popup5" class="popup">
+
+        <div class="popup-content">
+
+            <span class="cerrar"
+            onclick="cerrarPopup('popup5')">
+                ✕
+            </span>
+
+            <h2>Neon Lights</h2>
+
+            <iframe
+                src="https://www.youtube.com/embed/a9r0cSZgpeo?si=EGxzSuOaqFBojs2H" 
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+    <!-- POPUP 6 -->
+
+    <div id="popup6" class="popup">
+
+        <div class="popup-content">
+
+            <span class="cerrar"
+            onclick="cerrarPopup('popup6')">
+                ✕
+            </span>
+
+            <h2>Iris</h2>
+
+            <iframe
+                src="https://www.youtube.com/embed/zdqyb9-rV50?si=hiHGZxFPLmtduvKq"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+    <!-- POPUP 7 -->
+
+    <div id="popup7" class="popup">
+
+        <div class="popup-content">
+
+            <span class="cerrar"
+            onclick="cerrarPopup('popup7')">
+                ✕
+            </span>
+
+            <h2>Eyes of Travis</h2>
+
+            <iframe
+                src="https://www.youtube.com/embed/T5IligQP7Fo"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+    <!-- POPUP 8 -->
+
+    <div id="popup8" class="popup">
+
+        <div class="popup-content">
+
+            <span class="cerrar"
+            onclick="cerrarPopup('popup8')">
+                ✕
+            </span>
+
+            <h2>Ambiguous Ending</h2>
+
+            <iframe
+                src="https://www.youtube.com/embed/CJ922ZaZVwI?si=K8L2V2IB5MrUlO-D"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="pop-ups.js"></script>
 
 </body>
 
