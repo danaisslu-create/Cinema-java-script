@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mercado de Pulgas</title>
+
+    <link rel="stylesheet" href="bogota.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="pulgas-body">
+
+    <!-- =========================
+         BACK BUTTON
+    ========================== -->
+
+    <button
+        class="bogota-back-button"
+        onclick="history.back()"
+    >
+
+        ←
+
+    </button>
+
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+    <img
+        src="ASSETS/Imagenes/pulgas-background.jpg"
+        class="pulgas-background"
+        alt="Mercado de Pulgas"
+    >
+
+    <div class="pulgas-overlay"></div>
+
+    <!-- =========================
+         TITLE
+    ========================== -->
+
+    <h1 class="pulgas-title">
+
+        MERCADO DE PULGAS
+
+    </h1>
+
+    <!-- =========================
+         DESCRIPTION
+    ========================== -->
+
+    <section class="pulgas-dialogue-box">
+
+        <p class="pulgas-dialogue">
+
+            “Todos los objetos parecían haber pertenecido a alguien.”
+
+        </p>
+
+        <p class="pulgas-dialogue-small">
+
+            Radios viejas. Fotografías olvidadas.
+            Vinilos rayados.
+            Cámaras que parecían demasiado pesadas para estar vacías.
+
+        </p>
+
+    </section>
+
+    <!-- =========================
+         OBJECTS
+    ========================== -->
+
+    <main class="pulgas-objects">
+
+        <!-- VINYL -->
+
+        <div
+            class="pulgas-object"
+            onclick="abrirPopup('vinyl-popup')"
+        >
+
+            <img
+                src="ASSETS/Imagenes/vinyl.png"
+                alt="Vinilo"
+            >
+
+        </div>
+
+        <!-- RADIO -->
+
+        <div
+            class="pulgas-object"
+            onclick="abrirPopup('radio-popup')"
+        >
+
+            <img
+                src="ASSETS/Imagenes/old-radio.png"
+                alt="Radio"
+            >
+
+        </div>
+
+        <!-- NEWSPAPER -->
+
+        <div
+            class="pulgas-object"
+            onclick="abrirPopup('news-popup')"
+        >
+
+            <img
+                src="ASSETS/Imagenes/newspapaer.png"
+                alt="Periódico"
+            >
+
+        </div>
+
+        <!-- CAMERA -->
+
+        <div
+            class="pulgas-object camera-object"
+            onclick="activarCamara()"
+        >
+
+            <img
+                src="ASSETS/Imagenes/camara.png"
+                alt="Camera"
+            >
+
+        </div>
+
+    </main>
+
+    <!-- =========================
+         POPUPS
+    ========================== -->
+
+    <!-- VINYL -->
+
+    <div
+        id="vinyl-popup"
+        class="pulgas-popup"
+    >
+
+        <div class="pulgas-popup-box">
+
+            <button
+                class="pulgas-close"
+                onclick="cerrarPopup('vinyl-popup')"
+            >
+
+                ✕
+
+            </button>
+
+            <h2>
+
+                Vinilo olvidado
+
+            </h2>
+
+            <p>
+
+                El disco seguía girando aunque no hubiera electricidad.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- RADIO -->
+
+    <div
+        id="radio-popup"
+        class="pulgas-popup"
+    >
+
+        <div class="pulgas-popup-box">
+
+            <button
+                class="pulgas-close"
+                onclick="cerrarPopup('radio-popup')"
+            >
+
+                ✕
+
+            </button>
+
+            <h2>
+
+                Radio vieja
+
+            </h2>
+
+            <p>
+
+                Entre la estática se escuchaba un bolero antiguo.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- NEWSPAPER -->
+
+    <div
+        id="news-popup"
+        class="pulgas-popup"
+    >
+
+        <div class="pulgas-popup-box">
+
+            <button
+                class="pulgas-close"
+                onclick="cerrarPopup('news-popup')"
+            >
+
+                ✕
+
+            </button>
+
+            <h2>
+
+                Periódico
+
+            </h2>
+
+            <p>
+
+                “Mujer desaparece tras entrar al mercado.”
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         GLITCH
+    ========================== -->
+
+    <div id="glitch-screen"></div>
+
+    <!-- =========================
+         AUDIO
+    ========================== -->
+
+    <audio
+        id="pulgasAudio"
+        autoplay
+        loop
+    >
+
+        <source
+            src="ASSETS/Audios/pulgas-ambience.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+    <!-- =========================
+         JS
+    ========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,36 +1,144 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
-<style>
-    body {
-      font-family: 'Abril Fatface', cursive;
-      background-color: #F0CB75;
-      color: #991D2E;
-    }
-  </style>
-    <title>Capitulo 1</title>
-    <h1>PERRO COME PERRO</h1>
-    <h2>Bogota</h2>
-    <h3> Un dia Nicole va al mercado de las pulgas en la septima.</h3>
-</head>
-<body>
-  <button class="back-button" onclick="history.back()">
-        ← BACK
-    </button>
 
-<img src="ASSETS/Imagenes/CAMARA.jpg" alt="Camara">
-<button id="next-btn">NEXT</button>
-<h3> ENCUENTRA UNA CÁMARA ANALOGA. Al mirarla por el visor, el mundo gris cobra un color tecnicolor vibrante.</h3>
-<button id="next2-btn">NEXT</button>
-<h3 id="texto3">OPRIME EL OBTURADOR, el flash la ciega y es transportada a Nueva York en el 2006.</h3>
-<button id="next3-btn">NEXT</button>
-<h3 id="texto4">EN EL UNIVERSO DEL DIABLO viste a la moda.</h3>
-<button id="next4-btn">NEXT</button>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bogotá - Perro come Perro</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="bogota.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="bogota-body">
+<!-- =========================
+     BACK BUTTON
+========================= -->
+
+<button
+    class="bogota-back-button"
+    onclick="history.back()"
+>
+
+    ←
+
+</button>
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+    <img
+        src="ASSETS/Imagenes/bogota-rain.jpg"
+        class="bogota-background"
+        alt="Bogotá"
+    >
+
+    <div class="bogota-overlay"></div>
+
+    <!-- =========================
+         RAIN LAYER
+    ========================== -->
+
+    <div class="rain-layer"></div>
+
+    <!-- =========================
+         TITLE
+    ========================== -->
+
+    <h1 class="bogota-title">
+
+        BOGOTÁ
+
+    </h1>
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="bogota-container">
+
+        <!-- TEXT BOX -->
+
+        <section class="bogota-dialogue-box">
+
+            <p class="bogota-dialogue">
+
+                “Bogotá olía a lluvia, café y buses frenando demasiado fuerte.”
+
+            </p>
+
+            <p class="bogota-dialogue-small">
+
+                Nicole caminaba por la Séptima sin rumbo fijo.
+                Las palomas se escondían bajo los techos,
+                los músicos llenaban el frío con boleros distorsionados
+                y el mercado de pulgas aparecía al fondo,
+                como si hubiera estado esperando por ella.
+
+            </p>
+
+        </section>
+
+        <!-- CONTINUE BUTTON -->
+
+        <div class="bogota-button-container">
+
+            <button
+                class="bogota-button"
+                onclick="irMercado()"
+            >
+
+                Continuar caminando
+
+            </button>
+
+        </div>
+
+    </main>
+
+    <!-- =========================
+         BUS ANIMATION
+    ========================== -->
+
+    <img
+        src="ASSETS/Imagenes/sitp.png"
+        class="bogota-bus"
+        id="bogotaBus"
+        alt="Bus Bogotá"
+    >
+
+    <!-- =========================
+         AUDIO
+    ========================== -->
+
+    <audio
+        id="bogotaAudio"
+        loop
+    >
+
+        <source
+            src="ASSETS/Audios/bogota-ambience.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
 
 </body>
 

@@ -1764,7 +1764,13 @@ Bogota1
 
     z-index:3;
 }
+/* HOVER */
 
+.paddington-suitcases:hover{
+
+    transform:scale(1.06) rotate(-2deg);
+
+}
 /* =========================
    CARD
 ========================= */
@@ -3456,6 +3462,57 @@ Bogota1
     margin-top:90px;
 }
 
+@keyframes subwayFlicker{
+
+    0%{
+        opacity:0.7;
+        text-shadow:
+        0px 0px 5px #1aff66,
+        0px 0px 10px #1aff66;
+    }
+
+    25%{
+        opacity:1;
+        text-shadow:
+        0px 0px 10px #1aff66,
+        0px 0px 25px #1aff66,
+        0px 0px 40px #1aff66;
+    }
+
+    50%{
+        opacity:0.85;
+        text-shadow:
+        0px 0px 4px #1aff66;
+    }
+
+    75%{
+        opacity:1;
+        text-shadow:
+        0px 0px 15px #1aff66,
+        0px 0px 35px #1aff66;
+    }
+
+    100%{
+        opacity:0.9;
+        text-shadow:
+        0px 0px 8px #1aff66,
+        0px 0px 18px #1aff66;
+    }
+}
+
+@keyframes subwayAppear{
+
+    from{
+        opacity:0;
+        transform:scale(0.95);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
 /* =========================
    FLASHES
 ========================= */
@@ -3598,44 +3655,40 @@ Bogota1
     overflow:hidden;
 }
 
-.subway-announcement{
+.subway-popup-text{
 
-    color:#F0CB75;
+    font-family:'Courier New', monospace;
 
-    font-family:'DM Serif Display', serif;
+    color:#FFB347;
 
-    font-size:42px;
+    font-size:38px;
+
+    text-transform:uppercase;
+
+    letter-spacing:6px;
 
     text-align:center;
 
+    line-height:1.8;
+
+    padding:40px;
+
+    background:black;
+
+    border:4px solid #1aff66;
+
+    border-radius:12px;
+
+    box-shadow:
+        0px 0px 10px #1aff66,
+        0px 0px 20px #1aff66,
+        inset 0px 0px 20px rgba(26,255,102,0.15);
+
+    animation:
+        subwayFlicker 1.5s infinite alternate,
+        subwayAppear 2s ease forwards;
+
     opacity:0;
-
-    animation:fadeMessage 2s forwards;
-}
-
-.delay1{
-
-    animation-delay:2s;
-}
-
-.delay2{
-
-    animation-delay:4s;
-}
-
-@keyframes fadeMessage{
-
-    0%{
-
-        opacity:0;
-        transform:translateY(20px);
-    }
-
-    100%{
-
-        opacity:1;
-        transform:translateY(0px);
-    }
 }
 
 /* =========================
@@ -26843,7 +26896,7 @@ Bogota1
 
 .museum-scroll-gif{
 
-    width:320px;
+    width:400px;
 
     opacity:0.85;
 
@@ -26868,4 +26921,325 @@ Bogota1
     100%{
         transform:translateY(0px);
     }    
+}
+
+/* =========================
+   PADDINGTON EGGS PAGE
+========================= */
+
+.paddington-eggs-body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    background:#F4C76B;
+
+    position:relative;
+
+    padding-bottom:80px;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.paddington-eggs-background{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:0.18;
+
+    z-index:-3;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.paddington-eggs-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(244, 199, 107, 0.88);
+
+    z-index:-2;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.paddington-eggs-title{
+
+    text-align:center;
+
+    color:#991D2E;
+
+    font-size:80px;
+
+    font-family:'DM Serif Display', serif;
+
+    margin-top:40px;
+
+    margin-bottom:30px;
+
+    text-shadow:0px 4px 10px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   PLAYLIST BUTTON
+========================= */
+
+.paddington-eggs-playlist-button{
+
+    display:block;
+
+    margin:0 auto 50px auto;
+
+    background:#495930;
+
+    color:#F0CB75;
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:15px 30px;
+
+    font-size:24px;
+
+    font-family:'Italiana', serif;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.paddington-eggs-playlist-button:hover{
+
+    transform:translateY(-4px);
+
+    background:#991D2E;
+
+    color:white;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.paddington-eggs-grid{
+
+    width:90%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3, 1fr);
+
+    gap:40px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.paddington-eggs-card{
+
+    background:rgba(255,255,255,0.22);
+
+    backdrop-filter:blur(5px);
+
+    border-radius:20px;
+
+    padding:18px;
+
+    text-align:center;
+
+    transition:0.35s;
+
+    box-shadow:0px 4px 15px rgba(0,0,0,0.15);
+
+    cursor:pointer;
+}
+
+.paddington-eggs-card:hover{
+
+    transform:rotate(-2deg) scale(1.03);
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+.paddington-eggs-card img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    border-radius:14px;
+
+    margin-bottom:15px;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.paddington-eggs-card p{
+
+    color:#2B1B12;
+
+    font-size:20px;
+
+    line-height:1.6;
+
+    font-family:'Italiana', serif;
+}
+
+/* =========================
+   POPUP
+========================= */
+
+.paddington-popup{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,0.75);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+}
+
+/* =========================
+   POPUP CONTENT
+========================= */
+
+.paddington-popup-content{
+
+    width:75%;
+
+    max-width:900px;
+
+    background:#F8E9D2;
+
+    border-radius:25px;
+
+    padding:30px;
+
+    position:relative;
+
+    text-align:center;
+
+    box-shadow:0px 10px 40px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   POPUP TITLE
+========================= */
+
+.paddington-popup-content h2{
+
+    color:#991D2E;
+
+    font-size:42px;
+
+    margin-bottom:25px;
+
+    font-family:'DM Serif Display', serif;
+}
+
+/* =========================
+   IFRAME
+========================= */
+
+.paddington-popup-content iframe{
+
+    width:100%;
+
+    height:500px;
+
+    border:none;
+
+    border-radius:18px;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.paddington-cerrar{
+
+    position:absolute;
+
+    top:20px;
+
+    right:25px;
+
+    font-size:32px;
+
+    cursor:pointer;
+
+    color:#495930;
+
+    transition:0.3s;
+}
+
+.paddington-cerrar:hover{
+
+    color:#991D2E;
+
+    transform:scale(1.1);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1200px){
+
+    .paddington-eggs-grid{
+
+        grid-template-columns:repeat(2, 1fr);
+    }
+}
+
+@media(max-width:700px){
+
+    .paddington-eggs-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .paddington-eggs-title{
+
+        font-size:55px;
+    }
+
+    .paddington-popup-content iframe{
+
+        height:250px;
+    }
 }

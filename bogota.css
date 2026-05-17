@@ -1,0 +1,633 @@
+/* =========================
+   BOGOTA INTRO
+========================= */
+
+.bogota-body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    position:relative;
+
+    background:#2B2F2B;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.bogota-background{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:-4;
+
+    filter:
+    brightness(0.6)
+    saturate(0.8);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.bogota-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:linear-gradient(
+        180deg,
+        rgba(22,26,24,0.55) 0%,
+        rgba(45,55,50,0.78) 100%
+    );
+
+    z-index:-3;
+}
+
+/* =========================
+   RAIN EFFECT
+========================= */
+
+.rain-layer{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:url("ASSETS/Imagenes/rain-texture.png");
+
+    opacity:0.18;
+
+    animation:rainMove 1s linear infinite;
+
+    z-index:-2;
+
+    pointer-events:none;
+}
+
+@keyframes rainMove{
+
+    from{
+
+        background-position:0px 0px;
+    }
+
+    to{
+
+        background-position:-120px 300px;
+    }
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.bogota-title{
+
+    text-align:center;
+
+    padding-top:70px;
+
+    color:#F3E5C8;
+
+    font-size:95px;
+
+    font-family:'DM Serif Display', serif;
+
+    letter-spacing:4px;
+
+    text-shadow:0px 0px 20px rgba(0,0,0,0.5);
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.bogota-container{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    margin-top:80px;
+}
+
+/* =========================
+   DIALOGUE BOX
+========================= */
+
+.bogota-dialogue-box{
+
+    width:65%;
+
+    max-width:850px;
+
+    background:rgba(35,40,35,0.72);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:28px;
+
+    padding:45px;
+
+    backdrop-filter:blur(8px);
+
+    text-align:center;
+
+    box-shadow:0px 10px 40px rgba(0,0,0,0.35);
+}
+
+.bogota-dialogue{
+
+    color:#F5E8CC;
+
+    font-size:34px;
+
+    font-family:'DM Serif Display', serif;
+
+    margin-bottom:25px;
+}
+
+.bogota-dialogue-small{
+
+    color:#D9D3C6;
+
+    font-size:22px;
+
+    line-height:1.9;
+
+    font-family:'Italiana', serif;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.bogota-button-container{
+
+    margin-top:60px;
+}
+
+.bogota-button{
+
+    background:rgba(73,89,48,0.92);
+
+    color:#F0CB75;
+
+    border:none;
+
+    border-radius:18px;
+
+    padding:18px 42px;
+
+    font-size:24px;
+
+    font-family:'Italiana', serif;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:0px 5px 20px rgba(0,0,0,0.3);
+}
+
+.bogota-button:hover{
+
+    transform:translateY(-5px);
+
+    background:#769446;
+
+    color:white;
+}
+
+/* =========================
+   BUS
+========================= */
+
+.bogota-bus{
+
+    position:fixed;
+
+    bottom:60px;
+
+    left:-900px;
+
+    width:750px;
+
+    z-index:9999;
+
+    pointer-events:none;
+}
+
+.bus-move{
+
+    animation:busMove 2.6s linear forwards;
+}
+
+@keyframes busMove{
+
+    from{
+
+        left:-900px;
+    }
+
+    to{
+
+        left:150%;
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .bogota-title{
+
+        font-size:60px;
+    }
+
+    .bogota-dialogue-box{
+
+        width:90%;
+    }
+
+    .bogota-dialogue{
+
+        font-size:26px;
+    }
+
+    .bogota-dialogue-small{
+
+        font-size:18px;
+    }
+
+    .bogota-bus{
+
+        width:500px;
+    }
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.bogota-back-button{
+
+    position:fixed;
+
+    top:25px;
+    left:25px;
+
+    z-index:9999;
+
+    width:65px;
+    height:65px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    background:rgba(35,40,35,0.88);
+
+    color:#F0CB75;
+
+    font-size:30px;
+
+    font-family:'DM Serif Display', serif;
+
+    backdrop-filter:blur(6px);
+
+    box-shadow:
+    0px 4px 20px rgba(0,0,0,0.35);
+
+    transition:0.3s;
+}
+
+.bogota-back-button:hover{
+
+    transform:
+    translateX(-4px)
+    scale(1.05);
+
+    background:#495930;
+
+    color:white;
+
+    box-shadow:
+    0px 0px 20px rgba(240,203,117,0.35);
+}
+
+/* =========================
+   MERCADO DE PULGAS
+========================= */
+
+.pulgas-body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    position:relative;
+
+    background:#2A241D;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.pulgas-background{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:-3;
+
+    filter:
+    brightness(0.45)
+    sepia(0.15);
+}
+
+.pulgas-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(20,15,10,0.55) 0%,
+        rgba(45,30,20,0.82) 100%
+    );
+
+    z-index:-2;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.pulgas-title{
+
+    text-align:center;
+
+    padding-top:60px;
+
+    color:#F0CB75;
+
+    font-size:80px;
+
+    font-family:'DM Serif Display', serif;
+}
+
+/* =========================
+   DIALOGUE
+========================= */
+
+.pulgas-dialogue-box{
+
+    width:65%;
+
+    margin:40px auto;
+
+    background:rgba(25,20,15,0.7);
+
+    padding:40px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    backdrop-filter:blur(8px);
+}
+
+.pulgas-dialogue{
+
+    color:#FFF0D6;
+
+    font-size:32px;
+
+    margin-bottom:20px;
+
+    font-family:'DM Serif Display', serif;
+}
+
+.pulgas-dialogue-small{
+
+    color:#E8DCC7;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    font-family:'Italiana', serif;
+}
+
+/* =========================
+   OBJECTS
+========================= */
+
+.pulgas-objects{
+
+    width:90%;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:70px;
+
+    margin-top:80px;
+}
+
+.pulgas-object{
+
+    cursor:pointer;
+
+    transition:0.4s;
+}
+
+.pulgas-object img{
+
+    width:220px;
+}
+
+.pulgas-object:hover{
+
+    transform:
+    translateY(-15px)
+    scale(1.08);
+
+    filter:
+    drop-shadow(0px 0px 20px #F0CB75);
+}
+
+/* =========================
+   CAMERA
+========================= */
+
+.camera-object{
+
+    animation:cameraPulse 2s infinite;
+}
+
+@keyframes cameraPulse{
+
+    50%{
+
+        filter:
+        drop-shadow(0px 0px 25px white);
+    }
+}
+
+/* =========================
+   POPUPS
+========================= */
+
+.pulgas-popup{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,0.7);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+}
+
+.pulgas-popup-box{
+
+    width:500px;
+
+    background:#1E1A16;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    position:relative;
+}
+
+.pulgas-popup-box h2{
+
+    color:#F0CB75;
+
+    margin-bottom:20px;
+
+    font-family:'DM Serif Display', serif;
+}
+
+.pulgas-popup-box p{
+
+    color:#E7D9C2;
+
+    line-height:1.8;
+
+    font-family:'Italiana', serif;
+}
+
+.pulgas-close{
+
+    position:absolute;
+
+    top:15px;
+    right:15px;
+
+    width:40px;
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#495930;
+
+    color:white;
+
+    cursor:pointer;
+}
+
+/* =========================
+   GLITCH
+========================= */
+
+#glitch-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:white;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:99999;
+}
+
+.glitch-active{
+
+    animation:glitchFlash 0.8s steps(3);
+}
+
+@keyframes glitchFlash{
+
+    0%{
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+        background:red;
+    }
+
+    40%{
+        background:blue;
+    }
+
+    70%{
+        background:white;
+    }
+
+    100%{
+        opacity:0;
+    }
+}

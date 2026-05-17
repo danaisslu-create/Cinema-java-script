@@ -56,3 +56,66 @@ setInterval(() => {
     }
 
 }, 7000);
+
+// =========================
+// AUDIO AUTOMÁTICO
+// =========================
+
+window.addEventListener("click", function(){
+
+    document.getElementById("bogotaAudio").play();
+
+}, { once:true });
+
+
+// =========================
+// IR AL MERCADO
+// =========================
+
+function irMercado(){
+
+    let bus = document.getElementById("bogotaBus");
+
+    bus.classList.remove("bus-move");
+
+    void bus.offsetWidth;
+
+    bus.classList.add("bus-move");
+
+    setTimeout(function(){
+
+        window.location.href = "mercado-pulgas.html";
+
+    }, 2400);
+}
+
+// =========================
+// POPUPS
+// =========================
+
+function abrirPopup(id){
+
+    document.getElementById(id).style.display = "flex";
+}
+
+function cerrarPopup(id){
+
+    document.getElementById(id).style.display = "none";
+}
+
+// =========================
+// CAMERA GLITCH
+// =========================
+
+function activarCamara(){
+
+    let glitch = document.getElementById("glitch-screen");
+
+    glitch.classList.add("glitch-active");
+
+    setTimeout(function(){
+
+        window.location.href = "devil-wears-prada.html";
+
+    }, 700);
+}

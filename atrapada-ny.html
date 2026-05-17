@@ -15,17 +15,13 @@
 
 <body class="trapped-body">
 
-    <!-- =========================
-         BACK BUTTON
-    ========================== -->
+    <!-- BACK BUTTON -->
 
     <button class="back-button" onclick="history.back()">
         ←
     </button>
 
-    <!-- =========================
-         FONDO
-    ========================== -->
+    <!-- BACKGROUND -->
 
     <img
         src="ASSETS/Imagenes/empty-nyc-night.jpg"
@@ -35,10 +31,6 @@
 
     <div class="trapped-overlay"></div>
 
-    <!-- FLASHES -->
-
-    <div class="times-square-flash" id="timesFlash"></div>
-
     <!-- SUBWAY TRAIN -->
 
     <img
@@ -47,21 +39,17 @@
         id="subwayTrain"
     >
 
-    <!-- =========================
-         TITULO
-    ========================== -->
+    <!-- TITLE -->
 
     <h1 class="trapped-title">
         LOST IN NEW YORK
     </h1>
 
-    <!-- =========================
-         CONTENIDO
-    ========================== -->
+    <!-- CONTENT -->
 
     <main class="trapped-container">
 
-        <!-- TEXTO -->
+        <!-- TEXT -->
 
         <section class="trapped-dialogue-box">
 
@@ -74,13 +62,15 @@
             <p class="trapped-dialogue-small">
 
                 Travis desapareció entre las luces húmedas de Manhattan.
-                Nicole siguió caminando sola.
+                Nicole siguió caminando sola, atravesando calles vacías,
+                estaciones silenciosas y escaparates iluminados
+                que parecían observarla de vuelta.
 
             </p>
 
         </section>
 
-        <!-- IMAGEN -->
+        <!-- IMAGE -->
 
         <img
             src="ASSETS/Imagenes/nicole-alone.jpg"
@@ -88,7 +78,7 @@
             alt="Nicole sola"
         >
 
-        <!-- OPCIONES -->
+        <!-- CARDS -->
 
         <section class="trapped-options">
 
@@ -99,34 +89,30 @@
                 onclick="abrirSubwayPopup()"
             >
 
-                <h2>
-                    El Subway
-                </h2>
+                <h2>El Subway</h2>
 
                 <p>
 
                     El tren pasó frente a ella vacío.
-                    Solo quedó el sonido metálico.
+                    Solo quedaba el sonido metálico de los rieles.
 
                 </p>
 
             </div>
 
-            <!-- TIMES SQUARE -->
+            <!-- TIMES -->
 
             <div
                 class="trapped-option-card"
                 onclick="abrirTimesPopup()"
             >
 
-                <h2>
-                    Times Square
-                </h2>
+                <h2>Times Square</h2>
 
                 <p>
 
-                    Las pantallas seguían encendidas.
-                    La ciudad parecía artificial.
+                    Las pantallas seguían encendidas,
+                    pero la ciudad parecía detenida en el tiempo.
 
                 </p>
 
@@ -139,13 +125,11 @@
                 onclick="abrirCameraPopup()"
             >
 
-                <h2>
-                    La Cámara
-                </h2>
+                <h2>La Cámara</h2>
 
                 <p>
 
-                    Nicole levantó la cámara otra vez.
+                    Nicole sintió el peso de la cámara otra vez.
 
                 </p>
 
@@ -153,7 +137,7 @@
 
         </section>
 
-        <!-- BOTONES -->
+        <!-- SIDE BUTTONS -->
 
         <a
             href="taxidriver-eastereggs.html"
@@ -169,7 +153,30 @@
             🎵 Radio
         </a>
 
+        <!-- CONTINUE -->
+
+        <div class="trapped-continue">
+
+            <a href="taxi-driver-ending.html">
+
+                <button>
+
+                    Seguir caminando
+
+                </button>
+
+            </a>
+
+        </div>
+
     </main>
+
+    <!-- FLASH -->
+
+    <div
+        class="times-square-flash"
+        id="timesFlash"
+    ></div>
 
     <!-- =========================
          SUBWAY POPUP
@@ -189,21 +196,13 @@
                 ✕
             </button>
 
-            <div class="subway-announcement">
+            <div class="subway-popup-text">
 
-                NEXT STOP...
+                NEXT TRAIN ARRIVING...<br><br>
 
-            </div>
+                DOWNTOWN MANHATTAN<br><br>
 
-            <div class="subway-announcement delay1">
-
-                42ND STREET
-
-            </div>
-
-            <div class="subway-announcement delay2">
-
-                LAST TRAIN LEAVING MANHATTAN
+                STAND CLEAR OF THE CLOSING DOORS
 
             </div>
 
@@ -257,14 +256,15 @@
             </button>
 
             <div class="camera-rec">
-                REC ●
+                ● REC
             </div>
 
             <video
-                class="camera-video"
                 autoplay
                 muted
                 loop
+                controls
+                class="camera-video"
             >
 
                 <source
@@ -278,7 +278,9 @@
 
     </div>
 
-    <script src="trapped-popups.js"></script>
+    <!-- JAVASCRIPT -->
+
+    <script src="pop-ups.js"></script>
 
 </body>
 
