@@ -1,35 +1,357 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Home</title>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
     <meta
-      name="description"
-      content="our first interactive multimedia narrative"
-    />
-    <link
-      id="favicon"
-      rel="icon"
-      href="https://glitch.com/edit/favicon-app.ico"
-      type="image/x-icon"
-    />
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        The Devil Wears Prada
+    </title>
 
     <link
-      rel="stylesheet"
-      href="
-style.css"
-    />
-    <script
-      src=".
-/script.js"
-      defer
-    ></script>
-  </head>
+        rel="stylesheet"
+        href="devil-wears-prada.css"
+    >
 
-  <body>
-    <h1>Capitulo 1</h1>
-    
-  </body>
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+<body class="devil-body">
+
+    <!-- =========================
+         BACK BUTTON
+    ========================== -->
+
+    <button
+        class="devil-back-button"
+        onclick="history.back()"
+    >
+
+        ←
+
+    </button>
+
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+    <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="devil-background-video"
+    >
+
+        <source
+            src="ASSETS/Videos/ny-fashion-night.mp4"
+            type="video/mp4"
+        >
+
+    </video>
+
+    <div class="devil-overlay"></div>
+
+    <!-- =========================
+         TITLE
+    ========================== -->
+
+    <header class="devil-header">
+
+        <h1 class="devil-title">
+
+            THE DEVIL<br>
+            WEARS PRADA
+
+        </h1>
+
+        <p class="devil-subtitle">
+
+            “Nueva York volvió a parecer una película.”
+
+        </p>
+
+    </header>
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="devil-container">
+
+        <!-- =========================
+             DIALOGUE BOX
+        ========================== -->
+
+        <section class="devil-dialogue-box">
+
+            <p class="devil-dialogue">
+
+                Nicole abrió los ojos bajo luces blancas,
+                taxis amarillos y vitrinas imposibles.
+
+            </p>
+
+            <p class="devil-dialogue-small">
+
+                La cámara había desaparecido.
+                En su lugar, una tarjeta negra decía:
+
+                <br><br>
+
+                “RUNWAY MAGAZINE.”
+
+            </p>
+
+        </section>
+
+        <!-- =========================
+             CENTRAL IMAGE
+        ========================== -->
+
+        <img
+            src="ASSETS/Imagenes/runway-lobby.jpg"
+            class="devil-image"
+            alt="Runway"
+        >
+
+        <!-- =========================
+             CHARACTER CARDS
+        ========================== -->
+
+        <section class="devil-options">
+
+            <!-- NIGEL -->
+
+            <div
+                class="devil-option-card nigel-card"
+                onclick="abrirNigelPopup()"
+            >
+
+                <h2>
+
+                    Nigel Kipling
+
+                </h2>
+
+                <p>
+
+                    “Querida, estás usando esperanza y confusión.
+                    Necesitamos arreglar eso.”
+
+                </p>
+
+            </div>
+
+            <!-- MIRANDA -->
+
+            <div
+                class="devil-option-card miranda-card"
+                onclick="abrirMirandaPopup()"
+            >
+
+                <h2>
+
+                    Miranda Priestly
+
+                </h2>
+
+                <p>
+
+                    “Todos quieren ser nosotros.”
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             SIDE BUTTONS
+        ========================== -->
+
+        <a
+            href="devil-easter-eggs.html"
+            class="devil-side-button devil-left-button"
+        >
+
+            👠 Easter Eggs
+
+        </a>
+
+       <a
+          href="runway-radio.html"
+          class="devil-side-button devil-right-button"
+      >
+
+          🎵 Runway Radio
+
+</a>
+
+    </main>
+
+    <!-- =========================
+         NIGEL POPUP
+    ========================== -->
+
+    <div
+        id="nigel-popup"
+        class="devil-popup"
+    >
+
+        <div class="devil-popup-box">
+
+            <button
+                class="devil-close"
+                onclick="cerrarNigelPopup()"
+            >
+
+                ✕
+
+            </button>
+
+            <h2>
+
+                Nigel sonríe.
+
+            </h2>
+
+            <p>
+
+                “Ven conmigo.
+                Nueva York se disfruta mejor cuando sabes mirar.”
+
+            </p>
+
+            <img
+                src="ASSETS/Imagenes/nigel-fashion.jpg"
+                class="popup-image"
+                alt="Nigel"
+            >
+
+            <button
+                class="choose-button"
+                onclick="elegirNigel()"
+            >
+
+                Ir con Nigel
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         MIRANDA POPUP
+    ========================== -->
+
+    <div
+        id="miranda-popup"
+        class="devil-popup"
+    >
+
+        <div class="devil-popup-box miranda-popup-box">
+
+            <button
+                class="devil-close"
+                onclick="cerrarMirandaPopup()"
+            >
+
+                ✕
+
+            </button>
+
+            <h2>
+
+                Miranda la observa.
+
+            </h2>
+
+            <p>
+
+                “Espero que puedas seguir el ritmo.”
+
+            </p>
+
+            <img
+                src="ASSETS/Imagenes/miranda-office.jpg"
+                class="popup-image"
+                alt="Miranda"
+            >
+
+            <button
+                class="choose-button miranda-button"
+                onclick="elegirMiranda()"
+            >
+
+                Seguir a Miranda
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         FLASH
+    ========================== -->
+
+    <div id="fashion-flash"></div>
+
+    <!-- =========================
+         AUDIO
+    ========================== -->
+
+    <audio
+        id="devilAmbience"
+        autoplay
+        loop
+    >
+
+        <source
+            src="ASSETS/Audios/runway-ambience.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+    <audio id="cameraSound">
+
+    <source
+        src="ASSETS/Audios/camera-flash.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+    <!-- =========================
+         JS
+    ========================== -->
+
+    <script src="devil.js"></script>
+
+</body>
+
 </html>
+
