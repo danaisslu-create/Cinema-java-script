@@ -72,6 +72,41 @@
     <source src="ASSETS/Audios/EFECTOS DE SONIDO COCHE DERRAPAR GEMIDO DERRAPE.mp3" type="audio/mpeg">
 </audio>
 
+<div class="music-box">
+
+    <button id="musicToggle">▶ Play</button>
+
+    <audio id="bondMusic">
+        <source src="ASSETS/Audios/no time to die.mp3" type="audio/mpeg">
+    </audio>
+
+</div>
+
+<script>
+
+const music = document.getElementById("bondMusic");
+const btn = document.getElementById("musicToggle");
+
+let isPlaying = false;
+
+btn.addEventListener("click", () => {
+
+    if (!isPlaying) {
+
+        music.play();
+        btn.textContent = "⏸ Pause";
+        isPlaying = true;
+
+    } else {
+
+        music.pause();
+        btn.textContent = "▶ Play";
+        isPlaying = false;
+    }
+
+});
+
+</script>
 </body>
 
 <script>
@@ -86,4 +121,3 @@ window.addEventListener("load", () => {
 
 </script>
 
-</html>

@@ -602,3 +602,159 @@
     box-shadow:
     0px 0px 25px rgba(122,31,43,0.5);
 }
+
+/* =========================
+   CLOSET GRID
+========================= */
+.closet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 35px;
+    width: 85%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.prenda-item {
+    background: rgba(30, 30, 30, 0.75);
+    backdrop-filter: blur(8px);
+    border-radius: 24px;
+    padding: 20px 12px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 215, 150, 0.2);
+}
+
+.prenda-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 0px 25px rgba(255, 208, 120, 0.6);
+    border-color: rgba(255, 208, 120, 0.8);
+    background: rgba(40, 35, 25, 0.85);
+}
+
+.prenda-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.prenda-nombre {
+    color: #f5e7d0;
+    font-family: 'Italiana', serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   OUTFIT PANEL
+========================= */
+.outfit-panel {
+    width: 85%;
+    max-width: 900px;
+    background: rgba(15, 15, 15, 0.85);
+    backdrop-filter: blur(12px);
+    border-radius: 32px;
+    margin: 40px auto 80px;
+    padding: 28px 35px;
+    border: 1px solid rgba(255, 208, 120, 0.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.outfit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid rgba(255, 208, 120, 0.5);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.outfit-header h3 {
+    font-family: 'DM Serif Display', serif;
+    color: #f5e7d0;
+    font-size: 28px;
+    margin: 0;
+}
+
+.style-counter {
+    font-family: 'Italiana', serif;
+    font-size: 22px;
+    color: #ffd898;
+    background: rgba(0,0,0,0.5);
+    padding: 6px 16px;
+    border-radius: 40px;
+}
+
+.outfit-list {
+    min-height: 100px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 24px;
+    padding: 18px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.outfit-empty {
+    color: #aaa;
+    font-style: italic;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.prenda-equipada {
+    background: rgba(255, 208, 120, 0.2);
+    border: 1px solid #ffd898;
+    border-radius: 40px;
+    padding: 6px 16px;
+    font-size: 18px;
+    color: #f5e7d0;
+    font-family: 'Italiana', serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.prenda-equipada button {
+    background: none;
+    border: none;
+    color: #ffb347;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nigel-comment {
+    background: rgba(255, 208, 120, 0.15);
+    border-left: 4px solid #ffd898;
+    padding: 14px 20px;
+    border-radius: 18px;
+    font-family: 'Italiana', serif;
+    font-size: 20px;
+    color: #ffefcf;
+    margin-bottom: 25px;
+}
+
+#finishLookBtn {
+    background: #d4a14a;
+    color: #1e1e1e;
+    border: none;
+    width: 100%;
+    font-size: 24px;
+    padding: 16px;
+}
+
+#finishLookBtn:hover {
+    background: #e6b85c;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(212, 161, 74, 0.6);
+}

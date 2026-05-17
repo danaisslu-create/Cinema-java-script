@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigel's Closet · The Devil Wears Prada</title>
+    <link rel="stylesheet" href="devil-wears-prada.css">
+    <link rel="stylesheet" href="nigel-closet.css"> <!-- CSS extra para esta página -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&display=swap" rel="stylesheet">
+</head>
+<body class="devil-body">
+
+    <!-- BACK BUTTON -->
+    <button class="devil-back-button" onclick="history.back()">←</button>
+
+    <!-- VIDEO BG (puedes usar el mismo o uno más cálido) -->
+    <video autoplay muted loop playsinline class="devil-background-video">
+        <source src="ASSETS/Videos/ny-fashion-night.mp4" type="video/mp4">
+    </video>
+    <div class="devil-overlay"></div>
+
+    <!-- HEADER -->
+    <header class="devil-header">
+        <h1 class="devil-title">EL CLOSET DE NIGEL</h1>
+        <p class="devil-subtitle">“Vístete como si fueras a conquistar Nueva York”</p>
+    </header>
+
+    <main class="devil-container">
+
+        <!-- DIÁLOGO INICIAL -->
+        <section class="devil-dialogue-box">
+            <p class="devil-dialogue">— Querida, la ropa no es solo tela. Es actitud. Es tu primera declaración antes de hablar.</p>
+            <p class="devil-dialogue-small">Nigel te guía hacia un vestidor infinito. Cada prenda tiene una historia. Elige sabiamente.</p>
+        </section>
+
+        <!-- SECCIÓN DEL CLOSET (GRID DE PRENDAS) -->
+        <div class="closet-grid">
+            <!-- Cada prenda: imagen + nombre + popup al click -->
+            <div class="prenda-item" data-prenda="abrigo" data-estilo="5">
+                <img src="ASSETS/Imagenes/trenchcoat.png" alt="Abrigo" class="prenda-img">
+                <p class="prenda-nombre">Abrigo</p>
+            </div>
+            <div class="prenda-item" data-prenda="tacones" data-estilo="4">
+                <img src="ASSETS/Imagenes/tacones-rojos.png" alt="Tacones rojos" class="prenda-img">
+                <p class="prenda-nombre">Tacones rojos</p>
+            </div>
+            <div class="prenda-item" data-prenda="bolso" data-estilo="3">
+                <img src="ASSETS/Imagenes/Untitled.png" alt="Bolso estructurado" class="prenda-img">
+                <p class="prenda-nombre">Bolso estructurado</p>
+            </div>
+            <div class="prenda-item" data-prenda="lentes" data-estilo="2">
+                <img src="ASSETS/Imagenes/sunglasses.png" alt="Lentes de sol" class="prenda-img">
+                <p class="prenda-nombre">Lentes de sol</p>
+            </div>
+            <div class="prenda-item" data-prenda="sombrero" data-estilo="3">
+                <img src="ASSETS/Imagenes/hat.png" alt="Sombrero" class="prenda-img">
+                <p class="prenda-nombre">Sombrero de fieltro</p>
+            </div>
+            <div class="prenda-item" data-prenda="bufanda" data-estilo="2">
+                <img src="ASSETS/Imagenes/scarf.png" alt="Bufanda de seda" class="prenda-img">
+                <p class="prenda-nombre">Bufanda de seda</p>
+            </div>
+            <div class="prenda-item" data-prenda="cinturon" data-estilo="2">
+                <img src="ASSETS/Imagenes/guantes.png" alt="Guantes" class="prenda-img">
+                <p class="prenda-nombre">Guantes</p>
+            </div>
+            <div class="prenda-item" data-prenda="vestido" data-estilo="5">
+                <img src="ASSETS/Imagenes/cocktail-dress.png" alt="Vestido" class="prenda-img">
+                <p class="prenda-nombre">Vestido</p>
+            </div>
+        </div>
+
+        <!-- PANEL DE OUTFIT ACTUAL Y CONTADOR DE ESTILO -->
+        <div class="outfit-panel">
+            <div class="outfit-header">
+                <h3>✨ TU OUTFIT ✨</h3>
+                <div class="style-counter">
+                    Estilo: <span id="stylePoints">0</span> pts
+                </div>
+            </div>
+            <div id="outfit-list" class="outfit-list">
+                <p class="outfit-empty">Aún no has equipado nada. Haz click en una prenda.</p>
+            </div>
+            <div id="nigel-comment" class="nigel-comment">
+                💬 Nigel: “Esperando verte brillar…”
+            </div>
+            <button id="finishLookBtn" class="choose-button">🌟 Mostrar look final 🌟</button>
+        </div>
+
+    </main>
+
+    <!-- POPUP DE REVISTA (se genera dinámicamente, pero dejamos uno oculto como plantilla) -->
+    <div id="revista-popup" class="devil-popup" style="display:none;">
+        <div class="devil-popup-box">
+            <button class="devil-close" onclick="cerrarPopupRevista()">✕</button>
+            <h2 id="popup-titulo"></h2>
+            <p id="popup-descripcion"></p>
+            <img id="popup-imagen" class="popup-image" src="" alt="Prenda">
+            <button id="equiparBtn" class="choose-button">👗 Equipar esta prenda</button>
+        </div>
+    </div>
+
+    <!-- FLASH y AUDIOS -->
+    <div id="fashion-flash"></div>
+    <audio id="devilAmbience" autoplay loop>
+        <source src="ASSETS/Audios/runway-ambience.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="cameraSound">
+        <source src="ASSETS/Audios/camera-flash.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="telaSound">
+        <source src="ASSETS/Audios/tela-seda.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="nigel-closet.js"></script>
+</body>
+</html>
