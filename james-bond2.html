@@ -22,13 +22,21 @@
     <!-- BACK BUTTON -->
     <button class="bond-chase-back-button" onclick="history.back()">←</button>
 
-    <!-- BACKGROUND -->
-    <img src="ASSETS/Imagenes/calle cula.jpeg" class="bond-chase-background">
+    <!-- BACKGROUND BASE -->
+    <img
+        src="ASSETS/Imagenes/ruinass.jpeg"
+        class="bond-chase-background"
+        alt="Chaos"
+    >
 
-    <div class="bond-chase-overlay"></div>
-
-    <!-- FIRE / SMOKE LAYER -->
-    <div class="bond-chase-fire-layer"></div>
+    <!-- RUINS GLOW LAYER (CLICKABLE) -->
+    <a href="james-bond3.html" class="ruins-link">
+        <img
+            src="ASSETS/Imagenes/ruinas pt2.png"
+            class="bond-chase-ruins-glow"
+            alt="Ruins Glow"
+        >
+    </a>
 
     <!-- TITLE -->
     <h1 class="bond-chase-title">RUN</h1>
@@ -51,32 +59,29 @@
 
     </main>
 
-    <!-- HIDE WALL (CLICKABLE + GLOW) -->
-    <a href="bond-hideout.html">
-        <img src="ASSETS/Imagenes/pared.png" class="bond-hide-wall" alt="Hide Here">
-    </a>
-
     <!-- ASTON MARTIN -->
-    <img src="ASSETS/Imagenes/carrito.png" class="bond-aston" id="bondAston">
+    <img
+        src="ASSETS/Imagenes/carrito.png"
+        class="bond-aston"
+        id="bondAston"
+        alt="Aston Martin"
+    >
 
     <!-- AUDIO -->
-    <audio id="bondChaseAudio" autoplay loop>
-        <source src="ASSETS/Audios/EFECTOS DE SONIDO COCHE DERRAPAR GEMIDO DERRAPE.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="bondChaseAudio" autoplay>
+    <source src="ASSETS/Audios/EFECTOS DE SONIDO COCHE DERRAPAR GEMIDO DERRAPE.mp3" type="audio/mpeg">
+</audio>
 
 </body>
 
-<!-- JS -->
 <script>
 
 const aston = document.getElementById("bondAston");
 
 window.addEventListener("load", () => {
-
     setTimeout(() => {
         aston.classList.add("bond-aston-move");
     }, 700);
-
 });
 
 </script>
