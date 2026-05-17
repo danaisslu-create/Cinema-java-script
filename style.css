@@ -3456,7 +3456,252 @@ Bogota1
     margin-top:90px;
 }
 
+/* =========================
+   FLASHES
+========================= */
 
+.times-square-flash{
+
+    position:fixed;
+
+    inset:0;
+
+    background:white;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:999;
+}
+
+.times-square-active{
+
+    animation:timesFlash 0.8s linear 4;
+}
+
+@keyframes timesFlash{
+
+    0%{opacity:0;}
+
+    50%{opacity:0.9;}
+
+    100%{opacity:0;}
+}
+
+/* =========================
+   SUBWAY TRAIN
+========================= */
+
+.subway-train{
+
+    position:fixed;
+
+    bottom:120px;
+
+    left:-1200px;
+
+    width:1000px;
+
+    z-index:9999;
+
+    pointer-events:none;
+}
+
+.subway-move{
+
+    animation:subwayMove 2s linear forwards;
+}
+
+@keyframes subwayMove{
+
+    from{
+
+        left:-1200px;
+    }
+
+    to{
+
+        left:150%;
+    }
+}
+
+/* =========================
+   POPUPS
+========================= */
+
+.trapped-popup-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,0.82);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:5000;
+}
+
+.trapped-popup-box{
+
+    width:700px;
+
+    max-width:90%;
+
+    background:rgba(12,15,18,0.95);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    position:relative;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:0px 0px 40px rgba(0,0,0,0.5);
+}
+
+.trapped-popup-close{
+
+    position:absolute;
+
+    top:20px;
+    right:20px;
+
+    background:#991D2E;
+
+    color:white;
+
+    border:none;
+
+    border-radius:50%;
+
+    width:40px;
+    height:40px;
+
+    cursor:pointer;
+}
+
+/* =========================
+   SUBWAY POPUP
+========================= */
+
+.subway-popup-box{
+
+    background:#111;
+
+    overflow:hidden;
+}
+
+.subway-announcement{
+
+    color:#F0CB75;
+
+    font-family:'DM Serif Display', serif;
+
+    font-size:42px;
+
+    text-align:center;
+
+    opacity:0;
+
+    animation:fadeMessage 2s forwards;
+}
+
+.delay1{
+
+    animation-delay:2s;
+}
+
+.delay2{
+
+    animation-delay:4s;
+}
+
+@keyframes fadeMessage{
+
+    0%{
+
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    100%{
+
+        opacity:1;
+        transform:translateY(0px);
+    }
+}
+
+/* =========================
+   TIMES GIF
+========================= */
+
+.times-popup-gif{
+
+    width:100%;
+
+    border-radius:20px;
+}
+
+/* =========================
+   CAMERA POPUP
+========================= */
+
+.camera-popup-frame{
+
+    width:900px;
+
+    max-width:95%;
+
+    background:black;
+
+    border:8px solid #222;
+
+    border-radius:25px;
+
+    padding:20px;
+
+    position:relative;
+}
+
+.camera-video{
+
+    width:100%;
+
+    border-radius:15px;
+}
+
+.camera-rec{
+
+    position:absolute;
+
+    top:15px;
+    left:20px;
+
+    color:red;
+
+    font-family:'DM Serif Display', serif;
+
+    font-size:26px;
+
+    z-index:20;
+
+    animation:blinkRec 1s infinite;
+}
+
+@keyframes blinkRec{
+
+    50%{
+
+        opacity:0.3;
+    }
+}
 
 /* =========================
    NAVBAR
@@ -26314,4 +26559,313 @@ Bogota1
         opacity:1;
         transform:scale(1);
     }
+}
+
+/* =========================
+   CAPITULO PADDINGTON NO 1 PAGE
+========================= */
+
+.capitulo-paddingtonNo1-page{
+
+    margin:0;
+
+    background:linear-gradient(180deg, #495930 0%, #2F3A1F 100%);
+
+    overflow-x:hidden;
+
+    font-family:'Tiro Devanagari Marathi', serif;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.capitulo-paddingtonNo1-section{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:80px 40px;
+
+    text-align:center;
+}
+
+/* =========================
+   INTRO TEXT
+========================= */
+
+.capitulo-paddingtonNo1-text{
+
+    width:70%;
+
+    color:white;
+
+    font-size:36px;
+
+    font-family:'Tiro Devanagari Marathi', serif;
+
+    font-weight:400;
+
+    line-height:43.2px;
+
+    text-shadow:0px 4px 12px rgba(0,0,0,0.3);
+
+    margin-bottom:60px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.capitulo-paddingtonNo1-gallery{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:40px;
+
+    flex-wrap:wrap;
+}
+
+/* =========================
+   GALLERY IMAGES
+========================= */
+
+.capitulo-paddingtonNo1-gallery-image{
+
+    width:420px;
+
+    border-radius:22px;
+
+    box-shadow:0px 10px 35px rgba(0,0,0,0.35);
+
+    border:6px solid rgba(255,255,255,0.12);
+
+    transition:0.3s;
+}
+
+.capitulo-paddingtonNo1-gallery-image:hover{
+
+    transform:scale(1.03);
+}
+
+/* =========================
+   MAP
+========================= */
+
+.capitulo-paddingtonNo1-map{
+
+    width:80%;
+
+    height:600px;
+
+    border:none;
+
+    border-radius:25px;
+
+    box-shadow:0px 10px 35px rgba(0,0,0,0.35);
+}
+
+/* =========================
+   RAIN GIF
+========================= */
+
+.capitulo-paddingtonNo1-rain-gif{
+
+    width:70%;
+
+    max-width:900px;
+
+    border-radius:25px;
+
+    box-shadow:0px 10px 35px rgba(0,0,0,0.35);
+
+    border:6px solid rgba(255,255,255,0.12);
+
+    margin-bottom:50px;
+}
+
+/* =========================
+   RAIN TEXT
+========================= */
+
+.capitulo-paddingtonNo1-rain-text{
+
+    width:65%;
+
+    color:white;
+
+    font-size:34px;
+
+    line-height:1.6;
+
+    margin-bottom:50px;
+
+    text-shadow:0px 4px 12px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.capitulo-paddingtonNo1-button{
+
+    background:#769446;
+
+    color:#E7CCD5;
+
+    border:none;
+
+    border-radius:22px;
+
+    padding:22px 40px;
+
+    font-size:28px;
+
+    font-family:'Italiana', serif;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:0px 8px 20px rgba(0,0,0,0.3);
+}
+
+.capitulo-paddingtonNo1-button:hover{
+
+    transform:translateY(-5px);
+
+    background:#8CAB58;
+
+    color:white;
+}
+/* =========================
+   SCROLL GIF SECTION
+========================= */
+
+.capitulo-paddingtonNo1-scroll-section{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:100px;
+
+    margin-bottom:100px;
+}
+
+/* =========================
+   SCROLL GIF
+========================= */
+
+.capitulo-paddingtonNo1-scroll-gif{
+
+    width:250px;
+
+    opacity:0.85;
+}
+/* =========================
+   SCROLL GIF SECTION
+========================= */
+
+.capitulo-paddingtonNo1-scroll-section{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:100px;
+
+    margin-bottom:100px;
+}
+
+/* =========================
+   SCROLL GIF (con movimiento y tamaño aumentado)
+========================= */
+
+.capitulo-paddingtonNo1-scroll-gif{
+
+    width:320px;  /* Tamaño aumentado de 250px a 320px */
+
+    opacity:0.85;
+
+    /* Movimiento suave del GIF */
+    animation: flotarGif 2.5s ease-in-out infinite;
+}
+
+/* Animación de flotación (movimiento arriba/abajo) */
+@keyframes flotarGif {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-12px);  /* Sube */
+    }
+    100% {
+        transform: translateY(0px);    /* Baja a la posición original */
+    }
+}
+
+/* =========================
+   MUSEUM SCROLL GIF
+========================= */
+
+.museum-scroll-gif-section{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:-300px;    /* ← CAMBIADO: antes -100px, ahora 20px desde arriba */
+
+    margin-bottom:100px;
+}
+
+/* =========================
+   GIF (con animación aplicada)
+========================= */
+
+.museum-scroll-gif{
+
+    width:320px;
+
+    opacity:0.85;
+
+    /* ← IMPORTANTE: aquí se aplica la animación al GIF */
+    animation: museumFlotarGif 2.5s ease-in-out infinite;
+}
+
+/* =========================
+   FLOAT ANIMATION
+========================= */
+
+@keyframes museumFlotarGif {
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-5px);  /* ← CAMBIADO: de -12px a -5px (solo un poquito) */
+    }
+
+    100%{
+        transform:translateY(0px);
+    }    
 }

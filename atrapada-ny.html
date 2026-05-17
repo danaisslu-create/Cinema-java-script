@@ -10,12 +10,7 @@
     <title>Atrapada en New York</title>
 
     <link rel="stylesheet" href="style.css">
- <link
-        id="favicon"
-        rel="icon"
-        href="ASSETS/Imagenes/empty-nyc-night.jpg"
-        type="image/x-icon"
-    />
+
 </head>
 
 <body class="trapped-body">
@@ -25,7 +20,7 @@
     ========================== -->
 
     <button class="back-button" onclick="history.back()">
-        ← 
+        ←
     </button>
 
     <!-- =========================
@@ -39,6 +34,18 @@
     >
 
     <div class="trapped-overlay"></div>
+
+    <!-- FLASHES -->
+
+    <div class="times-square-flash" id="timesFlash"></div>
+
+    <!-- SUBWAY TRAIN -->
+
+    <img
+        src="ASSETS/Imagenes/subway-train.png"
+        class="subway-train"
+        id="subwayTrain"
+    >
 
     <!-- =========================
          TITULO
@@ -54,7 +61,7 @@
 
     <main class="trapped-container">
 
-        <!-- TEXTO PRINCIPAL -->
+        <!-- TEXTO -->
 
         <section class="trapped-dialogue-box">
 
@@ -66,28 +73,31 @@
 
             <p class="trapped-dialogue-small">
 
-                Travis desapareció entre las luces húmedas de Manhattan.  
-                Nicole siguió caminando sola, atravesando calles vacías,
-                estaciones silenciosas y escaparates iluminados
-                que parecían observarla de vuelta.
+                Travis desapareció entre las luces húmedas de Manhattan.
+                Nicole siguió caminando sola.
 
             </p>
 
         </section>
 
-        <!-- IMAGEN CENTRAL -->
+        <!-- IMAGEN -->
 
         <img
             src="ASSETS/Imagenes/nicole-alone.jpg"
             class="trapped-image"
-            alt="Nicole sola en Nueva York"
+            alt="Nicole sola"
         >
 
-        <!-- TARJETAS -->
+        <!-- OPCIONES -->
 
         <section class="trapped-options">
 
-            <div class="trapped-option-card">
+            <!-- SUBWAY -->
+
+            <div
+                class="trapped-option-card"
+                onclick="abrirSubwayPopup()"
+            >
 
                 <h2>
                     El Subway
@@ -95,14 +105,19 @@
 
                 <p>
 
-                    El tren pasó frente a ella vacío.  
-                    Solo quedaba el sonido metálico de los rieles.
+                    El tren pasó frente a ella vacío.
+                    Solo quedó el sonido metálico.
 
                 </p>
 
             </div>
 
-            <div class="trapped-option-card">
+            <!-- TIMES SQUARE -->
+
+            <div
+                class="trapped-option-card"
+                onclick="abrirTimesPopup()"
+            >
 
                 <h2>
                     Times Square
@@ -110,14 +125,19 @@
 
                 <p>
 
-                    Las pantallas seguían encendidas,
-                    pero la ciudad parecía detenida en el tiempo.
+                    Las pantallas seguían encendidas.
+                    La ciudad parecía artificial.
 
                 </p>
 
             </div>
 
-            <div class="trapped-option-card">
+            <!-- CAMERA -->
+
+            <div
+                class="trapped-option-card"
+                onclick="abrirCameraPopup()"
+            >
 
                 <h2>
                     La Cámara
@@ -125,8 +145,7 @@
 
                 <p>
 
-                    Nicole sintió el peso de la cámara otra vez.
-                    Como si quisiera llevarla a otro lugar.
+                    Nicole levantó la cámara otra vez.
 
                 </p>
 
@@ -134,7 +153,7 @@
 
         </section>
 
-        <!-- BOTONES LATERALES -->
+        <!-- BOTONES -->
 
         <a
             href="taxidriver-eastereggs.html"
@@ -150,23 +169,116 @@
             🎵 Radio
         </a>
 
-        <!-- CONTINUAR -->
+    </main>
 
-        <div class="trapped-continue">
+    <!-- =========================
+         SUBWAY POPUP
+    ========================== -->
 
-            <a href="taxi-driver-ending.html">
+    <div
+        class="trapped-popup-overlay"
+        id="subwayPopup"
+    >
 
-                <button>
+        <div class="trapped-popup-box subway-popup-box">
 
-                    Seguir caminando
+            <button
+                class="trapped-popup-close"
+                onclick="cerrarSubwayPopup()"
+            >
+                ✕
+            </button>
 
-                </button>
+            <div class="subway-announcement">
 
-            </a>
+                NEXT STOP...
+
+            </div>
+
+            <div class="subway-announcement delay1">
+
+                42ND STREET
+
+            </div>
+
+            <div class="subway-announcement delay2">
+
+                LAST TRAIN LEAVING MANHATTAN
+
+            </div>
 
         </div>
 
-    </main>
+    </div>
+
+    <!-- =========================
+         TIMES SQUARE POPUP
+    ========================== -->
+
+    <div
+        class="trapped-popup-overlay"
+        id="timesPopup"
+    >
+
+        <div class="trapped-popup-box">
+
+            <button
+                class="trapped-popup-close"
+                onclick="cerrarTimesPopup()"
+            >
+                ✕
+            </button>
+
+            <img
+                src="ASSETS/Imagenes/times-square-70s.gif"
+                class="times-popup-gif"
+            >
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         CAMERA POPUP
+    ========================== -->
+
+    <div
+        class="trapped-popup-overlay"
+        id="cameraPopup"
+    >
+
+        <div class="camera-popup-frame">
+
+            <button
+                class="trapped-popup-close"
+                onclick="cerrarCameraPopup()"
+            >
+                ✕
+            </button>
+
+            <div class="camera-rec">
+                REC ●
+            </div>
+
+            <video
+                class="camera-video"
+                autoplay
+                muted
+                loop
+            >
+
+                <source
+                    src="ASSETS/Videos/empty-ny-streets.mp4"
+                    type="video/mp4"
+                >
+
+            </video>
+
+        </div>
+
+    </div>
+
+    <script src="trapped-popups.js"></script>
 
 </body>
 
