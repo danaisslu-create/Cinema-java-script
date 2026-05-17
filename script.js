@@ -90,32 +90,145 @@ function irMercado(){
 }
 
 // =========================
-// POPUPS
+// VINYL POPUP
+// =========================
+
+function abrirVinylPopup(){
+
+    document.getElementById("vinyl-popup").style.display = "flex";
+}
+
+function cerrarVinylPopup(){
+
+    document.getElementById("vinyl-popup").style.display = "none";
+}
+
+// =========================
+// RADIO POPUP
+// =========================
+
+function abrirRadioPopup(){
+
+    document.getElementById("radio-popup").style.display = "flex";
+}
+
+function cerrarRadioPopup(){
+
+    document.getElementById("radio-popup").style.display = "none";
+}
+
+function activarCamara(){
+
+    activarFlash();
+
+    document.getElementById("camera-glitch").style.display = "flex";
+
+    setTimeout(() => {
+
+        window.location.href = "devil-wears-prada.html";
+
+    }, 2200);
+}
+
+// =========================
+// ABRIR POPUP
 // =========================
 
 function abrirPopup(id){
 
     document.getElementById(id).style.display = "flex";
+
+    // FLASH PARA EL PERIODICO
+
+    if(id === "news-popup"){
+
+        activarFlash();
+    }
+
+    // RADIO APAGA AMBIENTE
+
+    if(id === "radio-popup"){
+
+        document
+        .getElementById("pulgasAudio")
+        .pause();
+    }
 }
 
 function cerrarPopup(id){
 
     document.getElementById(id).style.display = "none";
+
+    // =========================
+    // VINYL
+    // =========================
+
+    if(id === "vinyl-popup"){
+
+        let vinyl =
+        document.getElementById("vinylAudio");
+
+        vinyl.pause();
+
+        vinyl.currentTime = 0;
+    }
+
+    // =========================
+    // VOLVER AMBIENTE
+    // =========================
+
+    document
+    .getElementById("pulgasAudio")
+    .play();
 }
-
 // =========================
-// CAMERA GLITCH
+// FLASH DE COLORES
 // =========================
 
-function activarCamara(){
+function activarFlash(){
 
     let glitch = document.getElementById("glitch-screen");
 
+    glitch.classList.remove("glitch-active");
+
+    void glitch.offsetWidth;
+
     glitch.classList.add("glitch-active");
-
-    setTimeout(function(){
-
-        window.location.href = "devil-wears-prada.html";
-
-    }, 700);
 }
+
+// =========================
+// AUDIO INTERACTION
+// =========================
+
+const ambienteAudio =
+document.getElementById("pulgasAudio");
+
+const vinylAudio =
+document.getElementById("vinylAudio");
+
+// =========================
+// CUANDO SUENA EL VINILO
+// =========================
+
+vinylAudio.addEventListener("play", () => {
+
+    ambienteAudio.pause();
+});
+
+// =========================
+// CUANDO SE PAUSA
+// =========================
+
+vinylAudio.addEventListener("pause", () => {
+
+    ambienteAudio.play();
+});
+
+// =========================
+// CUANDO TERMINA
+// =========================
+
+vinylAudio.addEventListener("ended", () => {
+
+    ambienteAudio.play();
+});

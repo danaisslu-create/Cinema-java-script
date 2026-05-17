@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bond Chase</title>
+
+    <link rel="stylesheet" href="jamesBond.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="bond-chase-body">
+
+    <!-- BACK BUTTON -->
+    <button class="bond-chase-back-button" onclick="history.back()">←</button>
+
+    <!-- BACKGROUND -->
+    <img src="ASSETS/Imagenes/calle cula.jpeg" class="bond-chase-background">
+
+    <div class="bond-chase-overlay"></div>
+
+    <!-- FIRE / SMOKE LAYER -->
+    <div class="bond-chase-fire-layer"></div>
+
+    <!-- TITLE -->
+    <h1 class="bond-chase-title">RUN</h1>
+
+    <!-- MAIN TEXT -->
+    <main class="bond-chase-container">
+
+        <section class="bond-chase-dialogue-box">
+
+            <p class="bond-chase-dialogue">“Lograste salir.”</p>
+
+            <p class="bond-chase-dialogue-small">
+                La calle es un caos.<br><br>
+                Sirenas, humo y disparos.<br><br>
+                Hay una persecución.<br><br>
+                Tienes que esconderte.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- HIDE WALL (CLICKABLE + GLOW) -->
+    <a href="bond-hideout.html">
+        <img src="ASSETS/Imagenes/pared.png" class="bond-hide-wall" alt="Hide Here">
+    </a>
+
+    <!-- ASTON MARTIN -->
+    <img src="ASSETS/Imagenes/carrito.png" class="bond-aston" id="bondAston">
+
+    <!-- AUDIO -->
+    <audio id="bondChaseAudio" autoplay loop>
+        <source src="ASSETS/Audios/EFECTOS DE SONIDO COCHE DERRAPAR GEMIDO DERRAPE.mp3" type="audio/mpeg">
+    </audio>
+
+</body>
+
+<!-- JS -->
+<script>
+
+const aston = document.getElementById("bondAston");
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+        aston.classList.add("bond-aston-move");
+    }, 700);
+
+});
+
+</script>
+
+</html>

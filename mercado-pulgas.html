@@ -82,7 +82,7 @@
          OBJECTS
     ========================== -->
 
-    <main class="pulgas-objects">
+    <main class="pulgas-container">
 
         <!-- VINYL -->
 
@@ -120,7 +120,7 @@
         >
 
             <img
-                src="ASSETS/Imagenes/newspapaer.png"
+                src="ASSETS/Imagenes/newspaper.png"
                 alt="Periódico"
             >
 
@@ -143,10 +143,8 @@
     </main>
 
     <!-- =========================
-         POPUPS
+         VINYL POPUP
     ========================== -->
-
-    <!-- VINYL -->
 
     <div
         id="vinyl-popup"
@@ -170,17 +168,49 @@
 
             </h2>
 
+            <!-- TOCADISCOS -->
+
+            <div class="turntable">
+
+                <img
+                    src="ASSETS/Imagenes/turntable.png"
+                    class="turntable-base"
+                    alt="Turntable"
+                >
+
+                <img
+                    src="ASSETS/Imagenes/vinyl-record.png"
+                    class="vinyl-disc"
+                    alt="Vinyl"
+                >
+
+            </div>
+
             <p>
 
                 El disco seguía girando aunque no hubiera electricidad.
 
             </p>
 
+            <audio
+                id="vinylAudio"
+                controls
+            >
+
+                <source
+                    src="ASSETS/Audios/vinyl-song.mp3"
+                    type="audio/mpeg"
+                >
+
+</audio>
+
         </div>
 
     </div>
 
-    <!-- RADIO -->
+    <!-- =========================
+         RADIO POPUP
+    ========================== -->
 
     <div
         id="radio-popup"
@@ -206,22 +236,31 @@
 
             <p>
 
-                Entre la estática se escuchaba un bolero antiguo.
+                Entre la estática se escuchaba Bogotá.
 
             </p>
+
+            <iframe
+                class="spotify-frame"
+                src="https://open.spotify.com/embed/playlist/4YZCkaR9U05CS1OTB79teX?utm_source=generator"
+                allowfullscreen=""
+                loading="lazy"
+            ></iframe>
 
         </div>
 
     </div>
 
-    <!-- NEWSPAPER -->
+    <!-- =========================
+         NEWSPAPER POPUP
+    ========================== -->
 
     <div
         id="news-popup"
         class="pulgas-popup"
     >
 
-        <div class="pulgas-popup-box">
+        <div class="pulgas-popup-box news-flash">
 
             <button
                 class="pulgas-close"
@@ -249,13 +288,33 @@
     </div>
 
     <!-- =========================
-         GLITCH
+         FLASH
+    ========================== -->
+
+    <div id="camera-flash"></div>
+
+    <!-- =========================
+         GLITCH SCREEN
+    ========================== -->
+
+    <div id="camera-glitch">
+
+        <h2 class="glitch-text">
+
+            SIN SEÑAL
+
+        </h2>
+
+    </div>
+
+    <!-- =========================
+         COLOR GLITCH
     ========================== -->
 
     <div id="glitch-screen"></div>
 
     <!-- =========================
-         AUDIO
+         AMBIENT AUDIO
     ========================== -->
 
     <audio
@@ -272,7 +331,7 @@
     </audio>
 
     <!-- =========================
-         JS
+         JAVASCRIPT
     ========================== -->
 
     <script src="script.js"></script>

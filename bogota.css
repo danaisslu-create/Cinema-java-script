@@ -336,7 +336,7 @@
 }
 
 /* =========================
-   MERCADO DE PULGAS
+   BODY
 ========================= */
 
 .pulgas-body{
@@ -347,7 +347,7 @@
 
     position:relative;
 
-    background:#2A241D;
+    background:#1d140f;
 }
 
 /* =========================
@@ -366,10 +366,6 @@
     object-fit:cover;
 
     z-index:-3;
-
-    filter:
-    brightness(0.45)
-    sepia(0.15);
 }
 
 .pulgas-overlay{
@@ -378,12 +374,7 @@
 
     inset:0;
 
-    background:
-    linear-gradient(
-        180deg,
-        rgba(20,15,10,0.55) 0%,
-        rgba(45,30,20,0.82) 100%
-    );
+    background:rgba(35,20,12,0.72);
 
     z-index:-2;
 }
@@ -400,63 +391,35 @@
 
     color:#F0CB75;
 
-    font-size:80px;
+    font-size:82px;
 
     font-family:'DM Serif Display', serif;
+
+    letter-spacing:4px;
+
+    text-shadow:0px 0px 20px rgba(0,0,0,0.5);
 }
 
-/* =========================
-   DIALOGUE
-========================= */
-
-.pulgas-dialogue-box{
-
-    width:65%;
-
-    margin:40px auto;
-
-    background:rgba(25,20,15,0.7);
-
-    padding:40px;
-
-    border-radius:25px;
+.pulgas-subtitle{
 
     text-align:center;
 
-    backdrop-filter:blur(8px);
-}
+    color:#E7D9C5;
 
-.pulgas-dialogue{
+    margin-top:15px;
 
-    color:#FFF0D6;
-
-    font-size:32px;
-
-    margin-bottom:20px;
-
-    font-family:'DM Serif Display', serif;
-}
-
-.pulgas-dialogue-small{
-
-    color:#E8DCC7;
-
-    font-size:20px;
-
-    line-height:1.8;
+    font-size:22px;
 
     font-family:'Italiana', serif;
 }
 
 /* =========================
-   OBJECTS
+   CONTAINER
 ========================= */
 
-.pulgas-objects{
+.pulgas-container{
 
-    width:90%;
-
-    margin:auto;
+    width:100%;
 
     display:flex;
 
@@ -464,48 +427,130 @@
 
     align-items:center;
 
-    gap:70px;
+    gap:100px;
 
-    margin-top:80px;
+    margin-top:120px;
+
+    flex-wrap:wrap;
 }
+
+/* =========================
+   OBJECTS
+========================= */
 
 .pulgas-object{
 
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
     cursor:pointer;
 
-    transition:0.4s;
+    transition:0.45s;
+
+    position:relative;
 }
+
+/* =========================
+   OBJECT IMAGE
+========================= */
 
 .pulgas-object img{
 
-    width:220px;
+    width:230px;
+
+    object-fit:contain;
+
+    filter:
+    drop-shadow(0px 10px 20px rgba(0,0,0,0.5));
+
+    transition:0.45s;
 }
+
+/* =========================
+   HOVER
+========================= */
 
 .pulgas-object:hover{
 
     transform:
-    translateY(-15px)
-    scale(1.08);
+    translateY(-12px)
+    scale(1.05);
+}
+
+.pulgas-object:hover img{
 
     filter:
-    drop-shadow(0px 0px 20px #F0CB75);
+    drop-shadow(0px 0px 12px rgba(240,203,117,0.55))
+    drop-shadow(0px 0px 25px rgba(240,203,117,0.35))
+    drop-shadow(0px 10px 30px rgba(0,0,0,0.6));
+
+    transform:scale(1.04);
 }
 
 /* =========================
-   CAMERA
+   CAMERA SPECIAL GLOW
 ========================= */
 
-.camera-object{
+.camera-object:hover img{
 
-    animation:cameraPulse 2s infinite;
+    filter:
+    drop-shadow(0px 0px 15px rgba(0,255,255,0.8))
+    drop-shadow(0px 0px 40px rgba(0,255,255,0.45))
+    drop-shadow(0px 0px 80px rgba(255,255,255,0.25));
+
+    transform:
+    scale(1.08)
+    rotate(-2deg);
 }
+
+/* =========================
+   CAMERA IDLE GLOW
+========================= */
+
+.camera-object img{
+
+    animation:cameraPulse 2.8s ease-in-out infinite;
+
+    filter:
+    drop-shadow(0px 0px 10px rgba(0,255,255,0.45))
+    drop-shadow(0px 0px 25px rgba(0,255,255,0.2));
+}
+
+/* =========================
+   CAMERA PULSE
+========================= */
 
 @keyframes cameraPulse{
 
-    50%{
+    0%{
+
+        transform:scale(1);
 
         filter:
-        drop-shadow(0px 0px 25px white);
+        drop-shadow(0px 0px 8px rgba(254, 255, 255, 0.903))
+        drop-shadow(0px 0px 18px rgba(228, 193, 18, 0.891));
+    }
+
+    50%{
+
+        transform:scale(1.03);
+
+        filter:
+        drop-shadow(0px 0px 18px rgba(255, 183, 0, 0.75))
+        drop-shadow(0px 0px 40px rgba(255, 255, 255, 0.4))
+        drop-shadow(0px 0px 70px rgba(255, 255, 255, 0.952));
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        filter:
+        drop-shadow(0px 0px 8px rgba(255, 204, 0, 0.888))
+        drop-shadow(0px 0px 18px rgba(234, 237, 237, 0.15));
     }
 }
 
@@ -519,7 +564,238 @@
 
     inset:0;
 
-    background:rgba(0,0,0,0.7);
+    background:rgba(0,0,0,0.85);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:5000;
+}
+
+.pulgas-popup-box{
+
+    width:750px;
+
+    max-width:92%;
+
+    background:#191410;
+
+    border-radius:30px;
+
+    padding:40px;
+
+    position:relative;
+
+    text-align:center;
+
+    box-shadow:0px 0px 40px rgba(0,0,0,0.5);
+}
+
+/* =========================
+   CLOSE
+========================= */
+
+.popup-close{
+
+    position:absolute;
+
+    top:20px;
+    right:20px;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#991D2E;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+}
+
+/* =========================
+   POPUP TEXT
+========================= */
+
+.popup-title{
+
+    color:#F0CB75;
+
+    font-size:42px;
+
+    margin-bottom:30px;
+
+    font-family:'DM Serif Display', serif;
+}
+
+.popup-text{
+
+    color:#E7D9C5;
+
+    margin-top:25px;
+
+    font-size:22px;
+
+    line-height:1.7;
+
+    font-family:'Italiana', serif;
+}
+
+/* =========================
+   TOCADISCOS
+========================= */
+
+.turntable{
+
+    position:relative;
+
+    width:400px;
+
+    margin:auto;
+}
+
+.turntable-base{
+
+    width:100%;
+}
+
+.vinyl-disc{
+
+    position:absolute;
+
+    width: 300px;
+
+    top:8px;
+    left:8px;
+
+    animation:spinVinyl 4s linear infinite;
+}
+
+@keyframes spinVinyl{
+
+    from{
+
+        transform:rotate(0deg);
+    }
+
+    to{
+
+        transform:rotate(360deg);
+    }
+}
+
+/* =========================
+   CAMERA FLASH
+========================= */
+
+#camera-flash{
+
+    position:fixed;
+
+    inset:0;
+
+    background:white;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:8000;
+}
+
+.camera-active{
+
+    animation:cameraFlash 0.8s ease;
+}
+
+@keyframes cameraFlash{
+
+    0%{opacity:0;}
+
+    30%{opacity:1;}
+
+    100%{opacity:0;}
+}
+
+/* =========================
+   GLITCH
+========================= */
+
+#camera-glitch{
+
+    position:fixed;
+
+    inset:0;
+
+    background:black;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9000;
+}
+
+.glitch-text{
+
+    color:white;
+
+    font-size:80px;
+
+    font-family:'DM Serif Display', serif;
+
+    animation:glitch 0.2s infinite;
+}
+
+@keyframes glitch{
+
+    0%{
+
+        transform:translate(2px,2px);
+    }
+
+    25%{
+
+        transform:translate(-2px,1px);
+    }
+
+    50%{
+
+        transform:translate(3px,-2px);
+    }
+
+    75%{
+
+        transform:translate(-1px,-3px);
+    }
+
+    100%{
+
+        transform:translate(1px,2px);
+    }
+}
+
+/* =========================
+   POPUPS GENERALES
+========================= */
+
+.pulgas-popup{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,0.82);
 
     display:none;
 
@@ -528,60 +804,154 @@
     align-items:center;
 
     z-index:9999;
+
+    backdrop-filter:blur(8px);
 }
 
 .pulgas-popup-box{
 
-    width:500px;
+    width:750px;
 
-    background:#1E1A16;
+    max-width:90%;
+
+    background:#161616;
+
+    border-radius:25px;
 
     padding:40px;
 
-    border-radius:20px;
+    position:relative;
 
     text-align:center;
 
-    position:relative;
+    box-shadow:0px 0px 40px rgba(0,0,0,0.5);
+
+    border:2px solid rgba(255,255,255,0.08);
 }
 
 .pulgas-popup-box h2{
 
     color:#F0CB75;
 
-    margin-bottom:20px;
-
     font-family:'DM Serif Display', serif;
+
+    font-size:42px;
+
+    margin-bottom:20px;
 }
 
 .pulgas-popup-box p{
 
-    color:#E7D9C2;
-
-    line-height:1.8;
+    color:#ddd;
 
     font-family:'Italiana', serif;
+
+    font-size:22px;
+
+    line-height:1.7;
 }
 
 .pulgas-close{
 
     position:absolute;
 
-    top:15px;
-    right:15px;
+    top:20px;
+    right:20px;
 
-    width:40px;
-    height:40px;
+    width:45px;
+    height:45px;
 
     border:none;
 
     border-radius:50%;
 
-    background:#495930;
+    background:#991D2E;
 
     color:white;
 
     cursor:pointer;
+
+    font-size:20px;
+}
+
+/* =========================
+   VINYL POPUP
+========================= */
+
+.vinyl-record{
+
+    width:260px;
+
+    animation:spinVinyl 5s linear infinite;
+
+    margin:30px auto;
+}
+
+@keyframes spinVinyl{
+
+    from{
+
+        transform:rotate(0deg);
+    }
+
+    to{
+
+        transform:rotate(360deg);
+    }
+}
+
+/* =========================
+   SPOTIFY
+========================= */
+
+.spotify-frame{
+
+    width:100%;
+
+    height:380px;
+
+    border:none;
+
+    border-radius:20px;
+
+    margin-top:20px;
+}
+
+/* =========================
+   NEWSPAPER FLASH
+========================= */
+
+.news-flash{
+
+    animation:newsFlash 1s infinite;
+}
+
+@keyframes newsFlash{
+
+    0%{
+
+        background:#ff004c;
+    }
+
+    25%{
+
+        background:#00d9ff;
+    }
+
+    50%{
+
+        background:#ffe600;
+    }
+
+    75%{
+
+        background:#00ff73;
+    }
+
+    100%{
+
+        background:#ff004c;
+    }
 }
 
 /* =========================
@@ -605,29 +975,113 @@
 
 .glitch-active{
 
-    animation:glitchFlash 0.8s steps(3);
+    animation:glitchFlash 0.8s linear 5;
 }
 
 @keyframes glitchFlash{
 
     0%{
+
         opacity:0;
+        background:#ff004c;
     }
 
     20%{
-        opacity:1;
-        background:red;
+
+        opacity:0.9;
+        background:#00d9ff;
     }
 
     40%{
-        background:blue;
+
+        opacity:0;
     }
 
-    70%{
-        background:white;
+    60%{
+
+        opacity:0.7;
+        background:#ffffff;
     }
 
     100%{
+
         opacity:0;
+    }
+}
+
+/* =========================
+   PULGAS DIALOGUE BOX
+========================= */
+
+.pulgas-dialogue-box{
+
+    width:65%;
+
+    max-width:850px;
+
+    margin:50px auto 0 auto;
+
+    background:rgba(20,12,8,0.75);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:28px;
+
+    padding:45px;
+
+    backdrop-filter:blur(8px);
+
+    text-align:center;
+
+    box-shadow:0px 10px 40px rgba(0,0,0,0.35);
+}
+
+/* =========================
+   MAIN QUOTE
+========================= */
+
+.pulgas-dialogue{
+
+    color:#F5E8CC;
+
+    font-size:34px;
+
+    font-family:'DM Serif Display', serif;
+
+    margin-bottom:25px;
+
+    text-shadow:0px 0px 10px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   SMALL TEXT
+========================= */
+
+.pulgas-dialogue-small{
+
+    color:#E7D9C5;
+
+    font-size:22px;
+
+    line-height:1.9;
+
+    font-family:'Italiana', serif;
+}
+
+@media(max-width:900px){
+
+    .pulgas-dialogue-box{
+
+        width:90%;
+    }
+
+    .pulgas-dialogue{
+
+        font-size:26px;
+    }
+
+    .pulgas-dialogue-small{
+
+        font-size:18px;
     }
 }
