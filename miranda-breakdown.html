@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakdown · Miranda Priestly</title>
+    <link rel="stylesheet" href="devil-wears-prada.css">
+    <link rel="stylesheet" href="miranda-breakdown.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&display=swap" rel="stylesheet">
+</head>
+<body class="devil-body breakdown-body">
+
+    <!-- Video de fondo: lluvia en Nueva York -->
+    <video autoplay muted loop playsinline class="devil-background-video">
+        <source src="ASSETS/Videos/nyc-rain-night.mp4" type="video/mp4">
+    </video>
+    <div class="devil-overlay breakdown-overlay"></div>
+
+    <main class="breakdown-container">
+        <h1 class="glitch-text" data-text="LA MODA DUELE">LA MODA DUELE</h1>
+        
+        <div id="criticism" class="criticism-popup">
+            ❌ “No es lo suficientemente bueno”
+        </div>
+
+        <!-- Efecto de maquillaje corrido (gotas) -->
+        <canvas id="makeupCanvas" class="broken-makeup"></canvas>
+
+        <!-- Taxis borrosos en la parte inferior -->
+        <div class="taxi-blur"></div>
+
+        <!-- Botón para huir -->
+        <button id="toCrosswalk" class="choose-button breakdown-button">
+            🚕 Huir de Nueva York 🚕
+        </button>
+    </main>
+
+    <!-- Flashes agresivos -->
+    <div id="fashion-flash"></div>
+
+    <!-- Sonidos -->
+    <audio id="rainSound" loop autoplay>
+        <source src="ASSETS/Audios/rain-city.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="cameraSound">
+        <source src="ASSETS/Audios/camera-flash.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="errorSound">
+        <source src="ASSETS/Audios/error-buzz.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="miranda-breakdown.js"></script>
+</body>
+</html>

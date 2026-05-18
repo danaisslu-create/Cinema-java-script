@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runway Office · Miranda Priestly</title>
+    <link rel="stylesheet" href="devil-wears-prada.css">
+    <link rel="stylesheet" href="miranda-office.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&display=swap" rel="stylesheet">
+</head>
+<body class="devil-body miranda-office-body">
+
+    <button class="devil-back-button" onclick="history.back()">←</button>
+
+    <!-- Video de fondo: oficina minimalista o neoyorquina fría -->
+    <video autoplay muted loop playsinline class="devil-background-video">
+        <source src="ASSETS/Videos/runway-office-ambient.mp4" type="video/mp4">
+    </video>
+    <div class="devil-overlay" style="background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.9));"></div>
+
+    <header class="devil-header">
+        <h1 class="devil-title">RUNWAY</h1>
+        <p class="devil-subtitle">“That’s all.”</p>
+    </header>
+
+    <main class="devil-container">
+        <div class="tension-panel">
+            <div class="clock-section">
+                ⏰ Tiempo restante: <span id="timer">05:00</span>
+            </div>
+            <div class="tasks-panel">
+                <h3>📋 Tareas urgentes</h3>
+                <ul id="taskList">
+                    <li data-task="call">📞 Llamar a floristería</li>
+                    <li data-task="email">📧 Revisar correos de París</li>
+                    <li data-task="doc">🗂️ Imprimir el libro de tendencias</li>
+                </ul>
+                <button id="completeTaskBtn" class="small-btn">✔️ Marcar completada</button>
+            </div>
+            <div class="miranda-message" id="mirandaMessage">
+                Miranda: “¿Todavía estás ahí? Necesito el boceto en 2 minutos.”
+            </div>
+            <button id="goToBreakdownBtn" class="choose-button miranda-button">💔 No puedo más... 💔</button>
+        </div>
+    </main>
+
+    <!-- Popup de llamada (aparece aleatorio) -->
+    <div id="callPopup" class="devil-popup" style="display:none;">
+        <div class="devil-popup-box miranda-popup-box">
+            <button class="devil-close" onclick="cerrarCallPopup()">✕</button>
+            <h2>📞 Llamada urgente</h2>
+            <p>“Nicole, Miranda quiere el informe YA. ¿Por qué no ha llegado?”</p>
+            <button class="choose-button miranda-button" onclick="atenderLlamada()">Atender</button>
+        </div>
+    </div>
+
+    <!-- Sonidos ocultos -->
+    <audio id="heelsSound" loop>
+        <source src="ASSETS/Audios/heels-approaching.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="emailSound">
+        <source src="ASSETS/Audios/email-notify.mp3" type="audio/mpeg">
+    </audio>
+    <div id="fashion-flash"></div>
+
+    <script src="miranda-office.js"></script>
+</body>
+</html>
