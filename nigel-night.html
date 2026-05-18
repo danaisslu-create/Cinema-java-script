@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noche Fashion · Nigel's Route</title>
+    <link rel="stylesheet" href="devil-wears-prada.css">
+    <link rel="stylesheet" href="nigel-night.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&display=swap" rel="stylesheet">
+</head>
+<body class="devil-body nigel-night-body">
+
+    <!-- BACK BUTTON -->
+    <button class="devil-back-button" onclick="history.back()">←</button>
+
+    <!-- VIDEO BG (NYC de noche) -->
+    <video autoplay muted loop playsinline class="devil-background-video">
+        <source src="ASSETS/Videos/nyc-night.mp4" type="video/mp4">
+    </video>
+    <div class="devil-overlay"></div>
+
+    <!-- HEADER -->
+    <header class="devil-header">
+        <h1 class="devil-title">NUEVA YORK DE NOCHE</h1>
+        <p class="devil-subtitle">“La ciudad nunca duerme, y tú menos con este look.”</p>
+    </header>
+
+    <main class="devil-container">
+
+        <!-- POLAROIDS DEL LOOK (se llenan con JS) -->
+        <div class="polaroid-strip" id="polaroidStrip">
+            <div class="polaroid-card" id="outfitPolaroid">
+                <img id="outfitPolaroidImg" src="" alt="Tu look">
+                <p id="outfitPolaroidText">Tu look</p>
+            </div>
+        </div>
+
+        <!-- SCENES: 4 tarjetas interactivas -->
+        <div class="scenes-grid">
+            <div class="scene-card" data-scene="rooftop">
+                <div class="scene-icon">🌆</div>
+                <h3>Rooftop</h3>
+                <p>Vistas 360° y cócteles</p>
+            </div>
+            <div class="scene-card" data-scene="restaurant">
+                <div class="scene-icon">🍽️</div>
+                <h3>Restaurante</h3>
+                <p>La nueva haute cuisine</p>
+            </div>
+            <div class="scene-card" data-scene="gallery">
+                <div class="scene-icon">🖼️</div>
+                <h3>Galería</h3>
+                <p>Arte contemporáneo</p>
+            </div>
+            <div class="scene-card" data-scene="party">
+                <div class="scene-icon">💃</div>
+                <h3>Fashion Party</h3>
+                <p>Donde todo brilla</p>
+            </div>
+        </div>
+
+        <!-- TAXI ANIMADO (aparece con JS) -->
+        <div id="taxi" class="taxi-animation">
+            <img src="ASSETS/Imagenes/yellow-taxi.png" alt="Taxi">
+        </div>
+
+        <!-- BOTÓN PARA CONTINUAR AL CROSSWALK -->
+        <div class="continue-section">
+            <button id="continueToCrosswalk" class="choose-button">🚕 La noche termina... Continuar 🚕</button>
+        </div>
+
+    </main>
+
+    <!-- POPUP GENÉRICO (se rellena según la escena) -->
+    <div id="nightPopup" class="devil-popup" style="display:none;">
+        <div class="devil-popup-box">
+            <button class="devil-close" onclick="cerrarNightPopup()">✕</button>
+            <h2 id="popupSceneTitle"></h2>
+            <img id="popupSceneImg" class="popup-image" src="" alt="Escena">
+            <p id="popupSceneDesc"></p>
+            <div id="popupExtra"></div> <!-- para mensajes de texto o polaroids extra -->
+            <button class="choose-button" onclick="cerrarNightPopup()">Seguir</button>
+        </div>
+    </div>
+
+    <!-- NOTIFICACIÓN DE TELÉFONO (estilo flotante) -->
+    <div id="phoneNotification" class="phone-notif" style="display:none;">
+        📱 Nuevo mensaje
+    </div>
+
+    <!-- FLASH Y AUDIOS -->
+    <div id="fashion-flash"></div>
+    <audio id="nightAmbience" autoplay loop>
+        <source src="ASSETS/Audios/nyc-night.wav" type="audio/wav">
+    </audio>
+    <audio id="cameraSound">
+        <source src="ASSETS/Audios/camera-flash.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="taxiHorn">
+        <source src="ASSETS/Audios/taxi-horn.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="notificationSound">
+        <source src="ASSETS/Audios/phone-ding.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="nigel-night.js"></script>
+</body>
+</html>

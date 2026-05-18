@@ -240,7 +240,7 @@
 
     border-radius:25px;
 
-    background:rgba(22,22,22,0.82);
+    background:rgba(79, 68, 68, 0.82);
 
     border:1px solid rgba(255,255,255,0.08);
 
@@ -381,7 +381,7 @@
 
     max-width:90%;
 
-    background:#141414;
+    background:#586447;
 
     border-radius:30px;
 
@@ -401,7 +401,7 @@
 
 .miranda-popup-box{
 
-    background:#1a1013;
+    background:#643b47;
 }
 
 .devil-popup-box h2{
@@ -428,17 +428,14 @@
     font-family:'Italiana', serif;
 }
 
-.popup-image{
-
-    width:100%;
-
-    max-height:420px;
-
-    object-fit:cover;
-
-    border-radius:18px;
-
-    margin-bottom:30px;
+.popup-image {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 60vh;
+    object-fit: contain;
+    margin: 0 auto 30px;
+    display: block;
 }
 
 /* =========================
