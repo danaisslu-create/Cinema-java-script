@@ -86,3 +86,10 @@ async function iniciarSecuencia() {
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+const ruta = localStorage.getItem("rutaCompletada"); // "nigel" o "miranda"
+if(ruta === "nigel") {
+    moodText.innerText = "El brillo de la fiesta se apaga bajo la lluvia...";
+} else {
+    moodText.innerText = "Las órdenes de Miranda se disuelven en el vapor...";
+}
