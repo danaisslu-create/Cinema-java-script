@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crosswalk · El cruce</title>
+    <link rel="stylesheet" href="devil-wears-prada.css">
+    <link rel="stylesheet" href="crosswalk.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&display=swap" rel="stylesheet">
+</head>
+<body class="crosswalk-body">
+
+    <!-- VIDEO FONDO: lluvia y neones -->
+    <video autoplay muted loop playsinline id="bgVideo" class="crosswalk-bg-video">
+        <source src="ASSETS/Videos/rainy-nyc-crosswalk.mp4" type="video/mp4">
+    </video>
+    <div class="crosswalk-overlay"></div>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <main class="crosswalk-container">
+        <div class="crosswalk-text">
+            <h1 class="glitch-text" data-text="NUEVA YORK">NUEVA YORK</h1>
+            <p id="moodText">La noche se vuelve pesada...</p>
+            <p id="transitionText" class="fade-text">Algo está cambiando.</p>
+        </div>
+
+        <!-- TAXI QUE SE DETIENE -->
+        <div id="taxiStop" class="taxi-stop">
+            <img src="ASSETS/Imagenes/taxi-clasico.png" alt="Taxi amarillo 70s">
+        </div>
+
+        <!-- INDICADOR DE CARGA / FLASH -->
+        <div id="cameraFlashOverlay" class="camera-flash-overlay"></div>
+    </main>
+
+    <!-- AUDIOS -->
+    <audio id="crosswalkAmbience" autoplay loop>
+        <source src="ASSETS/Audios/rain-traffic-70s.mp3.wav" type="audio/mpeg">
+    </audio>
+    <audio id="taxiStopSound">
+        <source src="ASSETS/Audios/taxi-stop.mp3.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="cameraShutter">
+        <source src="ASSETS/Audios/camera-flash.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="thunderSound">
+        <source src="ASSETS/Audios/thunder-rumble.mp3.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="crosswalk.js"></script>
+</body>
+</html>
