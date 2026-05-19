@@ -118,9 +118,9 @@
     <!-- SCRIPT -->
 <script>
 
-const albumLink = document.querySelector(".album-link");
+<script>
 
-const flash = document.getElementById("cameraFlash");
+const albumLink = document.querySelector(".album-link");
 
 const cameraSound = document.getElementById("cameraSound");
 
@@ -128,16 +128,23 @@ albumLink.addEventListener("click", function(event){
 
     event.preventDefault();
 
-    /* FLASH */
-
-    flash.classList.add("flash-active");
-
     /* SOUND */
 
     cameraSound.currentTime = 0;
 
     cameraSound.play();
 
+    /* NEXT PAGE */
+
+    setTimeout(() => {
+
+        window.location.href = "capitulo-paddington4.html";
+
+    }, 350);
+
+});
+
+</script>
     /* NEXT PAGE */
 
     setTimeout(() => {
