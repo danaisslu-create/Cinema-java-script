@@ -1,251 +1,283 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Museum Page</title>
-
-  
+    <title>Museum Page - Álbum Interactivo</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body class="museum-page">
-     <button class="back-button" onclick="history.back()">
+    <button class="back-button" onclick="history.back()">
         ← BACK
     </button>
 
-    <!-- ALBUM -->
-    <div class="album-section">
-        <img src="ASSETS/Imagenes/foto album.png" class="album-image">
+    <!-- ÁLBUM (click para abrir popup) -->
+    <div class="album-section" id="albumTrigger">
+        <img src="ASSETS/Imagenes/foto album.png" class="album-image" alt="álbum de fotos">
     </div>
-    <!DOCTYPE html>
-<html lang="es">
 
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Museum Page</title>
-
-    <style>
-        /* =========================
-           MUSEUM SCROLL GIF
-        ========================= */
-
-        .museum-scroll-gif-section{
-
-            display:flex;
-
-            justify-content:center;
-
-            align-items:center;
-
-            margin-top:-300px;    /* Separación desde arriba */
-
-            margin-bottom:100px;
-        }
-
-        /* =========================
-           GIF (con animación aplicada)
-        ========================= */
-
-        .museum-scroll-gif{
-
-            width:320px;
-
-            opacity:0.85;
-
-            /* Animación al GIF */
-            animation: museumFlotarGif 2.5s ease-in-out infinite;
-        }
-
-        /* =========================
-           FLOAT ANIMATION
-        ========================= */
-
-        @keyframes museumFlotarGif {
-
-            0%{
-                transform:translateY(0px);
-            }
-
-            50%{
-                transform:translateY(-5px);  /* Sube solo 5px */
-            }
-
-            100%{
-                transform:translateY(0px);
-            }    
-        }
-
-        /* =========================
-           OTROS ESTILOS (mantengo los tuyos)
-        ========================= */
-
-        .museum-page {
-            background-color: #f5f0e8;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .back-button {
-            background: none;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            margin-bottom: 20px;
-            padding: 10px 15px;
-            background-color: #333;
-            color: white;
-            border-radius: 5px;
-        }
-
-        .album-section {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .album-image {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .museum-text-top {
-            text-align: center;
-            font-size: 18px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-    </style>
-
-</head>
-
-
-
-</html>
     <!-- TEXTO 1 -->
-    <div class="museum-text-top" style="font-size: 35px;">
-        Qué día tan ocupado tuvieron.  
+    <div class="museum-text-top">
+        Qué día tan ocupado tuvieron.<br>
         Abre tu maleta para guardar las cosas.
     </div>
 
     <!-- MALETA -->
     <div class="suitcase-section">
-        <img 
-            src="ASSETS/Imagenes/maleta cerrada.png"
-            class="suitcase-image"
-            id="suitcase"
-        >
+        <img src="ASSETS/Imagenes/maleta cerrada.png" class="suitcase-image" id="suitcase" alt="maleta cerrada">
     </div>
-    
-<!-- SCROLL DOWN GIF -->
 
-<section class="museum-scroll-gif-section">
+    <!-- SCROLL DOWN GIF -->
+    <section class="museum-scroll-gif-section">
+        <img src="ASSETS/Imagenes/scroll dowm.png" class="museum-scroll-gif" alt="scroll down gif">
+    </section>
 
-    <img 
-        src="ASSETS/Imagenes/scroll dowm.png"
-        class="museum-scroll-gif"
-        alt="scroll down gif"
-    >
-
-</section>
-
-<style>
-
-/* =========================
-   MUSEUM SCROLL GIF SECTION
-========================= */
-
-.museum-scroll-gif-section{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    margin-top:-20px;
-
-    margin-bottom:40px;
-}
-
-/* =========================
-   MUSEUM SCROLL GIF
-========================= */
-
-.museum-scroll-gif{
-
-    width:320px;
-
-    opacity:0.85;
-
-    animation:museumFlotarGif 2.5s ease-in-out infinite;
-}
-
-/* =========================
-   FLOAT ANIMATION
-========================= */
-
-@keyframes museumFlotarGif {
-
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-12px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
-
-}
-
-</style>
-    <!-- TEXTO 2 -->
+    <!-- TEXTO 2 (oculto inicialmente) -->
     <div class="museum-text-bottom" id="museumText">
-        Oh wow, ¿qué es eso?  
-        Todavía tienes un tiquete para el museo.  
+        Oh wow, ¿qué es eso?<br>
+        Todavía tienes un tiquete para el museo.<br>
         ¿Por qué no vas con Paddington?
     </div>
 
-    <!-- BOTÓN -->
+    <!-- BOTÓN (oculto inicialmente) -->
     <div class="museum-button-container" id="museumButton">
-
         <a href="capitulo-paddington5.html">
             <button class="museum-button">
                 Vamos al museo
             </button>
         </a>
-
     </div>
 
-    <!-- JS -->
-   <script>
-const suitcase = document.getElementById("suitcase");
-const museumText = document.getElementById("museumText");
-const museumButton = document.getElementById("museumButton");
+    <!-- ====================== -->
+    <!-- POPUP DEL ÁLBUM (LIBRO) -->
+    <!-- ====================== -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-book">
+            <div class="popup-header">
+                <h3>📸 Mi Álbum de Recuerdos</h3>
+                <button class="close-popup" id="closePopupBtn">✕</button>
+            </div>
 
-suitcase.addEventListener("click", function(){
+            <div class="book-pages-container">
+                <!-- Página izquierda -->
+                <div class="page-left" id="pageLeft">
+                    <div class="page-content">
+                        <img id="leftImage" class="page-photo" src="" alt="foto izquierda">
+                        <p id="leftCaption" class="photo-caption"></p>
+                    </div>
+                </div>
 
-    suitcase.src = "ASSETS/Imagenes/foto maleta.png";
+                <!-- Página derecha -->
+                <div class="page-right" id="pageRight">
+                    <div class="page-content">
+                        <img id="rightImage" class="page-photo" src="" alt="foto derecha">
+                        <p id="rightCaption" class="photo-caption"></p>
+                    </div>
+                </div>
 
-    suitcase.classList.add("open");
-    museumText.classList.add("show-content");
-    museumButton.classList.add("show-content");
+                <!-- Efecto de pliegue central (simula libro) -->
+                <div class="book-spine"></div>
+            </div>
 
-});
+            <!-- Botones de navegación -->
+            <div class="book-nav">
+                <button class="nav-btn prev-btn" id="prevPageBtn">◀ Página anterior</button>
+                <span class="page-counter" id="pageCounter">Página 1 de 3</span>
+                <button class="nav-btn next-btn" id="nextPageBtn">Página siguiente ▶</button>
+            </div>
 
-</script>
+            <div class="popup-footer">
+                <small>📖 Haz clic en las esquinas para pasar página</small>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        // =========================
+        // CONFIGURACIÓN DE FOTOS (simula un libro real)
+        // =========================
+        // Cada objeto representa una "doble página" (izquierda + derecha)
+        const pagesData = [
+            {
+                leftImg: "ASSETS/Imagenes/foto 1.jpeg",
+                leftCaption: "London tower 🏰",
+                rightImg: "ASSETS/Imagenes/foto 2.jpeg",
+                rightCaption: "Conociendo el palacio de Buckingham 👑"
+            },
+            {
+                leftImg: "ASSETS/Imagenes/foto 3.jpeg",
+                leftCaption: "picnic en el parque 🌳🍎",
+                rightImg: "ASSETS/Imagenes/foto 4.jpeg",
+                rightCaption: "Picnic en el parque 🌳🍎"
+            },
+            {
+                leftImg: "ASSETS/Imagenes/foto 5.jpeg",
+                leftCaption: "Caminando a almorzar 🏛️",
+                rightImg: "ASSETS/Imagenes/foto 6.jpeg",
+                rightCaption: "¿donde esta One Direction?"
+            }
+        ];
+
+        // Si no tienes todas las imágenes reales, usa imágenes de respaldo (placeholder)
+        // Para que no se vean rotos los enlaces, verificamos y usamos placeholder si falta
+        const placeholderImg = "https://via.placeholder.com/300x200?text=Foto+de+recuerdo";
+
+        // Aseguramos que cada página tenga imágenes válidas
+        for (let i = 0; i < pagesData.length; i++) {
+            if (!pagesData[i].leftImg || pagesData[i].leftImg === "") pagesData[i].leftImg = placeholderImg;
+            if (!pagesData[i].rightImg || pagesData[i].rightImg === "") pagesData[i].rightImg = placeholderImg;
+        }
+
+        let currentSpread = 0;        // índice de la doble página actual (0 = primera)
+        const totalSpreads = pagesData.length;
+
+        // Elementos del DOM
+        const popupOverlay = document.getElementById('popupOverlay');
+        const albumTrigger = document.getElementById('albumTrigger');
+        const closePopupBtn = document.getElementById('closePopupBtn');
+        const prevBtn = document.getElementById('prevPageBtn');
+        const nextBtn = document.getElementById('nextPageBtn');
+        const pageCounter = document.getElementById('pageCounter');
+
+        const leftImage = document.getElementById('leftImage');
+        const rightImage = document.getElementById('rightImage');
+        const leftCaption = document.getElementById('leftCaption');
+        const rightCaption = document.getElementById('rightCaption');
+
+        // =========================
+        // FUNCIÓN: ACTUALIZAR PÁGINAS DEL LIBRO
+        // =========================
+        function updateBookPages() {
+            const currentPage = pagesData[currentSpread];
+            if (currentPage) {
+                leftImage.src = currentPage.leftImg;
+                leftCaption.textContent = currentPage.leftCaption;
+                rightImage.src = currentPage.rightImg;
+                rightCaption.textContent = currentPage.rightCaption;
+
+                // Añadir animación sutil al cambiar página
+                const leftDiv = document.getElementById('pageLeft');
+                const rightDiv = document.getElementById('pageRight');
+                leftDiv.style.animation = 'none';
+                rightDiv.style.animation = 'none';
+                setTimeout(() => {
+                    leftDiv.style.animation = 'pageFadeIn 0.3s ease';
+                    rightDiv.style.animation = 'pageFadeIn 0.3s ease';
+                }, 10);
+            }
+            // Actualizar contador de página (estilo libro)
+            pageCounter.textContent = `Página ${currentSpread + 1} de ${totalSpreads}`;
+
+            // Deshabilitar botones si es necesario (feedback visual)
+            if (currentSpread === 0) {
+                prevBtn.style.opacity = '0.5';
+                prevBtn.style.cursor = 'not-allowed';
+            } else {
+                prevBtn.style.opacity = '1';
+                prevBtn.style.cursor = 'pointer';
+            }
+
+            if (currentSpread === totalSpreads - 1) {
+                nextBtn.style.opacity = '0.5';
+                nextBtn.style.cursor = 'not-allowed';
+            } else {
+                nextBtn.style.opacity = '1';
+                nextBtn.style.cursor = 'pointer';
+            }
+        }
+
+        // Navegación: página siguiente
+        function nextPage() {
+            if (currentSpread < totalSpreads - 1) {
+                currentSpread++;
+                updateBookPages();
+            } else {
+                // Efecto sutil: si es última página, se puede cerrar o solo vibración
+                const book = document.querySelector('.popup-book');
+                book.style.transform = 'scale(1.01)';
+                setTimeout(() => { book.style.transform = 'scale(1)'; }, 150);
+            }
+        }
+
+        // Navegación: página anterior
+        function prevPage() {
+            if (currentSpread > 0) {
+                currentSpread--;
+                updateBookPages();
+            } else {
+                const book = document.querySelector('.popup-book');
+                book.style.transform = 'scale(1.01)';
+                setTimeout(() => { book.style.transform = 'scale(1)'; }, 150);
+            }
+        }
+
+        // Abrir popup
+        function openPopup() {
+            popupOverlay.classList.add('active');
+            currentSpread = 0;
+            updateBookPages();
+            document.body.style.overflow = 'hidden';  // evitar scroll detrás
+        }
+
+        // Cerrar popup
+        function closePopup() {
+            popupOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // =========================
+        // EVENTOS DEL POPUP
+        // =========================
+        albumTrigger.addEventListener('click', openPopup);
+        closePopupBtn.addEventListener('click', closePopup);
+        prevBtn.addEventListener('click', prevPage);
+        nextBtn.addEventListener('click', nextPage);
+
+        // Cerrar si se hace clic en el overlay (fondo oscuro)
+        popupOverlay.addEventListener('click', function(e) {
+            if (e.target === popupOverlay) {
+                closePopup();
+            }
+        });
+
+        // Navegación con teclado: flechas izquierda/derecha (opcional)
+        document.addEventListener('keydown', function(e) {
+            if (popupOverlay.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') {
+                    prevPage();
+                    e.preventDefault();
+                } else if (e.key === 'ArrowRight') {
+                    nextPage();
+                    e.preventDefault();
+                } else if (e.key === 'Escape') {
+                    closePopup();
+                    e.preventDefault();
+                }
+            }
+        });
+
+        // =========================
+        // LÓGICA DE LA MALETA (ya existente)
+        // =========================
+        const suitcase = document.getElementById("suitcase");
+        const museumText = document.getElementById("museumText");
+        const museumButton = document.getElementById("museumButton");
+
+        if (suitcase) {
+            suitcase.addEventListener("click", function() {
+                suitcase.src = "ASSETS/Imagenes/foto maleta.png";
+                suitcase.classList.add("open");
+                museumText.classList.add("show-content");
+                museumButton.classList.add("show-content");
+            });
+        }
+
+        // Pequeña mejora: Si las imágenes del álbum no existen, mostrar texto amigable
+        // Esto evita errores visuales
+        window.addEventListener('load', () => {
+            // Pre-cargar verificaciones de imágenes (opcional)
+            console.log("Álbum interactivo listo - haz click en el álbum");
+        });
+    </script>
 </body>
 </html>

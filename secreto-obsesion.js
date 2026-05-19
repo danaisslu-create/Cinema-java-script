@@ -57,20 +57,20 @@ function animateRain() {
 animateRain();
 
 // =========================
-// 2. DATOS DE RECUERDOS (popups sin tocadiscos)
+// 2. DATOS DE RECUERDOS (claves exactas)
 // =========================
 const recuerdosData = {
-    carta1: {
+    "carta1": {
         titulo: "✉️ Primera carta",
         img: "ASSETS/Imagenes/carta-amor.jpg",
         desc: "“Querido Benjamín: Te escribo desde el silencio. Nunca me atreví a decirte que...” (la carta está incompleta, manchada por la lluvia)."
     },
-    fotoTren: {
+    "foto-tren": {
         titulo: "🚂 Foto en la estación",
         img: "ASSETS/Imagenes/foto-tren.jpg",
         desc: "Una fotografía vieja. Irene y Benjamín en el andén, mirándose como si supieran que sería la última vez."
     },
-    diario: {
+    "diario": {
         titulo: "📓 Página del diario",
         img: "ASSETS/Imagenes/diario-viejo.jpg",
         desc: "“25 de junio de 1999. Hoy lo vi. Me sonrió. Y no pude decirle nada.”"
@@ -82,16 +82,15 @@ const popup = document.getElementById('recuerdoPopup');
 const popupTitulo = document.getElementById('popupTitulo');
 const popupImagen = document.getElementById('popupImagen');
 const popupDesc = document.getElementById('popupDescripcion');
-const closePopupBtn = document.querySelectorAll('.popup-close');
 
 function cerrarPopup() {
     const allPopups = document.querySelectorAll('.popup-overlay');
     allPopups.forEach(p => p.style.display = 'none');
 }
 
-closePopupBtn.forEach(btn => btn.addEventListener('click', cerrarPopup));
+document.querySelectorAll('.popup-close').forEach(btn => btn.addEventListener('click', cerrarPopup));
 
-function mostrarRecurso(id) {
+function mostrarRecuerdo(id) {
     const data = recuerdosData[id];
     if (data) {
         popupTitulo.innerText = data.titulo;
@@ -99,17 +98,17 @@ function mostrarRecurso(id) {
         popupDesc.innerText = data.desc;
         popup.style.display = 'flex';
         activarFlash();
-        // Sonido de papel
+        // Sonido de papel opcional
         const paper = new Audio('ASSETS/Audios/paper-flip.mp3');
         paper.play().catch(e=>console.log);
     }
 }
 
-// Asignar eventos a las tarjetas (excepto tango)
+// Asignar eventos a todas las tarjetas menos la del tango
 document.querySelectorAll('.recuerdo-card').forEach(card => {
     const id = card.dataset.recuerdo;
     if (id !== 'tango') {
-        card.addEventListener('click', () => mostrarRecurso(id));
+        card.addEventListener('click', () => mostrarRecuerdo(id));
     }
 });
 
@@ -119,7 +118,7 @@ document.querySelectorAll('.recuerdo-card').forEach(card => {
 const tocadiscosPopup = document.getElementById('tocadiscosPopup');
 const tangoAudio = document.getElementById('tangoAudio');
 const playPauseBtn = document.getElementById('playPauseBtn');
-const viniloContainer = document.querySelector('.tocadiscos');
+const vinilo = document.getElementById('vinilo');
 
 let isPlaying = false;
 
@@ -129,49 +128,48 @@ if (tangoCard) {
     tangoCard.addEventListener('click', () => {
         tocadiscosPopup.style.display = 'flex';
         activarFlash();
-        // No reproducir automáticamente, esperar botón
-        // Aseguramos que el vinilo no gire si no está sonando
-        viniloContainer.classList.remove('animando');
-        playPauseBtn.innerText = '▶ PLAY';
-        isPlaying = false;
+        // Al abrir, detener música si estaba sonando
         if (tangoAudio) {
             tangoAudio.pause();
             tangoAudio.currentTime = 0;
         }
+        vinilo.classList.remove('animando');
+        playPauseBtn.innerText = '▶ PLAY';
+        isPlaying = false;
     });
 }
 
-// Cerrar tocadiscos
+// Cerrar tocadiscos (el botón específico)
 document.getElementById('closeTocadiscos').addEventListener('click', () => {
     tocadiscosPopup.style.display = 'none';
     if (tangoAudio) {
         tangoAudio.pause();
         isPlaying = false;
-        viniloContainer.classList.remove('animando');
+        vinilo.classList.remove('animando');
     }
 });
 
-// Botón Play/Pause
+// Play/Pause
 playPauseBtn.addEventListener('click', () => {
     if (!isPlaying) {
         tangoAudio.play().then(() => {
             isPlaying = true;
             playPauseBtn.innerText = '⏸ PAUSE';
-            viniloContainer.classList.add('animando');
+            vinilo.classList.add('animando');
         }).catch(err => {
             console.log("Error al reproducir:", err);
-            alert("El navegador bloqueó el audio. Haz clic en cualquier parte de la página primero.");
+            alert("El navegador bloqueó el audio. Haz clic en cualquier parte de la página primero y luego intenta de nuevo.");
         });
     } else {
         tangoAudio.pause();
         isPlaying = false;
         playPauseBtn.innerText = '▶ PLAY';
-        viniloContainer.classList.remove('animando');
+        vinilo.classList.remove('animando');
     }
 });
 
 // =========================
-// 4. BOTÓN IR AL ESTADIO (convergencia)
+// 4. BOTÓN IR AL ESTADIO
 // =========================
 const irEstadio = document.getElementById('irEstadioBtn');
 irEstadio.addEventListener('click', () => {
@@ -182,7 +180,7 @@ irEstadio.addEventListener('click', () => {
 });
 
 // =========================
-// 5. FLASH GENÉRICO
+// 5. FLASH Y SONIDO CLICK
 // =========================
 function activarFlash() {
     const flash = document.getElementById('obsession-flash');

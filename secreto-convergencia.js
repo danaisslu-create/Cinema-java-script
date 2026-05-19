@@ -94,6 +94,6 @@ travelBtn.addEventListener('click', () => {
     activarFlash();
     setTimeout(() => {
         // Redirigir a Londres (paddington-index.html o similar)
-        window.location.href = "paddington-choice.html";  // Ajusta según tu página de Londres
+        window.location.href = "capitulo-paddington.html";  // Ajusta según tu página de Londres
     }, 500);
 });
