@@ -3,18 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Museum Page - Álbum Interactivo</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Museum Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="paddington.css">
 </head>
+
 <body class="museum-page">
     <button class="back-button" onclick="history.back()">
         ← BACK
     </button>
+    <!-- =========================
+     MUSIC PLAYER
+========================= -->
 
-    <!-- ÁLBUM (click para abrir popup) -->
-    <div class="album-section" id="albumTrigger">
-        <img src="ASSETS/Imagenes/foto album.png" class="album-image" alt="álbum de fotos">
+<div class="paddington-music-player">
+
+    <!-- PLAY BUTTON -->
+
+    <button id="paddingtonPlayButton" class="paddington-play-button">
+
+        ▶
+
+    </button>
+
+    <!-- SONG NAME -->
+
+    <div class="paddington-song-info">
+
+        Paddington Soundtrack
+
     </div>
+
+</div>
+
+<!-- AUDIO -->
+
+<audio id="paddingtonAudio" loop>
+
+    <source
+        src="ASSETS/Audios/Marmalade Harvest .mp3 "
+        type="audio/mpeg"
+    >
+
+</audio>
+
+   
+  <!-- ALBUM (click para abrir popup) -->
+    <div class="album-section" id="albumTrigger">
+        <img src="ASSETS/Imagenes/foto album.png" class="album-image" alt="álbum">
+    </div>
+    
+    <p class="album-click-text">
+    Dale click al álbum para ver más ✨
+</p>
 
     <!-- TEXTO 1 -->
     <div class="museum-text-top">
@@ -24,12 +65,21 @@
 
     <!-- MALETA -->
     <div class="suitcase-section">
-        <img src="ASSETS/Imagenes/maleta cerrada.png" class="suitcase-image" id="suitcase" alt="maleta cerrada">
+        <img 
+            src="ASSETS/Imagenes/maleta cerrada.png"
+            class="suitcase-image"
+            id="suitcase"
+            alt="maleta"
+        >
     </div>
 
     <!-- SCROLL DOWN GIF -->
     <section class="museum-scroll-gif-section">
-        <img src="ASSETS/Imagenes/scroll dowm.png" class="museum-scroll-gif" alt="scroll down gif">
+        <img 
+            src="ASSETS/Imagenes/scroll dowm.png"
+            class="museum-scroll-gif"
+            alt="scroll down gif"
+        >
     </section>
 
     <!-- TEXTO 2 (oculto inicialmente) -->
@@ -49,34 +99,25 @@
     </div>
 
     <!-- ====================== -->
-    <!-- POPUP DEL ÁLBUM (LIBRO) -->
+    <!-- POPUP DEL ÁLBUM (LIBRO CON 2 FOTOS POR PÁGINA) -->
     <!-- ====================== -->
     <div class="popup-overlay" id="popupOverlay">
         <div class="popup-book">
             <div class="popup-header">
-                <h3>📸 Mi Álbum de Recuerdos</h3>
+                <h3>📸 Álbum de Paddington</h3>
                 <button class="close-popup" id="closePopupBtn">✕</button>
             </div>
 
-            <div class="book-pages-container">
-                <!-- Página izquierda -->
-                <div class="page-left" id="pageLeft">
-                    <div class="page-content">
-                        <img id="leftImage" class="page-photo" src="" alt="foto izquierda">
-                        <p id="leftCaption" class="photo-caption"></p>
-                    </div>
+            <!-- Libro abierto: página izquierda + página derecha -->
+            <div class="book-spread">
+                <div class="page-left">
+                    <img id="leftImage" class="page-photo" src="" alt="foto izquierda">
+                    <p id="leftCaption" class="photo-caption"></p>
                 </div>
-
-                <!-- Página derecha -->
-                <div class="page-right" id="pageRight">
-                    <div class="page-content">
-                        <img id="rightImage" class="page-photo" src="" alt="foto derecha">
-                        <p id="rightCaption" class="photo-caption"></p>
-                    </div>
+                <div class="page-right">
+                    <img id="rightImage" class="page-photo" src="" alt="foto derecha">
+                    <p id="rightCaption" class="photo-caption"></p>
                 </div>
-
-                <!-- Efecto de pliegue central (simula libro) -->
-                <div class="book-spine"></div>
             </div>
 
             <!-- Botones de navegación -->
@@ -87,177 +128,14 @@
             </div>
 
             <div class="popup-footer">
-                <small>📖 Haz clic en las esquinas para pasar página</small>
+                📖 Usa las flechas del teclado (← →) para cambiar de página
             </div>
         </div>
     </div>
 
     <script>
         // =========================
-        // CONFIGURACIÓN DE FOTOS (simula un libro real)
-        // =========================
-        // Cada objeto representa una "doble página" (izquierda + derecha)
-        const pagesData = [
-            {
-                leftImg: "ASSETS/Imagenes/foto 1.jpeg",
-                leftCaption: "London tower 🏰",
-                rightImg: "ASSETS/Imagenes/foto 2.jpeg",
-                rightCaption: "Conociendo el palacio de Buckingham 👑"
-            },
-            {
-                leftImg: "ASSETS/Imagenes/foto 3.jpeg",
-                leftCaption: "picnic en el parque 🌳🍎",
-                rightImg: "ASSETS/Imagenes/foto 4.jpeg",
-                rightCaption: "Picnic en el parque 🌳🍎"
-            },
-            {
-                leftImg: "ASSETS/Imagenes/foto 5.jpeg",
-                leftCaption: "Caminando a almorzar 🏛️",
-                rightImg: "ASSETS/Imagenes/foto 6.jpeg",
-                rightCaption: "¿donde esta One Direction?"
-            }
-        ];
-
-        // Si no tienes todas las imágenes reales, usa imágenes de respaldo (placeholder)
-        // Para que no se vean rotos los enlaces, verificamos y usamos placeholder si falta
-        const placeholderImg = "https://via.placeholder.com/300x200?text=Foto+de+recuerdo";
-
-        // Aseguramos que cada página tenga imágenes válidas
-        for (let i = 0; i < pagesData.length; i++) {
-            if (!pagesData[i].leftImg || pagesData[i].leftImg === "") pagesData[i].leftImg = placeholderImg;
-            if (!pagesData[i].rightImg || pagesData[i].rightImg === "") pagesData[i].rightImg = placeholderImg;
-        }
-
-        let currentSpread = 0;        // índice de la doble página actual (0 = primera)
-        const totalSpreads = pagesData.length;
-
-        // Elementos del DOM
-        const popupOverlay = document.getElementById('popupOverlay');
-        const albumTrigger = document.getElementById('albumTrigger');
-        const closePopupBtn = document.getElementById('closePopupBtn');
-        const prevBtn = document.getElementById('prevPageBtn');
-        const nextBtn = document.getElementById('nextPageBtn');
-        const pageCounter = document.getElementById('pageCounter');
-
-        const leftImage = document.getElementById('leftImage');
-        const rightImage = document.getElementById('rightImage');
-        const leftCaption = document.getElementById('leftCaption');
-        const rightCaption = document.getElementById('rightCaption');
-
-        // =========================
-        // FUNCIÓN: ACTUALIZAR PÁGINAS DEL LIBRO
-        // =========================
-        function updateBookPages() {
-            const currentPage = pagesData[currentSpread];
-            if (currentPage) {
-                leftImage.src = currentPage.leftImg;
-                leftCaption.textContent = currentPage.leftCaption;
-                rightImage.src = currentPage.rightImg;
-                rightCaption.textContent = currentPage.rightCaption;
-
-                // Añadir animación sutil al cambiar página
-                const leftDiv = document.getElementById('pageLeft');
-                const rightDiv = document.getElementById('pageRight');
-                leftDiv.style.animation = 'none';
-                rightDiv.style.animation = 'none';
-                setTimeout(() => {
-                    leftDiv.style.animation = 'pageFadeIn 0.3s ease';
-                    rightDiv.style.animation = 'pageFadeIn 0.3s ease';
-                }, 10);
-            }
-            // Actualizar contador de página (estilo libro)
-            pageCounter.textContent = `Página ${currentSpread + 1} de ${totalSpreads}`;
-
-            // Deshabilitar botones si es necesario (feedback visual)
-            if (currentSpread === 0) {
-                prevBtn.style.opacity = '0.5';
-                prevBtn.style.cursor = 'not-allowed';
-            } else {
-                prevBtn.style.opacity = '1';
-                prevBtn.style.cursor = 'pointer';
-            }
-
-            if (currentSpread === totalSpreads - 1) {
-                nextBtn.style.opacity = '0.5';
-                nextBtn.style.cursor = 'not-allowed';
-            } else {
-                nextBtn.style.opacity = '1';
-                nextBtn.style.cursor = 'pointer';
-            }
-        }
-
-        // Navegación: página siguiente
-        function nextPage() {
-            if (currentSpread < totalSpreads - 1) {
-                currentSpread++;
-                updateBookPages();
-            } else {
-                // Efecto sutil: si es última página, se puede cerrar o solo vibración
-                const book = document.querySelector('.popup-book');
-                book.style.transform = 'scale(1.01)';
-                setTimeout(() => { book.style.transform = 'scale(1)'; }, 150);
-            }
-        }
-
-        // Navegación: página anterior
-        function prevPage() {
-            if (currentSpread > 0) {
-                currentSpread--;
-                updateBookPages();
-            } else {
-                const book = document.querySelector('.popup-book');
-                book.style.transform = 'scale(1.01)';
-                setTimeout(() => { book.style.transform = 'scale(1)'; }, 150);
-            }
-        }
-
-        // Abrir popup
-        function openPopup() {
-            popupOverlay.classList.add('active');
-            currentSpread = 0;
-            updateBookPages();
-            document.body.style.overflow = 'hidden';  // evitar scroll detrás
-        }
-
-        // Cerrar popup
-        function closePopup() {
-            popupOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        // =========================
-        // EVENTOS DEL POPUP
-        // =========================
-        albumTrigger.addEventListener('click', openPopup);
-        closePopupBtn.addEventListener('click', closePopup);
-        prevBtn.addEventListener('click', prevPage);
-        nextBtn.addEventListener('click', nextPage);
-
-        // Cerrar si se hace clic en el overlay (fondo oscuro)
-        popupOverlay.addEventListener('click', function(e) {
-            if (e.target === popupOverlay) {
-                closePopup();
-            }
-        });
-
-        // Navegación con teclado: flechas izquierda/derecha (opcional)
-        document.addEventListener('keydown', function(e) {
-            if (popupOverlay.classList.contains('active')) {
-                if (e.key === 'ArrowLeft') {
-                    prevPage();
-                    e.preventDefault();
-                } else if (e.key === 'ArrowRight') {
-                    nextPage();
-                    e.preventDefault();
-                } else if (e.key === 'Escape') {
-                    closePopup();
-                    e.preventDefault();
-                }
-            }
-        });
-
-        // =========================
-        // LÓGICA DE LA MALETA (ya existente)
+        // LÓGICA DE LA MALETA (ORIGINAL - SIN CAMBIOS)
         // =========================
         const suitcase = document.getElementById("suitcase");
         const museumText = document.getElementById("museumText");
@@ -272,12 +150,166 @@
             });
         }
 
-        // Pequeña mejora: Si las imágenes del álbum no existen, mostrar texto amigable
-        // Esto evita errores visuales
-        window.addEventListener('load', () => {
-            // Pre-cargar verificaciones de imágenes (opcional)
-            console.log("Álbum interactivo listo - haz click en el álbum");
+        // =========================
+        // LÓGICA DEL ÁLBUM (6 FOTOS: 3 DOBLES PÁGINAS)
+        // =========================
+        // Cada objeto = una doble página (foto izquierda + foto derecha)
+        const pagesData = [
+            {
+                leftImg: "ASSETS/Imagenes/foto 1.jpeg",
+                leftCaption: "london tower🧳",
+                rightImg: "ASSETS/Imagenes/foto 2.jpeg",
+                rightCaption: "buckingham palace👑"
+            },
+            {
+                leftImg: "ASSETS/Imagenes/foto 3.jpeg",
+                leftCaption: "Picnic en el parque 🌳🍎",
+                rightImg: "ASSETS/Imagenes/foto 4.jpeg",
+                rightCaption: "Picnic en el parque 🌳🍎"
+            },
+            {
+                leftImg: "ASSETS/Imagenes/foto 5.jpeg",
+                leftCaption: "Camino a almorzar 🍽️",
+                rightImg: "ASSETS/Imagenes/foto6.jpg",
+                rightCaption: "¿Donde esta One direction?"
+            }
+        ];
+
+        let currentSpread = 0;  // 0 = primera doble página, 1 = segunda, 2 = tercera
+        const totalSpreads = pagesData.length;
+
+        // Elementos del DOM
+        const popupOverlay = document.getElementById('popupOverlay');
+        const albumTrigger = document.getElementById('albumTrigger');
+        const closePopupBtn = document.getElementById('closePopupBtn');
+        const prevBtn = document.getElementById('prevPageBtn');
+        const nextBtn = document.getElementById('nextPageBtn');
+        const pageCounter = document.getElementById('pageCounter');
+        const leftImage = document.getElementById('leftImage');
+        const rightImage = document.getElementById('rightImage');
+        const leftCaption = document.getElementById('leftCaption');
+        const rightCaption = document.getElementById('rightCaption');
+
+        // Actualizar las dos páginas del libro
+        function updateSpread() {
+            const currentPage = pagesData[currentSpread];
+            if (currentPage) {
+                leftImage.src = currentPage.leftImg;
+                leftCaption.textContent = currentPage.leftCaption;
+                rightImage.src = currentPage.rightImg;
+                rightCaption.textContent = currentPage.rightCaption;
+
+                // Animación de cambio de página
+                const spread = document.querySelector('.book-spread');
+                spread.style.animation = 'none';
+                setTimeout(() => {
+                    spread.style.animation = 'pageFlip 0.35s ease';
+                }, 10);
+            }
+            
+            // Actualizar contador
+            pageCounter.textContent = `Página ${currentSpread + 1} de ${totalSpreads}`;
+            
+            // Estado de botones
+            prevBtn.style.opacity = currentSpread === 0 ? '0.5' : '1';
+            prevBtn.style.cursor = currentSpread === 0 ? 'not-allowed' : 'pointer';
+            nextBtn.style.opacity = currentSpread === totalSpreads - 1 ? '0.5' : '1';
+            nextBtn.style.cursor = currentSpread === totalSpreads - 1 ? 'not-allowed' : 'pointer';
+        }
+
+        // Siguiente doble página
+        function nextPage() {
+            if (currentSpread < totalSpreads - 1) {
+                currentSpread++;
+                updateSpread();
+            }
+        }
+
+        // Página anterior
+        function prevPage() {
+            if (currentSpread > 0) {
+                currentSpread--;
+                updateSpread();
+            }
+        }
+
+        // Abrir popup
+        function openPopup() {
+            popupOverlay.classList.add('active');
+            currentSpread = 0;
+            updateSpread();
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Cerrar popup
+        function closePopup() {
+            popupOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Eventos
+        if (albumTrigger) albumTrigger.addEventListener('click', openPopup);
+        if (closePopupBtn) closePopupBtn.addEventListener('click', closePopup);
+        if (prevBtn) prevBtn.addEventListener('click', prevPage);
+        if (nextBtn) nextBtn.addEventListener('click', nextPage);
+
+        // Cerrar al hacer clic en el fondo oscuro
+        if (popupOverlay) {
+            popupOverlay.addEventListener('click', function(e) {
+                if (e.target === popupOverlay) {
+                    closePopup();
+                }
+            });
+        }
+
+        // Navegación con teclado (flechas izquierda/derecha)
+        document.addEventListener('keydown', function(e) {
+            if (popupOverlay && popupOverlay.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') {
+                    prevPage();
+                    e.preventDefault();
+                } else if (e.key === 'ArrowRight') {
+                    nextPage();
+                    e.preventDefault();
+                } else if (e.key === 'Escape') {
+                    closePopup();
+                    e.preventDefault();
+                }
+            }
         });
     </script>
+
+
+    <script>
+
+const paddingtonAudio = document.getElementById("paddingtonAudio");
+
+const paddingtonPlayButton = document.getElementById("paddingtonPlayButton");
+
+let isPlaying = false;
+
+paddingtonPlayButton.addEventListener("click", () => {
+
+    if(!isPlaying){
+
+        paddingtonAudio.play();
+
+        paddingtonPlayButton.innerHTML = "❚❚";
+
+        isPlaying = true;
+
+    } else {
+
+        paddingtonAudio.pause();
+
+        paddingtonPlayButton.innerHTML = "▶";
+
+        isPlaying = false;
+
+    }
+
+});
+
+</script>
 </body>
 </html>

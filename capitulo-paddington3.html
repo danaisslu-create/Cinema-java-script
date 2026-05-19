@@ -104,34 +104,51 @@
         </a>
 
     </div>
+<!-- CAMERA SOUND -->
 
-    <!-- FLASH -->
+<audio id="cameraSound">
 
-    <div class="camera-flash" id="cameraFlash"></div>
+    <source
+        src="ASSETS/Audios/camera-flash.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
 
     <!-- SCRIPT -->
+<script>
 
-    <script>
+const albumLink = document.querySelector(".album-link");
 
-    const albumLink = document.querySelector(".album-link");
+const flash = document.getElementById("cameraFlash");
 
-    const flash = document.getElementById("cameraFlash");
+const cameraSound = document.getElementById("cameraSound");
 
-    albumLink.addEventListener("click", function(event){
+albumLink.addEventListener("click", function(event){
 
-        event.preventDefault();
+    event.preventDefault();
 
-        flash.classList.add("flash-active");
+    /* FLASH */
 
-        setTimeout(() => {
+    flash.classList.add("flash-active");
 
-            window.location.href = "capitulo-paddington4.html";
+    /* SOUND */
 
-        }, 350);
+    cameraSound.currentTime = 0;
 
-    });
+    cameraSound.play();
 
-    </script>
+    /* NEXT PAGE */
+
+    setTimeout(() => {
+
+        window.location.href = "capitulo-paddington4.html";
+
+    }, 350);
+
+});
+
+</script>
 
 </body>
 

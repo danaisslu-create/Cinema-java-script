@@ -61,7 +61,7 @@ async function iniciarSecuencia() {
     // 3. Efecto de lluvia más intensa (cambiar filtro del video)
     const video = document.querySelector('.crosswalk-bg-video');
     if (video) {
-        video.style.filter = 'brightness(0.5) saturate(0.8) contrast(1.3)';
+        video.style.filter = 'brightness(0.7) saturate(0.8) contrast(1.3)';
     }
 
     await delay(2500);

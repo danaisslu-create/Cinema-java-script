@@ -10,36 +10,67 @@ window.addEventListener('load', () => {
 });
 
 // =========================
-// 2. MÚSICA DE FONDO (con botón Play/Pause)
+// 2. MÚSICA CON AUTOPLAY INTENTADO + BOTÓN PAUSE
 // =========================
 const music = document.getElementById('bgMusic');
 const musicBtn = document.getElementById('musicToggle');
 let isPlaying = false;
 
-// El navegador bloquea autoplay, así que esperamos a que el usuario haga clic en el botón
-musicBtn.addEventListener('click', () => {
-    if (!isPlaying) {
-        music.play().then(() => {
-            isPlaying = true;
-            musicBtn.innerHTML = '⏸ Pausar música';
-        }).catch(err => {
-            console.log("Error al reproducir:", err);
-            alert("Haz clic en cualquier parte de la página primero para activar el audio.");
-        });
-    } else {
-        music.pause();
-        isPlaying = false;
-        musicBtn.innerHTML = '🎵 Reproducir música';
-    }
+// Función para iniciar la música (sea por autoplay o por clic)
+function startMusic() {
+    if (isPlaying) return;
+    music.muted = false;   // aseguramos que no esté silenciado
+    music.play().then(() => {
+        isPlaying = true;
+        if (musicBtn) musicBtn.innerHTML = '⏸ Pausar música';
+    }).catch(err => {
+        console.log("No se pudo iniciar la música automáticamente");
+    });
+}
+
+// Intentar autoplay con muted (algunos navegadores lo permiten)
+music.muted = true;
+music.play().then(() => {
+    // Si logra empezar, desmutear después de 0.1s
+    setTimeout(() => {
+        music.muted = false;
+        isPlaying = true;
+        if (musicBtn) musicBtn.innerHTML = '⏸ Pausar música';
+    }, 100);
+}).catch(err => {
+    console.log("Autoplay bloqueado, esperando interacción del usuario.");
+    // Si falla, mostramos el botón y esperamos clic
+    if (musicBtn) musicBtn.style.display = 'inline-block';
 });
 
-// Opcional: si quieres que la música comience al primer clic en cualquier lugar (más amigable)
-document.body.addEventListener('click', function once() {
-    if (!isPlaying && musicBtn.innerHTML !== '⏸ Pausar música') {
+// Botón para reproducir/pausar (siempre funcional)
+if (musicBtn) {
+    musicBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (isPlaying) {
+            music.pause();
+            isPlaying = false;
+            musicBtn.innerHTML = '🎵 Reproducir música';
+        } else {
+            music.muted = false;
+            music.play().then(() => {
+                isPlaying = true;
+                musicBtn.innerHTML = '⏸ Pausar música';
+            }).catch(err => {
+                console.log("Error al reproducir:", err);
+                alert("Haz clic en cualquier parte de la página primero para activar el audio.");
+            });
+        }
+    });
+}
+
+// Opcional: si el usuario hace clic en cualquier lugar y aún no hay música, activarla (sin necesidad de botón)
+document.body.addEventListener('click', function activarPorClic() {
+    if (!isPlaying && music.paused) {
+        music.muted = false;
         music.play().then(() => {
             isPlaying = true;
-            musicBtn.innerHTML = '⏸ Pausar música';
+            if (musicBtn) musicBtn.innerHTML = '⏸ Pausar música';
         }).catch(e => console.log);
     }
-    document.body.removeEventListener('click', once);
-}, { once: true });
+});

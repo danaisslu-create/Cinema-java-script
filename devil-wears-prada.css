@@ -149,6 +149,7 @@
     cursor: pointer;
     transition: 0.4s;
     backdrop-filter: blur(6px);
+    font-family: 'Italiana', serif;
 }
 
 .devil-option-card:hover {
@@ -169,7 +170,7 @@
     color: #f5e7d0;
     font-size: 34px;
     margin-bottom: 20px;
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Italiana', serif;
 }
 
 .devil-option-card p {
@@ -244,7 +245,7 @@
     color: #f5e7d0;
     font-size: 46px;
     margin-bottom: 20px;
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Italiana', serif;
 }
 
 .devil-popup-box p {
@@ -291,6 +292,7 @@
     cursor: pointer;
     font-size: 20px;
     transition: 0.3s;
+    font-family: 'Italiana', serif;
 }
 
 .choose-button:hover {
