@@ -1,37 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
-<style>
-    body {
-      font-family: 'Abril Fatface', cursive;
-      background-color: #841F42;
-      color: #000000;
-    }
+    <title>Bogotá · El regreso de Nicole</title>
+    <link rel="stylesheet" href="bogota-final.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
 
-  </style>
-    <title>Capitulo 1.2</title>
-    <h1>Bogota</h1>
-    <h3>Usa el flash de su camara para despertar</h3>
-    <h2> SINOPSIS</h2>
- <body>
+    <button class="back-btn" onclick="history.back()">← Volver</button>
 
-     <img src= "./ASSETS/CAMARA2.jpg">
- </body>
+    <!-- FONDO: imagen de Bogotá (con fallback a color) -->
+    <div class="bogota-bg"></div>
+    <div class="bogota-overlay"></div>
 
+    <main class="final-container">
+        <div class="final-card">
+            <div class="camara-wrapper">
+                <div class="camara-icon" id="camaraIcon">📷</div>
+                <div class="camara-luz" id="camaraLuz"></div>
+            </div>
+            <div class="final-text">
+                <p class="nicole-dialogue">Nicole cierra los ojos. Siente el frío de Bogotá. La cámara pesa en sus manos.<br>“Vi mundos que no creía posibles. Pero ahora... ¿qué hago con este poder?”</p>
+                <p class="decision-pregunta">✧ ¿Qué decides, Nicole? ✧</p>
+            </div>
+            <div class="decision-buttons">
+                <button id="comprarBtn" class="decision-btn comprar">📸 Comprar la cámara</button>
+                <button id="devolverBtn" class="decision-btn devolver">📦 Devolverla al mercado</button>
+            </div>
+            <div class="final-nota">
+                <span class="nota-text">La cámara parpadea suavemente. Un recuerdo fugaz de Nueva York, Buenos Aires, Londres.</span>
+            </div>
+        </div>
+    </main>
 
+    <div id="final-flash"></div>
+    <audio id="cameraShutter" src="ASSETS/Audios/camera-flash.mp3"></audio>
+    <audio id="ambienteBogota" src="ASSETS/Audios/bogota-ambience.mp3" loop></audio>
 
-
-
-
-
-
-
-
-
-
+    <script src="bogota-final.js"></script>
+</body>
 </html>

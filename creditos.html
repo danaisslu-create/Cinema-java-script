@@ -6,25 +6,20 @@
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Créditos - Cinema</title>
-
-    <link rel="stylesheet" href="style.css">
-
+    <title>Créditos · Cinema</title>
+    <link rel="stylesheet" href="creditos.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
 <body class="creditos-body">
 
-    <!-- BACK BUTTON -->
+    <!-- BOTÓN BACK -->
+    <button class="back-button" onclick="history.back()">←</button>
 
-    <button class="back-button" onclick="history.back()">
-        ← BACK
-    </button>
+    <!-- BOTÓN DE MÚSICA (PLAY/PAUSE) -->
+    <button id="musicToggle" class="music-btn">🎵 Reproducir música</button>
 
-    <!-- =========================
-         NAVBAR
-    ========================== -->
-
+    <!-- NAVBAR (opcional, si la quieres conservar) -->
     <header>
 
         <nav>
@@ -47,28 +42,19 @@
 
     </header>
 
-    <!-- =========================
-         CONTENIDO
-    ========================== -->
 
+    
     <main class="creditos-main">
+        <!-- IMAGEN DE FONDO -->
+        <img class="creditos-background" src="ASSETS/Imagenes/AAAA creditos finales.jpg" alt="Cinema Background">
 
-        <!-- FONDO -->
+        <!-- OVERLAY PARA DARLE ATMÓSFERA -->
+        <div class="creditos-overlay"></div>
 
-        <img
-            class="creditos-background"
-            src="ASSETS/Imagenes/AAAA creditos finales.jpg"
-            alt="Cinema Background"
-        >
+        <!-- TÍTULO PRINCIPAL -->
+        <h1 class="creditos-title">CINEMA</h1>
 
-        <!-- TITULO -->
-
-        <h1 class="creditos-title">
-            CINEMA
-        </h1>
-
-        <!-- CAJA -->
-
+        <!-- CAJA DE CRÉDITOS -->
         <section class="creditos-box">
 
             <p class="creditos-text">
@@ -76,28 +62,36 @@
                 Este proyecto fue creado por:
 
                 <br><br>
-
-                Natalia Alvarado  
-                <br>
-                Isabella Ballesteros  
-                <br>
-                Luisa Sahagún  
-                <br>
-                Daniela Nerea  
-                <br>
-                Isabela Alban
-
+                <span class="nombre">Natalia Alvarado</span><br>
+                <span class="nombre">Isabella Ballesteros</span><br>
+                <span class="nombre">Luisa Sahagún</span><br>
+                <span class="nombre">Daniela Nerea</span><br>
+                <span class="nombre">Isabela Alban</span>
                 <br><br>
-
-                Una narrativa interactiva que explora
-                el cine, las decisiones y los universos
+                Una narrativa interactiva que explora<br>
+                el cine, las decisiones y los universos<br>
                 que existen dentro de cada historia.
-            </p>
 
+            </p>
+            <div class="fin">✦ FIN ✦</div>
         </section>
 
+        <!-- PEQUEÑO CRÉDITO TÉCNICO (opcional) -->
+        <div class="tec-credits">
+            <p>Música: "Rompecabezas - Aterciopelados" · Diseño web interactivo · 2026</p>
+        </div>
     </main>
 
+    <!-- FLASH DE DESPEDIDA -->
+    <div id="creditos-flash"></div>
+
+    <!-- AUDIO DE FONDO (se inicia con interacción del usuario) -->
+    <audio id="bgMusic" loop>
+        <source src="ASSETS/Audios/Rompecabezas.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+
+    <script src="creditos.js"></script>
 </body>
 
 </html>
