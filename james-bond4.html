@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Camera Restart</title>
+
+<link rel="stylesheet" href="jamesBond.css">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="camera-body">
+
+<!-- BACKGROUND -->
+
+<img
+    src="ASSETS/Imagenes/camera-scene.jpeg"
+    class="camera-bg"
+>
+
+<!-- OVERLAY -->
+
+<div class="camera-overlay"></div>
+
+<!-- TITLE -->
+
+<h1 class="camera-title">
+RESTART
+</h1>
+
+<!-- TEXT -->
+
+<div class="camera-container">
+
+    <div class="camera-box">
+
+        <p class="camera-text">
+
+            “La cámara está muerta.”
+
+        </p>
+
+        <p class="camera-subtext">
+
+            La sostienes entre tus manos.<br><br>
+
+            La pantalla parpadea.<br><br>
+
+            De pronto piensas:<br><br>
+
+            “Tal vez pueda reiniciarla.”
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="camera-object">
+
+    <!-- BASE CAMERA -->
+
+    <img
+        src="ASSETS/Imagenes/camara 3.png"
+        class="camera-img"
+    >
+
+    <!-- GLOW BUTTON OVERLAY -->
+
+    <img
+        src="ASSETS/Imagenes/off.png"
+        class="power-button"
+        id="powerButton"
+    >
+
+</div>
+
+<!-- GLITCH SCREEN -->
+
+<div id="camera-glitch">
+
+    <h2 class="glitch-text">
+
+        RECONECTANDO
+
+    </h2>
+
+</div>
+
+<!-- AUDIO -->
+
+<audio id="glitchAudio">
+
+    <source
+        src="ASSETS/Audios/glitch.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+<script>
+
+const powerButton = document.getElementById("powerButton");
+const glitch = document.getElementById("camera-glitch");
+const glitchAudio = document.getElementById("glitchAudio");
+
+powerButton.addEventListener("click", () => {
+
+    glitch.style.display = "flex";
+
+    glitchAudio.play();
+
+    setTimeout(() => {
+
+        window.location.href = "capitulo-8-bogota.html";
+
+    }, 2500);
+
+});
+
+</script>
+
+</body>
+
+</html>
