@@ -1,91 +1,380 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bogotá · Nicole</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <title>Bogotá</title>
+        body {
+            min-height: 100vh;
+            font-family: 'Quicksand', sans-serif;
+            background: radial-gradient(circle at 10% 20%, #72963b, #405807);
+            position: relative;
+            padding: 30px 20px 80px;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        /* BOTÓN BACK */
+        .back-button {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(6px);
+            border: 1px solid #c2a15b;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-family: 'Italiana', serif;
+            font-size: 18px;
+            color: #eeddbb;
+            cursor: pointer;
+            z-index: 110;
+            transition: 0.2s;
+        }
+        .back-button:hover {
+            background: #c2a15b;
+            color: #0a0a0a;
+            transform: translateX(-3px);
+        }
 
+        /* BOTÓN RADIO FLOTANTE */
+        .radio-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid #e4c581;
+            border-radius: 60px;
+            padding: 12px 24px;
+            font-family: 'Italiana', serif;
+            font-size: 20px;
+            color: #f7e9cf;
+            cursor: pointer;
+            z-index: 110;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.2s;
+            box-shadow: 0 0 12px rgba(194,161,91,0.3);
+        }
+        .radio-button:hover {
+            background: #c2a15b;
+            color: black;
+            transform: scale(1.02);
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .bogota-container {
+            max-width: 1200px;
+            margin: 60px auto 40px;
+            padding: 0 20px;
+        }
+
+        /* SECCIONES (originales pero adaptadas) */
+        .bogota-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 70px;
+            background: rgba(20,20,18,0.65);
+            backdrop-filter: blur(5px);
+            border-radius: 48px;
+            padding: 30px;
+            border: 1px solid rgba(194,161,91,0.3);
+        }
+
+        .bogota-section.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .bogota-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .miranda-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 58px;
+            color: #f2e0b0;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .bogota-subtitle {
+            font-family: 'DM Serif Display', serif;
+            font-size: 38px;
+            color: #e6cf8b;
+            margin-bottom: 20px;
+        }
+
+        .bogota-text p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #e8e0cf;
+            margin-bottom: 20px;
+        }
+
+        /* FLIP CARDS */
+        .flip-card {
+            background-color: transparent;
+            width: 280px;
+            height: 280px;
+            perspective: 1000px;
+            flex-shrink: 0;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            border-radius: 28px;
+            box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-front, .flip-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 28px;
+            overflow: hidden;
+        }
+
+        .flip-front {
+            background: #2a241e;
+        }
+        .flip-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .flip-back {
+            background: linear-gradient(145deg, #2f2a22, #1e1914);
+            color: #f3e9cf;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-family: 'Italiana', serif;
+            font-size: 1rem;
+            text-align: center;
+            border: 1px solid #c2a15b;
+        }
+        .flip-back h3 {
+            font-family: 'DM Serif Display', serif;
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+            color: #e7d09c;
+        }
+
+        /* BANNER (mosaico) con flip card */
+        .bogota-banner {
+            display: flex;
+            justify-content: center;
+            margin: 50px 0;
+        }
+        .bogota-banner .flip-card {
+            width: 100%;
+            max-width: 600px;
+            height: 320px;
+        }
+        .bogota-banner .flip-front img {
+            object-position: center 30%;
+        }
+
+        /* RESPONSIVE FLIP */
+        @media (max-width: 800px) {
+            .bogota-section {
+                flex-direction: column !important;
+                text-align: center;
+            }
+            .flip-card {
+                margin: 0 auto;
+            }
+            .miranda-title {
+                font-size: 44px;
+            }
+        }
+
+        /* RADIO POPUP */
+        .popup-radio {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .radio-card {
+            background: #1f1c18;
+            border-radius: 48px;
+            max-width: 600px;
+            width: 90%;
+            padding: 30px;
+            border: 1px solid #d4af6a;
+            box-shadow: 0 0 30px rgba(212,175,106,0.3);
+            position: relative;
+            text-align: center;
+        }
+        .radio-card h2 {
+            font-family: 'DM Serif Display', serif;
+            color: #e9d6ae;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        .radio-card .dial {
+            width: 80px;
+            height: 80px;
+            background: #2b2520;
+            border-radius: 50%;
+            margin: 10px auto;
+            border: 3px solid #b5925a;
+            position: relative;
+        }
+        .radio-card .dial::after {
+            content: "🎵";
+            font-size: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .radio-card iframe {
+            margin: 25px 0;
+            border-radius: 20px;
+        }
+        .close-radio {
+            background: #b5925a;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-family: 'Italiana', serif;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
 </head>
+<body>
 
-<body class="miranda-body">
+    <button class="back-button" onclick="history.back()">← BACK</button>
+    <button id="radioBtn" class="radio-button">📻 Radio Bogotá</button>
 
-    <!-- BOTON BACK -->
-    <button class="back-button" onclick="history.back()">
-        ← BACK
-    </button>
-
-   
-
-    </header>
-
-    <!-- CONTENIDO -->
     <main class="bogota-container">
-
-        <!-- PRIMERA SECCION -->
+        <!-- PRIMERA SECCIÓN con flip card en lugar de imagen estática -->
         <section class="bogota-section">
-
             <div class="bogota-text">
-
-                <h1 class="miranda-title">
-                    Bogotá
-                </h1>
-
-                <p>
-                    Bogotá es la capital de Colombia y una de las ciudades más grandes de América Latina. Ubicada en la cordillera de los Andes a más de 2.600 metros sobre el nivel del mar, la ciudad es conocida por sus museos, su escena cultural, la arquitectura colonial de La Candelaria y lugares emblemáticos como Monserrate. Además, Bogotá es un centro importante de cine, música, gastronomía y moda en Colombia.
-                </p>
-
+                <h1 class="miranda-title">Bogotá</h1>
+                <p>Bogotá es la capital de Colombia y una de las ciudades más grandes de América Latina. Ubicada en la cordillera de los Andes a más de 2.600 metros sobre el nivel del mar, la ciudad es conocida por sus museos, su escena cultural, la arquitectura colonial de La Candelaria y lugares emblemáticos como Monserrate. Además, Bogotá es un centro importante de cine, música, gastronomía y moda en Colombia.</p>
             </div>
-
-            <img 
-                src="ASSETS/Imagenes/sobreBogota.jpeg"
-                alt="Bogotá"
-                class="bogota-image"
-            >
-
+            <!-- Flip card -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-front">
+                        <img src="ASSETS/Imagenes/sobreBogota.jpeg" alt="Bogotá panorámica">
+                    </div>
+                    <div class="flip-back">
+                        <h3>✨ Dato curioso</h3>
+                        <p>Bogotá tiene más de 200 bibliotecas públicas y fue nombrada Capital Mundial del Libro en 2007 por la UNESCO.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- FOTO EXTRA ENTRE SECCIONES -->
-<section class="bogota-banner">
+        <!-- BANNER: Mapa / Centro de Bogotá como flip card -->
+        <section class="bogota-banner">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-front">
+                        <img src="ASSETS/Imagenes/bogotaMapa.jpeg" alt="Mapa de Bogotá">
+                    </div>
+                    <div class="flip-back">
+                        <h3>🗺️ El centro histórico</h3>
+                        <p>La Candelaria conserva más de 300 inmuebles coloniales. La Plaza de Bolívar ha sido escenario de eventos históricos clave.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <img 
-        src="ASSETS/Imagenes/bogotaMapa.jpeg"
-        alt="Centro de Bogotá"
-        class="bogota-banner-image"
-    >
-
-</section>
-
-        <!-- SEGUNDA SECCION -->
+        <!-- SEGUNDA SECCIÓN con flip card de La Séptima -->
         <section class="bogota-section reverse">
-
-            <img 
-                src="ASSETS/Imagenes/La séptima_Bogota (1).jpeg"
-                alt="La Séptima"
-                class="bogota-image"
-            >
-
-            <div class="bogota-text">
-
-                <h2 class="bogota-subtitle">
-                    La Séptima
-                </h2>
-
-                <p>
-                    La Séptima es una calle peatonal ubicada en el centro de Bogotá y una de las más emblemáticas de la ciudad. Recorre gran parte de Bogotá y conecta zonas históricas, culturales y tradicionales. A lo largo de la Séptima se encuentran lugares importantes como la Plaza de Bolívar, museos, universidades, teatros y cafés clásicos. También es famosa por la gran cantidad de mercados de pulgas y tiendas de segunda mano que se encuentran a lo largo de la peatonal.
-                </p>
-
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-front">
+                        <img src="ASSETS/Imagenes/La séptima_Bogota (1).jpeg" alt="Carrera Séptima">
+                    </div>
+                    <div class="flip-back">
+                        <h3>🛍️ Mercado de pulgas</h3>
+                        <p>La Séptima es famosa por sus mercados de pulgas y tiendas vintage, donde Nicole encontró la cámara mágica.</p>
+                    </div>
+                </div>
             </div>
-
+            <div class="bogota-text">
+                <h2 class="bogota-subtitle">La Séptima</h2>
+                <p>La Séptima es una calle peatonal ubicada en el centro de Bogotá y una de las más emblemáticas de la ciudad. Recorre gran parte de Bogotá y conecta zonas históricas, culturales y tradicionales. A lo largo de la Séptima se encuentran lugares importantes como la Plaza de Bolívar, museos, universidades, teatros y cafés clásicos. También es famosa por la gran cantidad de mercados de pulgas y tiendas de segunda mano que se encuentran a lo largo de la peatonal.</p>
+            </div>
         </section>
-
     </main>
 
+    <!-- POPUP RADIO VINTAGE -->
+    <div id="radioPopup" class="popup-radio">
+        <div class="radio-card">
+            <div class="dial"></div>
+            <h2>🎙️ RADIO BOGOTÁ</h2>
+            <iframe 
+                src="https://open.spotify.com/embed/playlist/4YZCkaR9U05CS1OTB79teX?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                frameborder="0" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy">
+            </iframe>
+            <button class="close-radio">Cerrar</button>
+        </div>
+    </div>
+
+    <script>
+        // Popup de radio
+        const radioBtn = document.getElementById('radioBtn');
+        const radioPopup = document.getElementById('radioPopup');
+        const closeRadio = document.querySelector('.close-radio');
+
+        radioBtn.addEventListener('click', () => {
+            radioPopup.style.display = 'flex';
+        });
+        closeRadio.addEventListener('click', () => {
+            radioPopup.style.display = 'none';
+        });
+        // Cerrar si se hace clic fuera de la radio
+        radioPopup.addEventListener('click', (e) => {
+            if (e.target === radioPopup) radioPopup.style.display = 'none';
+        });
+    </script>
 </body>
+
 
 </html>

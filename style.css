@@ -26165,9 +26165,30 @@ Bogota1
    PUERTA
 ========================= */
 
+/* =========================
+   PUERTA
+========================= */
+
+/* =========================
+   PUERTA
+========================= */
+
 .door{
+
+    position:relative;
+
+    left:41%;
+
+    transform:translateX(-50%);
+
+    margin-top:-150px;
+
+    margin-bottom:40px;
+
     width:260px;
+
     cursor:pointer;
+
     transition:0.3s;
 }
 

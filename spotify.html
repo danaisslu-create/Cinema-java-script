@@ -1,39 +1,238 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta
-      name="description"
-      content="our first interactive multimedia narrative"
-    />
-    <link
-      id="favicon"
-      rel="icon"
-      href="https://glitch.com/edit/favicon-app.ico"
-      type="image/x-icon"
-    />
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify de Nicole · Cinema</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link
-      rel="stylesheet"
-      href="
-style.css"
-    />
-    <script
-      src=".
-/script.js"
-      defer
-    ></script>
-  </head>
+        body {
+            min-height: 100vh;
+            font-family: 'Roboto Condensed', sans-serif;
+            background: #0a0c10;
+            position: relative;
+            overflow-x: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
 
-  <body>
-    
-     <h1>Conoce el spotify de Nicole</h1>
-    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3JkESm0ouqhaHFFqNhR05s?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-<a href="aboutNicole.html">
-                    <button>regresa</button>
-                </a>
-  </body>
+        /* Fondo cinematográfico (imagen + overlay) */
+        .cinema-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=2069&auto=format&fit=crop'); /* imagen de auriculares vintage / música */
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+            filter: brightness(0.4) saturate(0.8);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%);
+            z-index: -1;
+        }
+
+        /* Tarjeta principal */
+        .card {
+            background: rgba(20,20,25,0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 48px;
+            max-width: 750px;
+            width: 100%;
+            padding: 45px 35px 55px;
+            text-align: center;
+            border: 1px solid rgba(212,161,74,0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 56px;
+            color: #f5e7d0;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+
+        .subtitulo {
+            font-family: 'Italiana', serif;
+            font-size: 20px;
+            color: #d4a14a;
+            margin-bottom: 35px;
+            letter-spacing: 1px;
+            border-top: 1px solid rgba(212,161,74,0.3);
+            display: inline-block;
+            padding-top: 8px;
+        }
+
+        /* Reproductor Spotify */
+        .spotify-wrapper {
+            margin: 25px 0 35px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        iframe {
+            display: block;
+            width: 100%;
+        }
+
+        /* Botón elegante */
+        .btn-regresar {
+            display: inline-block;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+            border: 1px solid #d4a14a;
+            color: #f5e7d0;
+            font-family: 'Italiana', serif;
+            font-size: 20px;
+            padding: 12px 32px;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: 0.3s ease;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        .btn-regresar:hover {
+            background: #d4a14a;
+            color: #0a0c10;
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(212,161,74,0.6);
+            border-color: transparent;
+        }
+
+        /* Partículas decorativas (JS) */
+        .particle {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .note {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0.2;
+            animation: floatNote 12s linear infinite;
+            color: #d4a14a;
+        }
+
+        @keyframes floatNote {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(15deg);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 650px) {
+            .card {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 38px;
+            }
+            .subtitulo {
+                font-size: 18px;
+            }
+            .btn-regresar {
+                font-size: 18px;
+                padding: 10px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cinema-bg"></div>
+    <div class="overlay"></div>
+
+    <div class="card">
+        <h1>🎧 CONOCE EL SPOTIFY<br>DE NICOLE</h1>
+        <div class="subtitulo">〄 La banda sonora de sus viajes 〄</div>
+
+        <div class="spotify-wrapper">
+            <iframe 
+                data-testid="embed-iframe" 
+                style="border-radius:12px" 
+                src="https://open.spotify.com/embed/playlist/3JkESm0ouqhaHFFqNhR05s?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                frameBorder="0" 
+                allowfullscreen="" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <a href="aboutNicole.html" class="btn-regresar">↺ Regresar</a>
+    </div>
+
+    <!-- Partículas musicales flotantes (solo decoración) -->
+    <div class="particle" id="particleContainer"></div>
+
+    <script>
+        // Crear notas musicales flotantes como ambiente
+        const container = document.getElementById('particleContainer');
+        const notas = ['♪', '♫', '🎵', '🎶', '🎧', '📀', '🎼', '♩', '🎸', '🎹'];
+        
+        for (let i = 0; i < 35; i++) {
+            const note = document.createElement('div');
+            note.classList.add('note');
+            note.textContent = notas[Math.floor(Math.random() * notas.length)];
+            note.style.left = Math.random() * 100 + '%';
+            note.style.animationDelay = Math.random() * 15 + 's';
+            note.style.animationDuration = 8 + Math.random() * 10 + 's';
+            note.style.fontSize = 16 + Math.random() * 24 + 'px';
+            note.style.opacity = 0.15 + Math.random() * 0.25;
+            container.appendChild(note);
+        }
+
+        // Pequeño efecto de bienvenida en consola
+        console.log('🎬 Playlist de Nicole cargada. Disfruta el viaje sonoro.');
+    </script>
+</body>
 </html>

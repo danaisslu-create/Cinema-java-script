@@ -1,67 +1,216 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Tour · Nicole</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <title>Room Tour</title>
+        body {
+            min-height: 100vh;
+            font-family: 'Quicksand', sans-serif;
+            background: #9c5489;  /* fondo claro, cálido */
+            position: relative;
+            overflow-x: hidden;
+            padding: 30px 20px 60px;
+        }
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+        /* Efecto de textura sutil (opcional) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#e0d6c8 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 0;
+        }
 
+        /* BOTÓN BACK */
+        .back-button {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            background: #e8dccc;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-family: 'Italiana', serif;
+            font-size: 18px;
+            color: #5e3a2e;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: 0.2s;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+        .back-button:hover {
+            background: #d4b68a;
+            color: white;
+            transform: translateX(-3px);
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .roomtour-container {
+            max-width: 1100px;
+            margin: 80px auto 40px;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* TÍTULO */
+        .paddington-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 48px;
+            text-align: center;
+            color: #5e3a2e;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .sub {
+            text-align: center;
+            font-family: 'Italiana', serif;
+            font-size: 20px;
+            color: #a5836e;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e0cfbc;
+            display: inline-block;
+            padding-bottom: 6px;
+            letter-spacing: 1px;
+        }
+
+        /* GALERÍA: DISEÑO DE CUADROS */
+        .room-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+            margin: 30px 0;
+            align-items: start;
+        }
+
+        .room-main {
+            width: 100%;
+            height: auto;
+            border-radius: 32px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s;
+            object-fit: cover;
+            aspect-ratio: 4 / 3;
+        }
+
+        .room-main:hover {
+            transform: scale(1.01);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+        }
+
+        .room-side {
+            width: 100%;
+            border-radius: 28px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            object-fit: cover;
+            aspect-ratio: 4 / 3;
+        }
+
+        .room-side:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.12);
+        }
+
+        /* Para poner las dos imágenes laterales una arriba de la otra */
+        .room-side.top {
+            margin-bottom: 25px;
+        }
+
+        /* SECCIÓN DE NOTAS O DECORACIÓN (opcional) */
+        .room-note {
+            background: #fef7e8;
+            border-radius: 28px;
+            padding: 20px 30px;
+            margin-top: 45px;
+            text-align: center;
+            border-left: 8px solid #d4b68a;
+            font-family: 'Italiana', serif;
+            font-size: 18px;
+            color: #6b4c3b;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.03);
+        }
+
+        .room-note span {
+            font-weight: bold;
+            color: #b87b4f;
+        }
+
+        @media (max-width: 700px) {
+            .room-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .room-side.top {
+                margin-bottom: 0;
+            }
+            .paddington-title {
+                font-size: 36px;
+            }
+        }
+    </style>
 </head>
+<body>
 
-<body class="paddington-body">
+    <button class="back-button" onclick="history.back()">← BACK</button>
 
-    <!-- BOTON BACK -->
-    <button class="back-button" onclick="history.back()">
-        ← BACK
-    </button>
-
-
-
-    </header>
-
-    <!-- CONTENIDO -->
     <main class="roomtour-container">
+        <h1 class="paddington-title">Bienvenido al cuarto de Nicole</h1>
+        <div style="text-align: center;">
+            <div class="sub">✦ un rincón lleno de recuerdos y polaroids ✦</div>
+        </div>
 
-        <h1 class="paddington-title">
-            Bienvenido al cuarto de Nicole
-        </h1>
-
-        <!-- GALERIA -->
         <section class="room-grid">
-
-            <!-- FOTO GRANDE -->
+            <!-- Foto grande: el cuarto completo -->
             <img 
                 src="ASSETS/Imagenes/cuarto.jpeg"
-                alt="Cuarto Nicole"
+                alt="Habitación de Nicole"
                 class="room-main"
             >
-
-            <!-- CUADROS -->
-            <img 
-                src="ASSETS/Imagenes/cuadros.jpeg"
-                alt="Cuadros"
-                class="room-side top"
-            >
-
-            <!-- LAMPARA -->
-            <img 
-                src="ASSETS/Imagenes/lampara.jpeg"
-                alt="Lámpara"
-                class="room-side bottom"
-            >
-
+            <!-- Lado derecho: dos imágenes verticales -->
+            <div class="room-right-col">
+                <img 
+                    src="ASSETS/Imagenes/cuadros.jpeg"
+                    alt="Cuadros y posters"
+                    class="room-side top"
+                >
+                <img 
+                    src="ASSETS/Imagenes/lampara.jpeg"
+                    alt="Lámpara vintage"
+                    class="room-side bottom"
+                >
+            </div>
         </section>
 
-        
-
+        <div class="room-note">
+            <span>🎧 “Un lugar donde las películas se encuentran con la realidad”</span><br>
+            Cada objeto cuenta una historia: las entradas de cine, los vinilos, la cámara que viaja entre mundos.
+        </div>
     </main>
 
+    <!-- Pequeño script para añadir un efecto sutil al cargar (opcional) -->
+    <script>
+        // Solo para consola amigable
+        console.log("📸 Room Tour de Nicole - Un espacio con magia cinematográfica");
+    </script>
 </body>
-
 </html>
