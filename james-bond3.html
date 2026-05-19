@@ -8,7 +8,7 @@
 
 <title>Hide Scene</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="jamesBond.css">
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&display=swap" rel="stylesheet">
 
@@ -22,7 +22,7 @@
 <!-- BACKGROUND -->
 <img src="ASSETS/Imagenes/fondo 3.jpeg" class="scene-bg">
 
-<!-- RUINS GLOW LAYER -->
+<!-- GLOW OVERLAY -->
 <img src="ASSETS/Imagenes/maleta james.png" class="scene-glow">
 
 <!-- TITLE -->
@@ -33,9 +33,11 @@
 
 <section class="scene-box">
 
-<p class="scene-text">“Estás escondida.”</p>
+<p>
+“Estás escondida.”
+</p>
 
-<p class="scene-subtext">
+<p>
 Las balas siguen cayendo.<br><br>
 Necesitas algo rápido.<br><br>
 Abres tu maleta.
@@ -46,22 +48,32 @@ Abres tu maleta.
 </main>
 
 <!-- SUITCASE -->
-<img src="ASSETS/Imagenes/maleta james.png.png" class="suitcase" id="suitcase">
+<img
+    src="ASSETS/Imagenes/maleta james.png"
+    class="suitcase"
+    id="suitcase"
+>
 
 <!-- INVENTORY -->
 <div class="inventory" id="inventory">
 
     <div class="inventory-box">
 
-        <h2>Maleta</h2>
-
         <div class="bag-container">
 
-            <img src="ASSETS/Imagenes/pop up James.jpeg" class="bag-base">
+            <img
+                src="ASSETS/Imagenes/pop up James.jpeg"
+                class="bag-base"
+            >
 
-            <!-- OBJETO CLICKABLE -->
+            <!-- CLICKABLE OBJECT -->
             <a href="james-bond4.html">
-                <img src="ASSETS/Imagenes/camara1.png" class="bag-glow">
+
+                <img
+                    src="ASSETS/Imagenes/camara1.png"
+                    class="bag-glow"
+                >
+
             </a>
 
         </div>
@@ -70,9 +82,14 @@ Abres tu maleta.
 
 </div>
 
-<!-- AUDIO BALAS -->
+<!-- AUDIO -->
 <audio id="gunAudio" loop>
-    <source src="ASSETS/Audios/gunfire.mp3" type="audio/mpeg">
+
+    <source
+        src="ASSETS/Audios/gunfire.mp3"
+        type="audio/mpeg"
+    >
+
 </audio>
 
 <script>
@@ -82,8 +99,11 @@ const inventory = document.getElementById("inventory");
 const gunAudio = document.getElementById("gunAudio");
 
 suitcase.addEventListener("click", () => {
+
     inventory.style.display = "flex";
+
     gunAudio.play();
+
 });
 
 </script>

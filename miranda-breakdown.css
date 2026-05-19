@@ -29,7 +29,7 @@
 .glitch-text {
     font-size: 80px;
     font-family: 'DM Serif Display', serif;
-    color: #9b1d36;
+    color: #87283b;
     text-align: center;
     position: relative;
     margin-bottom: 60px;
@@ -50,13 +50,13 @@
 }
 
 .glitch-text::before {
-    color: cyan;
+    color: rgb(52, 93, 48);
     z-index: -1;
     animation: glitch-offset 0.3s infinite linear alternate-reverse;
 }
 
 .glitch-text::after {
-    color: magenta;
+    color: rgb(88, 41, 88);
     z-index: -2;
     animation: glitch-offset2 0.2s infinite linear alternate-reverse;
 }

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easter Eggs · The Devil Wears Prada</title>
+    <link rel="stylesheet" href="devil-wears-prada.css">
+    <link rel="stylesheet" href="devil-easter-eggs.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&display=swap" rel="stylesheet">
+</head>
+<body class="devil-body">
+  
+
+    <button class="devil-back-button" onclick="history.back()">←</button>
+
+      <!-- Botón Runway Radio (esquina superior derecha) -->
+    <a href="runway-radio.html" class="devil-radio-button">
+    🎵 Runway Radio
+    </a>  
+
+    <video autoplay muted loop playsinline class="devil-background-video">
+        <source src="ASSETS/Videos/ny-fashion-night.mp4" type="video/mp4">
+    </video>
+    <div class="devil-overlay"></div>
+
+    <header class="devil-header">
+        <h1 class="devil-title">EASTER EGGS</h1>
+        <p class="devil-subtitle">“Secretos detrás de las escenas”</p>
+    </header>
+
+    <main class="easter-container">
+        
+        <!-- SECCIÓN 1: TARJETAS CLICABLES (Easter eggs clásicos) -->
+        <div class="eggs-grid">
+            <div class="egg-card" data-egg="abrigo">
+                <div class="egg-icon">🧥</div>
+                <h3>El abrigo de Miranda</h3>
+                <p>Haz clic para descubrir el secreto</p>
+            </div>
+          
+            <div class="egg-card" data-egg="bolso">
+                <div class="egg-icon">👜</div>
+                <h3>El bolso verde</h3>
+                <p>Haz clic para descubrir el secreto</p>
+            </div>
+            <div class="egg-card" data-egg="ceruleo">
+                <div class="egg-icon">🎨</div>
+                <h3>El azul cerúleo</h3>
+                <p>Haz clic para descubrir el secreto</p>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2: FLIP CARDS (datos curiosos al pasar el mouse) -->
+        <div class="flip-section">
+            <h2 class="section-title">🎴 Datos curiosos (pasa el mouse)</h2>
+            <div class="flip-cards-container">
+                <div class="flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">👗 El vestido</div>
+                        <div class="flip-back">El vestido verde de Andy costó más de $10,000 y era auténtico de Donna Karan.</div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">🎬 Actriz</div>
+                        <div class="flip-back">Meryl Streep aprendió a teclear como Miranda en solo 2 semanas.</div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">📖 Libro</div>
+                        <div class="flip-back">La autora Lauren Weisberger trabajó como asistente de Anna Wintour.</div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">🧥 El abrigo</div>
+                        <div class="flip-back">La acción de tirar el abrigo fue improvisada por Meryl Streep.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 3: FRASE SECRETA (clic en orden) -->
+        <div class="secret-section">
+            <h3>🗝️ Mensaje oculto</h3>
+            <p>Ordena las palabras haciendo clic en el orden correcto:</p>
+            <div class="word-buttons" id="wordButtons">
+                <button class="word-btn" data-word="ANNA">ANNA</button>
+                <button class="word-btn" data-word="WINTOUR">WINTOUR</button>
+                <button class="word-btn" data-word="INSPIRÓ">INSPIRÓ</button>
+                <button class="word-btn" data-word="MIRANDA">MIRANDA</button>
+            </div>
+            <div class="selected-order" id="selectedOrder">
+                Orden actual: <span id="orderDisplay"></span>
+            </div>
+            <button id="revealSecretBtn" class="small-btn">🔓 Revelar secreto</button>
+            <div id="secretMessage" class="secret-message" style="display:none;">
+                ✨ ¡Correcto! La película está basada en la experiencia de Lauren Weisberger como asistente de Anna Wintour, directora de Vogue. ✨
+            </div>
+        </div>
+    </main>
+
+    <!-- POPUP GENERAL -->
+    <div id="easterPopup" class="devil-popup" style="display:none;">
+        <div class="devil-popup-box">
+            <button class="devil-close" onclick="cerrarPopup()">✕</button>
+            <h2 id="popupTitle"></h2>
+            <img id="popupImage" class="popup-image" src="" alt="Easter Egg">
+            <p id="popupDescription"></p>
+            <button class="choose-button" onclick="cerrarPopup()">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="fashion-flash"></div>
+    <audio id="cameraSound" src="ASSETS/Audios/camera-flash.mp3"></audio>
+
+    <script src="devil-easter-eggs.js"></script>
+</body>
+</html>

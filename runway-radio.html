@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runway Radio · The Devil Wears Prada</title>
+    <link rel="stylesheet" href="devil-wears-prada.css">
+    <link rel="stylesheet" href="runway-radio.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&display=swap" rel="stylesheet">
+</head>
+<body class="devil-body">
+
+    <button class="devil-back-button" onclick="history.back()">←</button>
+
+    <a href="devil-wears-prada.html" class="devil-home-button">🏠</a>
+
+    <video autoplay muted loop playsinline class="devil-background-video">
+        <source src="ASSETS/Videos/ny-fashion-night.mp4" type="video/mp4">
+    </video>
+    <div class="devil-overlay"></div>
+
+    <main class="radio-container">
+        <div class="radio-card">
+            <div class="radio-header">
+                <div class="radio-header-line"></div>
+                <h1 class="radio-title">🎙️ RUNWAY RADIO</h1>
+                <div class="radio-header-line"></div>
+            </div>
+            <p class="radio-subtitle">"La banda sonora de tus sueños fashion, 24/7"</p>
+
+            <!-- REPRODUCTOR DE SPOTIFY CON TU PLAYLIST -->
+            <div class="spotify-embed-container">
+                <iframe 
+                    id="spotifyPlayer"
+                    style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/playlist/64aUUkGfdg2iGkRIteXFe3?utm_source=generator" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="radio-controls">
+                <div class="radio-dial">
+                    <div class="dial-knob"></div>
+                    <div class="dial-marks"></div>
+                </div>
+                <button id="activateRadioBtn" class="radio-button">
+                    📻 ACTIVAR ANIMACIÓN
+                </button>
+                <div class="radio-signal" id="radioSignal">
+                    <span class="signal-wave"></span>
+                    <span class="signal-wave"></span>
+                    <span class="signal-wave"></span>
+                </div>
+            </div>
+
+            <div class="radio-now-playing">
+                <span class="now-label">✦ AHORA SUENA ✦</span>
+                <span class="now-track" id="nowPlayingTrack">Preparando sintonía...</span>
+                <div class="visualizer" id="visualizer">
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="fashion-flash"></div>
+    <audio id="clickSound" src="ASSETS/Audios/radio-click.mp3"></audio>
+    <audio id="cameraSound" src="ASSETS/Audios/camera-flash.mp3"></audio>
+
+    <script src="runway-radio.js"></script>
+</body>
+</html>
