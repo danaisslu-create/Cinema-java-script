@@ -104,58 +104,61 @@
         </a>
 
     </div>
-<!-- CAMERA SOUND -->
 
-<audio id="cameraSound">
+    <!-- FLASH -->
 
-    <source
-        src="ASSETS/Audios/camera-flash.mp3"
-        type="audio/mpeg"
-    >
+    <div class="camera-flash" id="cameraFlash"></div>
 
-</audio>
+    <!-- CAMERA SOUND -->
+
+    <audio id="cameraSound">
+
+        <source
+            src="ASSETS/Audios/camera-flash.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
 
     <!-- SCRIPT -->
-<script>
 
-<script>
+    <script>
 
-const albumLink = document.querySelector(".album-link");
+    const albumLink = document.querySelector(".album-link");
 
-const cameraSound = document.getElementById("cameraSound");
+    const flash = document.getElementById("cameraFlash");
 
-albumLink.addEventListener("click", function(event){
+    const cameraSound = document.getElementById("cameraSound");
 
-    event.preventDefault();
+    albumLink.addEventListener("click", function(event){
 
-    /* SOUND */
+        event.preventDefault();
 
-    cameraSound.currentTime = 0;
+        /* FLASH */
 
-    cameraSound.play();
+        if(flash){
 
-    /* NEXT PAGE */
+            flash.classList.add("flash-active");
 
-    setTimeout(() => {
+        }
 
-        window.location.href = "capitulo-paddington4.html";
+        /* SOUND */
 
-    }, 350);
+        cameraSound.currentTime = 0;
 
-});
+        cameraSound.play();
 
-</script>
-    /* NEXT PAGE */
+        /* NEXT PAGE */
 
-    setTimeout(() => {
+        setTimeout(() => {
 
-        window.location.href = "capitulo-paddington4.html";
+            window.location.href = "capitulo-paddington4.html";
 
-    }, 350);
+        }, 350);
 
-});
+    });
 
-</script>
+    </script>
 
 </body>
 
