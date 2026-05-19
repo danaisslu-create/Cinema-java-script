@@ -22,8 +22,16 @@
 <!-- BACKGROUND -->
 <img src="ASSETS/Imagenes/fondo 3.jpeg" class="scene-bg">
 
-<!-- GLOW OVERLAY -->
-<img src="ASSETS/Imagenes/maleta james.png" class="scene-glow">
+<!-- BACKGROUND -->
+<img src="ASSETS/Imagenes/fondo 3.jpeg" class="scene-bg">
+
+<!-- BULLETS -->
+
+<div class="bullet bullet1"></div>
+<div class="bullet bullet2"></div>
+<div class="bullet bullet3"></div>
+<div class="bullet bullet4"></div>
+<div class="bullet bullet5"></div>
 
 <!-- TITLE -->
 <h1 class="scene-title">RUN</h1>
@@ -45,15 +53,66 @@ Abres tu maleta.
 
 </section>
 
+<!-- SKYFALL PLAYER -->
+
+<div class="skyfall-player">
+
+    <button id="skyfallBtn">
+
+        ▶ PLAY SKYFALL
+
+    </button>
+
+    <audio id="skyfallAudio">
+
+        <source
+            src="ASSETS/Audios/skyfall.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+</div>
+
+<script>
+
+const skyfallBtn = document.getElementById("skyfallBtn");
+const skyfallAudio = document.getElementById("skyfallAudio");
+
+let isPlaying = false;
+
+skyfallBtn.addEventListener("click", () => {
+
+    if(!isPlaying){
+
+        skyfallAudio.play();
+
+        skyfallBtn.innerHTML = "❚❚ PAUSE SKYFALL";
+
+        isPlaying = true;
+
+    } else {
+
+        skyfallAudio.pause();
+
+        skyfallBtn.innerHTML = "▶ PLAY SKYFALL";
+
+        isPlaying = false;
+    }
+
+});
+
+</script>
+
 </main>
 
 <!-- SUITCASE -->
+ 
 <img
     src="ASSETS/Imagenes/maleta james.png"
     class="suitcase"
     id="suitcase"
 >
-
 <!-- INVENTORY -->
 <div class="inventory" id="inventory">
 
@@ -82,6 +141,25 @@ Abres tu maleta.
 
 </div>
 
+<!-- =========================
+     BOND WARNING
+========================= -->
+
+<div class="bond-warning">
+
+    <img
+        src="ASSETS/Imagenes/papi bond.png"
+        class="bond-warning-img"
+    >
+
+    <div class="bond-warning-text">
+
+        "Tienes que huir.<br>
+        No es seguro aquí."
+
+    </div>
+
+</div>
 <!-- AUDIO -->
 <audio id="gunAudio" loop>
 
