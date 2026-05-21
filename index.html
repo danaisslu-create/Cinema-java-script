@@ -1,68 +1,208 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema · Inicio</title>
+    <meta name="description" content="Narrativa interactiva de cine">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <title>Home</title>
+        body {
+            min-height: 100vh;
+            /* Degradado radial desde el centro: rojo-rosa hacia morado oscuro */
+            background: radial-gradient(circle at center, #5e1a2a 0%, #3a0a26 70%, #250512 100%);
+            font-family: 'Quicksand', sans-serif;
+            position: relative;
+            overflow-x: hidden;
+        }
 
-    <meta
-        name="description"
-        content="our first interactive multimedia narrative"
-    />
+        /* NAVBAR estilo créditos */
+        header {
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            padding: 0 20px;
+        }
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 35px;
+            list-style: none;
+            background: rgba(20, 10, 20, 0.55);
+            backdrop-filter: blur(12px);
+            padding: 10px 28px;
+            border-radius: 80px;
+            border: 1px solid rgba(220, 120, 150, 0.4);
+        }
+        nav ul li a {
+            text-decoration: none;
+            font-family: 'Italiana', serif;
+            color: #f5e0e8;
+            font-size: 18px;
+            transition: 0.2s;
+            letter-spacing: 1px;
+        }
+        nav ul li a:hover {
+            color: #f2a0b5;
+            text-shadow: 0 0 6px #ffa0b5;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        /* CONTENIDO PRINCIPAL */
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 100px);
+            padding: 40px 20px;
+        }
 
+        #home {
+            text-align: center;
+            animation: fadeInUp 0.8s ease;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* TÍTULO PRINCIPAL (cinemático, sin neon, tamaño contenido) */
+        #home h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 70px;
+            color: #f7e6ed;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            letter-spacing: 4px;
+            margin-bottom: 45px;
+            font-weight: 400;
+        }
+
+        /* BOTÓN (mucho más pequeño que el título) */
+        #home button {
+            background: rgba(30, 12, 25, 0.65);
+            backdrop-filter: blur(6px);
+            border: 1px solid #d97a9a;
+            color: #ffe6f0;
+            font-family: 'Italiana', serif;
+            font-size: 20px;
+            padding: 10px 32px;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            letter-spacing: 2px;
+        }
+        #home button:hover {
+            background: #de7cae;
+            color: #1e0a1a;
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(217, 122, 154, 0.5);
+            border-color: transparent;
+        }
+
+        /* ANIMACIÓN DE ENTRADA SUTIL */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* PARTÍCULAS FLOTANTES (rosado / rojo tenue) */
+        .particle {
+            position: fixed;
+            bottom: 0;
+            width: 3px;
+            height: 3px;
+            background: #e8a0b5;
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: floatParticle 12s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.5;
+            }
+            85% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(30px);
+                opacity: 0;
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 700px) {
+            #home h1 {
+                font-size: 48px;
+                letter-spacing: 2px;
+                margin-bottom: 35px;
+            }
+            #home button {
+                font-size: 18px;
+                padding: 8px 24px;
+            }
+            nav ul {
+                gap: 18px;
+                padding: 6px 18px;
+            }
+            nav ul li a {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
+    <!-- NAVBAR -->
     <header>
-
         <nav>
-
             <ul>
-
-                <li>
-                    <a href="aboutNicole.html">About</a>
-                </li>
-
-                <li>
-                    <a href="personajes.html">Personajes</a>
-                </li>
-
-                <li>
-                    <a href="capitulos.html">Capítulos</a>
-                </li>
-
-                <li>
-                    <a href="creditos.html">Créditos</a>
-                </li>
-
+                <li><a href="aboutNicole.html">About</a></li>
+                <li><a href="personajes.html">Personajes</a></li>
+                <li><a href="capitulos.html">Capítulos</a></li>
+                <li><a href="creditos.html">Créditos</a></li>
             </ul>
-
         </nav>
-
     </header>
 
     <main>
-
         <section id="home">
-
             <h1>CINEMA</h1>
-
-            <button onclick="location.href='aboutNicole.html'">
-
-                START HERE
-
-            </button>
-
+            <button onclick="location.href='aboutNicole.html'">Entrar a la función</button>
         </section>
-
     </main>
 
+    <script>
+        // Partículas sutiles rosa/rojo (menos densidad)
+        for (let i = 0; i < 45; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = 10 + Math.random() * 15 + 's';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            const size = 2 + Math.random() * 4;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.background = `rgba(210, 90, 120, ${0.2 + Math.random() * 0.3})`;
+            document.body.appendChild(particle);
+        }
+    </script>
 </body>
-
 </html>

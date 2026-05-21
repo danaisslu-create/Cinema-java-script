@@ -1,179 +1,252 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Personajes - Cinema</title>
+    <link rel="icon" href="ASSETS/Imagenes/BOGOTA 1.jpg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Italiana&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Favicon -->
-    <link
-        id="favicon"
-        rel="icon"
-        href="ASSETS/Imagenes/BOGOTA 1.jpg"
-        type="image/x-icon"
-    />
+        body {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #24321a 0%, #11130f 100%);
+            font-family: 'Quicksand', sans-serif;
+            padding: 30px 20px 80px;
+            position: relative;
+        }
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+        /* BOTÓN BACK (estilo créditos) */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(6px);
+            border: 1px solid #c0a86a;
+            color: #f0e6d0;
+            font-family: 'Italiana', serif;
+            font-size: 18px;
+            padding: 8px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            z-index: 110;
+            transition: 0.2s;
+        }
+        .back-button:hover {
+            background: #c0a86a;
+            color: #0a0c10;
+            transform: translateX(-3px);
+        }
 
+        /* NAVBAR (estilo créditos) */
+        header {
+            position: sticky;
+            top: 15px;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            list-style: none;
+            background: rgba(30,30,35,0.6);
+            backdrop-filter: blur(12px);
+            padding: 12px 30px;
+            border-radius: 80px;
+            border: 1px solid rgba(192,168,106,0.4);
+        }
+        nav ul li a {
+            text-decoration: none;
+            font-family: 'Italiana', serif;
+            color: #fef7e0;
+            font-size: 18px;
+            transition: 0.2s;
+            letter-spacing: 1px;
+        }
+        nav ul li a:hover {
+            color: #d4c2a5;
+            text-shadow: 0 0 4px #fffaec;
+        }
+
+        /* TÍTULO PRINCIPAL */
+        #personajes h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 70px;
+            text-align: center;
+            color: #f2e4c0;
+            letter-spacing: 4px;
+            margin-bottom: 50px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+
+        /* CONTENEDOR DE LOS PERSONAJES (flex, centrado) */
+        .capitulos-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* CADA TARJETA (círculo perfecto) */
+        .ciudad {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+            width: 200px;
+            transition: transform 0.3s ease;
+        }
+        .ciudad:hover {
+            transform: translateY(-8px);
+        }
+
+        /* IMAGEN CIRCULAR (el "circulito") */
+        .ciudad img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #c0a86a;
+            box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            background: #2c2a27;
+        }
+        .ciudad img:hover {
+            border-color: #e0c88a;
+            box-shadow: 0 0 0 4px rgba(192,168,106,0.3), 0 20px 30px rgba(0,0,0,0.4);
+            transform: scale(1.02);
+        }
+
+        /* BOTÓN DE CADA PERSONAJE (estilo elegante) */
+        .ciudad a button {
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid #c0a86a;
+            color: #f0e6d0;
+            font-family: 'Italiana', serif;
+            font-size: 20px;
+            padding: 8px 22px;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: auto;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+        .ciudad a button:hover {
+            background: #c0a86a;
+            color: #1a1a1a;
+            transform: scale(1.02);
+            box-shadow: 0 0 12px rgba(192,168,106,0.5);
+            border-color: transparent;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 700px) {
+            #personajes h1 {
+                font-size: 48px;
+            }
+            .ciudad img {
+                width: 140px;
+                height: 140px;
+            }
+            .ciudad {
+                width: 160px;
+            }
+            .ciudad a button {
+                font-size: 16px;
+                padding: 6px 18px;
+            }
+            nav ul {
+                gap: 12px;
+                padding: 8px 18px;
+            }
+            nav ul li a {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-    <!-- BOTON BACK -->
+    <!-- BOTÓN BACK -->
+    <button class="back-button" onclick="history.back()">← </button>
 
-    <button class="back-button" onclick="history.back()">
-        ← BACK
-    </button>
-
-    <!-- =========================
-         NAVBAR
-    ========================== -->
-
+    <!-- NAVBAR -->
     <header>
-
         <nav>
-
             <ul>
-
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-
-                <li>
-                    <a href="aboutNicole.html">About</a>
-                </li>
-
-                <li>
-                    <a href="personajes.html">Personajes</a>
-                </li>
-
-                <li>
-                    <a href="capitulos.html">Capítulos</a>
-                </li>
-
-                <li>
-                    <a href="creditos.html">Créditos</a>
-                </li>
-
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutNicole.html">About</a></li>
+                <li><a href="personajes.html">Personajes</a></li>
+                <li><a href="capitulos.html">Capítulos</a></li>
+                <li><a href="creditos.html">Créditos</a></li>
             </ul>
-
         </nav>
-
     </header>
 
-    <!-- =========================
-         PERSONAJES
-    ========================== -->
-
+    <!-- CONTENIDO PRINCIPAL -->
     <main>
-
         <section id="personajes">
-
             <h1>PERSONAJES</h1>
-
             <div class="capitulos-container">
 
                 <!-- Nicole -->
                 <div class="ciudad">
-
-                    <img 
-                        src="ASSETS/Imagenes/nicole.png" 
-                        alt="Nicole"
-                    >
-
+                    <img src="ASSETS/Imagenes/nicole.png" alt="Nicole">
                     <a href="aboutNicole.html">
-
-                        <button>
-                            Nicole
-                        </button>
-
+                        <button>Nicole</button>
                     </a>
-
                 </div>
 
-                <!-- Travis -->
+                <!-- Travis Bickle -->
                 <div class="ciudad">
-
-                    <img 
-                        src="ASSETS/Imagenes/travis bicle still.jpeg" 
-                        alt="Travis Bickle"
-                    >
-
+                    <img src="ASSETS/Imagenes/travis bicle still.jpeg" alt="Travis Bickle">
                     <a href="travis-bickle.html">
-
-                        <button>
-                            Travis Bickle
-                        </button>
-
+                        <button>Travis Bickle</button>
                     </a>
-
                 </div>
 
                 <!-- Paddington -->
                 <div class="ciudad">
-
-                    <img 
-                        src="ASSETS/Imagenes/paddington.jpg" 
-                        alt="Paddington"
-                    >
-
+                    <img src="ASSETS/Imagenes/paddington.jpg" alt="Paddington">
                     <a href="paddington.html">
-
-                        <button>
-                            Paddington
-                        </button>
-
+                        <button>Paddington</button>
                     </a>
-
                 </div>
 
-                <!-- Miranda -->
+                <!-- Miranda Priestly -->
                 <div class="ciudad">
-
-                    <img 
-                        src="ASSETS/Imagenes/meryl streep.avif" 
-                        alt="Miranda Priestly"
-                    >
-
+                    <img src="ASSETS/Imagenes/meryl streep.avif" alt="Miranda Priestly">
                     <a href="miranda-priestly.html">
-
-                        <button>
-                            Miranda Priestly
-                        </button>
-
+                        <button>Miranda Priestly</button>
                     </a>
-
                 </div>
 
-                <!-- Nigel -->
+                <!-- Nigel Kipling -->
                 <div class="ciudad">
-
-                    <img 
-                        src="ASSETS/Imagenes/nigel.jpg" 
-                        alt="Nigel Kipling"
-                    >
-
+                    <img src="ASSETS/Imagenes/nigel.jpg" alt="Nigel Kipling">
                     <a href="nigel-kipling.html">
-
-                        <button>
-                            Nigel Kipling
-                        </button>
-
+                        <button>Nigel Kipling</button>
                     </a>
-
                 </div>
 
             </div>
-
         </section>
-
     </main>
 
 </body>
-
 </html>

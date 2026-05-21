@@ -1,177 +1,229 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Taxi Ride - Cinema</title>
-
     <link rel="stylesheet" href="style.css">
-    <script src="./script.js"></script>
-
+    <style>
+        /* Estilos adicionales para popups (sin modificar tu style.css) */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(6px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        }
+        .popup-container {
+            background: #1a1a1a;
+            max-width: 550px;
+            width: 90%;
+            border-radius: 28px;
+            padding: 35px;
+            position: relative;
+            text-align: center;
+            border-top: 6px solid #F0CB75;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.5);
+        }
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            width: 36px;
+            height: 36px;
+            background: #F0CB75;
+            border: none;
+            border-radius: 50%;
+            color: #1a1a1a;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .popup-close:hover {
+            background: #e0b85a;
+            transform: scale(1.05);
+        }
+        .popup-container h2 {
+            color: #F0CB75;
+            font-family: 'DM Serif Display', serif;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .popup-container p {
+            color: #E7D9C5;
+            font-family: 'Italiana', serif;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+        .emoji-list {
+            font-size: 48px;
+            letter-spacing: 12px;
+            margin: 20px 0;
+        }
+        .spotify-embed {
+            width: 100%;
+            height: 352px;
+            border-radius: 20px;
+            margin: 15px 0;
+            border: none;
+        }
+        .flash-effect {
+            position: fixed;
+            inset: 0;
+            background: white;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 10001;
+        }
+        .flash-active {
+            animation: flashAnim 0.3s linear;
+        }
+        @keyframes flashAnim {
+            0% { opacity: 0; }
+            30% { opacity: 0.9; }
+            100% { opacity: 0; }
+        }
+    </style>
 </head>
-
 <body class="taxi-ride-body">
 
     <!-- BACK BUTTON -->
-
-    <button class="back-button" onclick="history.back()">
-        ←
-    </button>
+    <button class="back-button" onclick="history.back()">←</button>
 
     <!-- FONDO -->
-
-    <img
-        src="ASSETS/Imagenes/fondo tax ride.jpg"
-        class="taxi-ride-background"
-        alt="New York Night"
-    >
-
-    <!-- OVERLAY -->
-
+    <img src="ASSETS/Imagenes/fondo tax ride.jpg" class="taxi-ride-background" alt="New York Night">
     <div class="taxi-ride-overlay"></div>
 
     <!-- TITULO -->
-
-    <h1 class="taxi-ride-title">
-        NIGHT RIDE
-    </h1>
+    <h1 class="taxi-ride-title">PASEO EN TAXI</h1>
 
     <!-- CONTENIDO -->
-
     <main class="taxi-ride-container">
-
         <!-- DIALOGO -->
-
         <section class="taxi-dialogue-box">
-
-            <p
-                class="taxi-dialogue"
-                id="taxiDialogue"
-            >
-
-                La ciudad se ve diferente después de medianoche.
-
-            </p>
-
-            <p class="taxi-dialogue-small">
-
-                Travis conduce sin mirar atrás.
-                Afuera, Manhattan parece una película
-                que nunca termina.
-
-            </p>
-
+            <p class="taxi-dialogue" id="taxiDialogue">La ciudad se ve diferente después de medianoche.</p>
+            <p class="taxi-dialogue-small">Travis conduce sin mirar atrás. Afuera, Manhattan parece una película que nunca termina.</p>
         </section>
 
         <!-- IMAGEN CENTRAL -->
+        <img src="ASSETS/Imagenes/dentro del taxi.jpg" class="taxi-interior" alt="Taxi Interior">
 
-        <img
-            src="ASSETS/Imagenes/dentro del taxi.jpg"
-            class="taxi-interior"
-            alt="Taxi Interior"
-        >
-
-        <!-- OPCIONES -->
-
+        <!-- OPCIONES (cada una abre un popup distinto) -->
         <section class="taxi-options">
-
-            <!-- OPCION 1 -->
-
-            <div
-                class="taxi-option-card"
-                onclick="changeDialogue(0)"
-            >
-
-                <h2>
-                    Mirar por la ventana
-                </h2>
-
-                <p>
-                    Las luces de Nueva York tiemblan sobre el pavimento mojado.
-                </p>
-
+            <div class="taxi-option-card" id="optVentana">
+                <h2>Mirar por la ventana</h2>
+                <p>Las luces de Nueva York tiemblan sobre el pavimento mojado.</p>
             </div>
-
-            <!-- OPCION 2 -->
-
-            <div
-                class="taxi-option-card"
-                onclick="changeDialogue(1)"
-            >
-
-                <h2>
-                    Escuchar a Travis
-                </h2>
-
-                <p>
-                    Parece conocer cada rincón oscuro de la ciudad.
-                </p>
-
+            <div class="taxi-option-card" id="optTravis">
+                <h2>Escuchar a Travis</h2>
+                <p>Parece conocer cada rincón oscuro de la ciudad.</p>
             </div>
-
-            <!-- OPCION 3 -->
-
-            <div
-                class="taxi-option-card"
-                onclick="changeDialogue(2)"
-            >
-
-                <h2>
-                    Permanecer en silencio
-                </h2>
-
-                <p>
-                    El sonido de la lluvia llena el taxi lentamente.
-                </p>
-
+            <div class="taxi-option-card" id="optSilencio">
+                <h2>Permanecer en silencio</h2>
+                <p>El sonido de la lluvia llena el taxi lentamente.</p>
             </div>
-
         </section>
 
-        <!-- BOTON EASTER EGGS -->
-
-        <a
-            href="taxidriver-eastereggs.html"
-            class="taxi-side-button taxi-left-button"
-        >
-            🚕
-        </a>
-
-        <!-- BOTON PLAYLIST -->
-
-        <a
-            href="travis-bickle-playlist.html"
-            class="taxi-side-button taxi-right-button"
-        >
-            🎵
-        </a>
+        <!-- BOTONES LATERALES -->
+        <a href="taxidriver-eastereggs.html" class="taxi-side-button taxi-left-button">🚕</a>
+        <a href="travis-bickle-playlist.html" class="taxi-side-button taxi-right-button">🎵</a>
 
         <!-- CONTINUAR -->
-
         <div class="taxi-continue">
-
             <a href="taxi-driver-ending.html">
-
-                <button class="taxi-continue-button">
-
-                    Continuar el recorrido
-
-                </button>
-
+                <button class="taxi-continue-button">Continuar el recorrido</button>
             </a>
-
         </div>
-
     </main>
 
-    <!-- JAVASCRIPT -->
+    <!-- POPUPS -->
+    <!-- Popup Mirar por la ventana -->
+    <div id="popupVentana" class="popup-overlay">
+        <div class="popup-container">
+            <button class="popup-close" onclick="cerrarPopup('popupVentana')">✕</button>
+            <h2>🌃 Mirar por la ventana</h2>
+            <div class="emoji-list">🌆🚕💨🌙</div>
+            <p>Las calles mojadas reflejan los neones. Nueva York se desliza como un sueño del que no quieres despertar.</p>
+        </div>
+    </div>
 
-    <script src="script.js"></script>
+    <!-- Popup Escuchar a Travis con la playlist que me diste -->
+    <div id="popupTravis" class="popup-overlay">
+        <div class="popup-container">
+            <button class="popup-close" onclick="cerrarPopup('popupTravis')">✕</button>
+            <h2>🎷 Escuchar a Travis</h2>
+            <iframe class="spotify-embed" src="https://open.spotify.com/embed/playlist/6vYCcjzegcjKfvR4mMYAJJ?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <p>“Algún día llegará una lluvia que limpie toda esta escoria”.</p>
+        </div>
+    </div>
 
+    <!-- Popup Permanecer en silencio -->
+    <div id="popupSilencio" class="popup-overlay">
+        <div class="popup-container">
+            <button class="popup-close" onclick="cerrarPopup('popupSilencio')">✕</button>
+            <h2>🔇 Permanecer en silencio</h2>
+            <div class="emoji-list">🌧️🤐🚕🌙</div>
+            <p>El ruido de la lluvia contra el parabrisas se convierte en la única conversación. A veces el silencio dice más que mil palabras.</p>
+        </div>
+    </div>
+
+    <div id="globalFlash" class="flash-effect"></div>
+
+    <script>
+        function activarFlash() {
+            const flash = document.getElementById('globalFlash');
+            flash.classList.remove('flash-active');
+            void flash.offsetWidth;
+            flash.classList.add('flash-active');
+        }
+
+        function abrirPopup(id) {
+            const popup = document.getElementById(id);
+            if (popup) {
+                popup.style.display = 'flex';
+                activarFlash();
+            }
+        }
+
+        function cerrarPopup(id) {
+            const popup = document.getElementById(id);
+            if (popup) popup.style.display = 'none';
+        }
+
+        // Eventos de las tarjetas
+        document.getElementById('optVentana').addEventListener('click', () => {
+            abrirPopup('popupVentana');
+            const dialogo = document.getElementById('taxiDialogue');
+            if (dialogo) dialogo.innerText = "Las luces de Nueva York tiemblan sobre el pavimento mojado.";
+        });
+        document.getElementById('optTravis').addEventListener('click', () => {
+            abrirPopup('popupTravis');
+            const dialogo = document.getElementById('taxiDialogue');
+            if (dialogo) dialogo.innerText = "— ¿Sabes? Esta ciudad te limpia la sangre — dice Travis sin mirarte.";
+        });
+        document.getElementById('optSilencio').addEventListener('click', () => {
+            abrirPopup('popupSilencio');
+            const dialogo = document.getElementById('taxiDialogue');
+            if (dialogo) dialogo.innerText = "El silencio se vuelve cómplice. La lluvia habla por ti.";
+        });
+
+        // Cerrar popup si se hace clic fuera del contenedor
+        window.addEventListener('click', (e) => {
+            const popups = document.querySelectorAll('.popup-overlay');
+            popups.forEach(popup => {
+                if (e.target === popup) popup.style.display = 'none';
+            });
+        });
+    </script>
 </body>
-
 </html>
